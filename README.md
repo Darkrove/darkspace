@@ -1,35 +1,6 @@
-## Getting Started
-
-Create a project using this example:
-
-```bash
-npx thirdweb create --template next-javascript-starter
-```
-
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
-
-On `pages/_app.js`, you'll find our `ThirdwebProvider` wrapping your app, this is necessary for our [hooks](https://portal.thirdweb.com/react) and
-[UI Components](https://portal.thirdweb.com/ui-components) to work.
-
-### Deploy to IPFS
-
-Deploy a copy of your application to IPFS using the following command:
-
-```bash
-yarn deploy
-```
-
-## Learn More
-
-To learn more about thirdweb and Next.js, take a look at the following resources:
-
-- [thirdweb React Documentation](https://docs.thirdweb.com/react) - learn about our React SDK.
-- [thirdweb JavaScript Documentation](https://docs.thirdweb.com/react) - learn about our JavaScript/TypeScript SDK.
-- [thirdweb Portal](https://docs.thirdweb.com/react) - check our guides and development resources.
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-
-You can check out [the thirdweb GitHub organization](https://github.com/thirdweb-dev) - your feedback and contributions are welcome!
-
-## Join our Discord!
-
-For any questions, suggestions, join our discord at [https://discord.gg/thirdweb](https://discord.gg/thirdweb).
+## Screen Layout
+![image](https://user-images.githubusercontent.com/53792139/216445634-6b1c5360-e0fc-408f-a4e0-838d127beff7.png)
+![image](https://user-images.githubusercontent.com/53792139/216445689-bbc7f14e-964a-46da-963b-17889ac39b19.png)
+![image](https://user-images.githubusercontent.com/53792139/216445910-46de31d9-7a52-49a7-957d-e05f5f6dc170.png)
+![image](https://user-images.githubusercontent.com/53792139/216445985-98a7e125-32a2-40c7-882e-c988148e1418.png)
+![image](https://user-images.githubusercontent.com/53792139/216446279-d44013d6-81f5-41af-930b-3e946a0a8ae9.png)
