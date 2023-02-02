@@ -11,15 +11,38 @@
     "deploy": "next build && next export && npx thirdweb@latest upload out"
   },
   "dependencies": {
+    "@headlessui/react": "^1.7.8",
+    "@heroicons/react": "^2.0.14",
+    "@preline/dropdown": "^1.3.0",
+    "@radix-ui/react-popover": "^1.0.3",
+    "@rajesh896/video-thumbnails-generator": "^2.3.9",
     "@thirdweb-dev/react": "^3",
     "@thirdweb-dev/sdk": "^3",
+    "@thirdweb-dev/storage": "^1.0.6",
+    "@vercel/analytics": "^0.1.8",
+    "clsx": "^1.2.1",
+    "daisyui": "^2.46.0",
     "ethers": "^5.6.8",
-    "next": "^13",
+    "framer-motion": "^8.5.3",
+    "lucide-react": "^0.107.0",
+    "next": "^13.1.2",
+    "next-auth": "^4.18.7",
+    "nft.storage": "^7.0.0",
+    "preline": "^1.7.0",
     "react": "^18.2",
-    "react-dom": "^18.2"
+    "react-dom": "^18.2",
+    "react-hot-toast": "^2.4.0",
+    "react-icons": "^4.7.1",
+    "react-wrap-balancer": "^0.4.0",
+    "web3": "^1.8.1"
   },
   "devDependencies": {
+    "@gradin/tailwindcss-skeleton-screen": "^1.0.2",
+    "@types/react": "^18.0.27",
+    "autoprefixer": "^10.4.13",
     "eslint": "8.11.0",
-    "eslint-config-next": "^13"
+    "eslint-config-next": "^13",
+    "postcss": "^8.4.20",
+    "tailwindcss": "^3.2.4"
   }
 }
