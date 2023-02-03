@@ -1,4 +1,5 @@
 import React, {useState, ueEffect} from "react";
+import Image from "next/image";
 import { GoogleLogo, GithubLogo, DiscordLogo } from "../assets/Icons"
 import { capitalizeFirstLetter } from "../utils";
 import useOnlineStatus from "../lib/hooks/useOnlineStatus"
@@ -31,10 +32,12 @@ export default function ProfileCard({host, user}) {
         </div>
       </div>
       <div className="h-16 w-16 lg:h-20 lg:w-20 md:w-20 md:h-20 justify-center items-center flex">
-        <img
+        <Image
           className="rounded-lg object-fit shadow-lg"
           src={user?.image}
           alt={user?.name}
+          height={70}
+          width={70}
         />
       </div>
     </div>

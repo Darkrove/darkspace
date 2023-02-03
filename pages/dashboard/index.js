@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { unstable_getServerSession } from "next-auth/next";
+import { getServerSession } from "next-auth/next";
 
 import { authOptions } from "../api/auth/[...nextauth]";
 import { useStateContext } from "../../context";
@@ -13,12 +13,11 @@ const Home = () => {
   const fetchFiles = async () => {
     setIsLoading(true);
     const data = await getPublicFiles();
-    if(data) {
+    if (data) {
       setFiles(data.reverse());
     }
     setIsLoading(false);
   };
-
   useEffect(() => {
     if (contract) fetchFiles();
   }, [address, contract]);
@@ -40,11 +39,7 @@ const Home = () => {
 export default Home;
 
 export async function getServerSideProps(context) {
-  const session = await unstable_getServerSession(
-    context.req,
-    context.res,
-    authOptions
-  );
+  const session = await getServerSession(context.req, context.res, authOptions);
   if (!session) {
     return {
       redirect: {

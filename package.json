@@ -27,6 +27,7 @@
     "lucide-react": "^0.107.0",
     "next": "^13.1.2",
     "next-auth": "^4.18.7",
+    "nextjs-progressbar": "^0.0.16",
     "nft.storage": "^7.0.0",
     "preline": "^1.7.0",
     "react": "^18.2",

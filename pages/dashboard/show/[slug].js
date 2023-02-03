@@ -2,19 +2,20 @@ import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import Image from "next/image";
 import { MediaRenderer } from "@thirdweb-dev/react";
-import { unstable_getServerSession } from "next-auth/next";
+import { getServerSession } from "next-auth/next";
 
 import { authOptions } from "../../api/auth/[...nextauth]";
 import { useStateContext } from "../../../context";
 import { LadyLoader, CardBox } from "../../../components";
 import { capitalizeFirstLetter, formatDate, formatBytes } from "../../../utils";
 
-const index = (props) => {
+const Index = (props) => {
   const [file, setFile] = useState();
   const [isLoading, setIsLoading] = useState(true);
   const { address, contract, getFileByHash } = useStateContext();
   const router = useRouter();
   const { slug } = router.query;
+
   const fetchFile = async () => {
     try {
       const data = await getFileByHash(slug);
@@ -28,12 +29,13 @@ const index = (props) => {
 
   useEffect(() => {
     if (contract && isLoading) fetchFile();
-  });
+  }, [contract, getFileByHash, isLoading, slug]);
+
   return (
     <div>
       {isLoading ? (
         <div className="flex items-center justify-center space-x-2">
-         <LadyLoader/>
+          <LadyLoader />
         </div>
       ) : (
         <>
@@ -88,7 +90,7 @@ const index = (props) => {
           <div className="mt-4 grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-4">
             <CardBox title={"Name"} value={file?.name} />
             <CardBox title={"Id"} value={`F${file?.pid}`} />
-            <CardBox title={"Hash"} value={file?.hash} copyIcon/>
+            <CardBox title={"Hash"} value={file?.hash} copyIcon />
             <CardBox title={"Size"} value={formatBytes(file?.size)} />
             <CardBox title={"Publish"} value={formatDate(file?.uploadTime)} />
             <CardBox
@@ -103,9 +105,9 @@ const index = (props) => {
   );
 };
 
-export default index;
+export default Index;
 export async function getServerSideProps(context) {
-  const session = await unstable_getServerSession(
+  const session = await getServerSession(
     context.req,
     context.res,
     authOptions

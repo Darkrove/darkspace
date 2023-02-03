@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useSession, signOut } from "next-auth/react";
 import { getSession } from "next-auth/react";
-import { unstable_getServerSession } from "next-auth/next";
+import { getServerSession } from "next-auth/next";
 
 import { authOptions } from "../api/auth/[...nextauth]";
 import { useStateContext } from "../../context";
@@ -9,7 +9,7 @@ import { CustomButton, StatsCard, ProfileCard, Stats } from "../../components";
 import { shortenAddress } from "../../utils";
 import { imageIcon, videoIcon, hostIcon } from "../../assets";
 
-const profile = () => {
+const Profile = () => {
   const { address, balance, contract, getFileStats } = useStateContext();
   const { data: session } = useSession();
   const [isLoading, setIsLoading] = useState(false);
@@ -32,7 +32,7 @@ const profile = () => {
   const fetchStats = async () => {
     setIsLoading(true);
     const counts = await getFileStats();
-    if (!counts) return 
+    if (!counts) return;
     console.log(counts);
     setLastUpdate(counts[0]);
     setImageCount(counts[1]);
@@ -46,16 +46,21 @@ const profile = () => {
     if (session?.user?.email) {
       const split = session?.user?.image?.split("/");
       const host = split[2]?.split(".")[1];
-      console.log(host)
+      console.log(host);
       if (host === "githubusercontent") {
         setHost("github");
       } else if (host === "googleusercontent") {
         setHost("google");
       } else if (host === "discordapp") {
-        setHost("discord")
+        setHost("discord");
       }
     }
-  }, [address, contract]);
+  }, [
+    address,
+    contract,
+    session?.user?.email,
+    session?.user?.image,
+  ]);
 
   return (
     <div>
@@ -87,14 +92,10 @@ const profile = () => {
   );
 };
 
-export default profile;
+export default Profile;
 
 export async function getServerSideProps(context) {
-  const session = await unstable_getServerSession(
-    context.req,
-    context.res,
-    authOptions
-  );
+  const session = await getServerSession(context.req, context.res, authOptions);
   if (!session) {
     return {
       redirect: {

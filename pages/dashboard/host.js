@@ -3,7 +3,7 @@ import { NFTStorage, File } from "nft.storage";
 import { useStorageUpload } from "@thirdweb-dev/react";
 import { useSession } from "next-auth/react";
 import toast from "react-hot-toast";
-import { unstable_getServerSession } from "next-auth/next";
+import { getServerSession } from "next-auth/next";
 
 import { authOptions } from "../api/auth/[...nextauth]";
 
@@ -15,7 +15,7 @@ import {
 } from "../../components";
 import { useStateContext } from "../../context";
 
-const viewfiles = () => {
+const Host = () => {
   const { data: session } = useSession();
   const { mutateAsync: upload } = useStorageUpload();
 
@@ -25,13 +25,6 @@ const viewfiles = () => {
   const [dataLoading, setDataLoading] = useState(false);
   const [isActive, setIsActive] = useState(false);
   const { address, contract, getUserFiles, uploadFile } = useStateContext();
-
-  const fetchFiles = async () => {
-    setDataLoading(true);
-    const data = await getUserFiles();
-    setFiles(data);
-    setDataLoading(false);
-  };
 
   const handleChange = (e) => {
     setSelectedFiles(e.target.files);
@@ -75,6 +68,12 @@ const viewfiles = () => {
     setIsLoading(false);
   };
 
+  const fetchFiles = async () => {
+    setDataLoading(true);
+    const data = await getUserFiles();
+    setFiles(data);
+    setDataLoading(false);
+  };
   useEffect(() => {
     if (selectedFiles.length > 0) {
       setIsActive(true);
@@ -125,13 +124,9 @@ const viewfiles = () => {
   );
 };
 
-export default viewfiles;
+export default Host;
 export async function getServerSideProps(context) {
-  const session = await unstable_getServerSession(
-    context.req,
-    context.res,
-    authOptions
-  );
+  const session = await getServerSession(context.req, context.res, authOptions);
   if (!session) {
     return {
       redirect: {

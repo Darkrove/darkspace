@@ -1,11 +1,12 @@
 import React, { useEffect } from "react";
 import toast, { Toaster } from "react-hot-toast";
-import { Analytics } from '@vercel/analytics/react';
+import { Analytics } from "@vercel/analytics/react";
 import Head from "next/head";
 import { ChainId, ThirdwebProvider } from "@thirdweb-dev/react";
 import { useRouter } from "next/router";
 import { SessionProvider } from "next-auth/react";
 import { Provider as RWBProvider } from "react-wrap-balancer";
+import NextNProgress from "nextjs-progressbar";
 
 import "../styles/globals.css";
 import { Sidebar, Navbar, HomeNavbar } from "../components";
@@ -89,11 +90,15 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }) {
   // TODO add Layout
   // TODO svg icons component
   // TODO SWR
-  return ( 
+  return (
     <ThirdwebProvider desiredChainId={activeChainId}>
       <StateContextProvider>
         <SessionProvider session={session}>
           <RWBProvider>
+            <NextNProgress
+              color={"#8B5CF6"}
+              options={{ showSpinner: false, easing: "ease" }}
+            />
             <Head>
               <title>DarkSpace</title>
               <meta name="description" content={"web3 storage provider"} />

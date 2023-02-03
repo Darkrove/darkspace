@@ -1,15 +1,16 @@
 import React, { useState, useEffect } from "react";
+import Image from "next/image";
 import { useSession } from "next-auth/react";
 import { useStorageUpload } from "@thirdweb-dev/react";
 import toast from "react-hot-toast";
-import { unstable_getServerSession } from "next-auth/next";
+import { getServerSession } from "next-auth/next";
 
 import { authOptions } from "../api/auth/[...nextauth]";
 import { CustomButton, FormField, Loader } from "../../components";
 import { secure } from "../../assets";
 import { useStateContext } from "../../context";
 
-const uploadmedia = () => {
+const Uploadmedia = () => {
   const { data: session } = useSession();
   const [isLoading, setIsLoading] = useState(false);
   const [isActive, setIsActive] = useState(false);
@@ -86,7 +87,7 @@ const uploadmedia = () => {
     } else {
       setIsActive(false);
     }
-  });
+  }, [form.file]);
 
   return (
     <div className="">
@@ -127,13 +128,15 @@ const uploadmedia = () => {
             </div>
 
             <div className="w-full flex justify-start items-center p-4 bg-violet-700 h-[120px] rounded-[10px]">
-              <img
+              <Image
                 src={secure}
                 alt="secure"
+                width={40}
+                height={40}
                 className="w-[40px] h-[40px] object-contain"
               />
               <h4 className="font-epilogue font-bold text-[25px] text-white ml-[20px]">
-                You're data will be 100% secured with us
+                You`&apos;`re data will be 100% secured with us
               </h4>
             </div>
 
@@ -156,10 +159,10 @@ const uploadmedia = () => {
   );
 };
 
-export default uploadmedia;
+export default Uploadmedia;
 
 export async function getServerSideProps(context) {
-  const session = await unstable_getServerSession(
+  const session = await getServerSession(
     context.req,
     context.res,
     authOptions

@@ -3,7 +3,7 @@ import Link from "next/link";
 
 import { Header, CtaSection } from "../components";
 
-const index = () => {
+const Index = () => {
   const [theme, setTheme] = useState();
   useEffect(() => {
     if (
@@ -16,7 +16,7 @@ const index = () => {
       document.documentElement.classList.remove("dark");
     }
     setTheme(localStorage.theme);
-  });
+  }, []);
 
   const setLightTheme = () => {
     localStorage.theme = "light";
@@ -110,4 +110,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default Index;

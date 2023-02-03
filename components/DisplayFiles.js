@@ -41,7 +41,7 @@ const DisplayFiles = ({
       {isLoading && (
         <div className="flex flex-wrap mt-[20px] gap-[26px]">
           {[0, 1, 2, 3, 4, 5].map((id) => (
-            <FileCardSkeleton user={user} />
+            <FileCardSkeleton key={id} user={user} />
           ))}
         </div>
       )}
@@ -51,7 +51,7 @@ const DisplayFiles = ({
           files?.length > 0 &&
           files
             .slice(0)
-            .map((file, id) => <FileCard key={id} {...file} user={user} />)}
+            .map((file, id) => <FileCard key={file.pid} {...file} user={user} />)}
       </div>
       {children}
     </div>

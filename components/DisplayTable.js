@@ -118,7 +118,8 @@ const DisplayTable = ({ title, isLoading, files, address, user }) => {
                             <a
                               href={`https://gateway.pinata.cloud/ipfs/${file.hash}/`}
                               target="_blank"
-                              className="text-blue-500 hover:text-blue-700"
+                              className="text-blue-500 hover:text-blue-700" 
+                              rel="noreferrer"
                             >
                               link
                             </a>

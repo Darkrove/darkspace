@@ -30,23 +30,23 @@ const FileCard = ({
   const [isLoading, setIsLoading] = useState(true);
   const [thumbnail, setThumbnail] = useState(`https://${gateways[Math.floor(Math.random() * gateways.length)]}/ipfs/${hash}`);
   const [fileSrc, setfileSrc] = useState(`https://${gateways[Math.floor(Math.random() * gateways.length)]}/ipfs/${hash}`);
-
-  const generateThumbnail = async () => {
-    try {
-      const res = await generateVideoThumbnailViaUrl(fileSrc, 3);
-      setThumbnail(res);
-    } catch (error) {
-      console.log(error);
-    }
-  };
   const [firstUpdate, setFirstUpdate] = useState(true);
 
   useEffect(() => {
+    const generateThumbnail = async () => {
+      try {
+        const res = await generateVideoThumbnailViaUrl(fileSrc, 3);
+        setThumbnail(res);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
     if (firstUpdate && type === "video/mp4") {
       generateThumbnail()
       setFirstUpdate(false)
     }
-  })
+  }, [firstUpdate, type, fileSrc])
 
   return (
     <div className="sm:w-[230px] md:w-[250px] xl:w-[270px] 2xl:w-[295px] w-full rounded-[15px] bg-zinc-800 cursor-pointer">

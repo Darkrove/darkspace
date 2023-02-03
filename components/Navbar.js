@@ -144,6 +144,7 @@ const Navbar = () => {
           <ul className="mb-4">
             {navlinks.map((link) => (
               <Row
+                key={link.name}
                 id={link.name}
                 {...link}
                 activePage={activePage}

@@ -1,25 +1,24 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import { unstable_getServerSession } from "next-auth/next";
+import { getServerSession } from "next-auth/next";
 
 import { authOptions } from "../api/auth/[...nextauth]";
 import { useStateContext } from "../../context";
 import { LeftFaceArrow } from "../../assets/Icons";
 import { DisplayFiles } from "../../components";
 
-const recent = () => {
+const Recent = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [files, setFiles] = useState([]);
   const { address, contract, setActivePage, getUserFiles } = useStateContext();
 
   const fetchFiles = async () => {
     setIsLoading(true);
-    console.log()
+    console.log();
     const data = await getUserFiles();
-    if(data) setFiles(data);
+    if (data) setFiles(data);
     setIsLoading(false);
   };
-
   useEffect(() => {
     if (contract) fetchFiles();
   }, [address, contract]);
@@ -30,7 +29,10 @@ const recent = () => {
         title="Recent Images"
         subtitle="Recent images"
         isLoading={isLoading}
-        files={files?.filter((file) => file.type.split("/")[0] === "image").reverse().slice(0, 3)}
+        files={files
+          ?.filter((file) => file.type.split("/")[0] === "image")
+          .reverse()
+          .slice(0, 3)}
         address={address}
         user={true}
       >
@@ -48,15 +50,16 @@ const recent = () => {
               <LeftFaceArrow className="w-4 h-4 fill-current" />
             </span>
           </Link>
-        ) : (
-          null
-        )}
+        ) : null}
       </DisplayFiles>
       <DisplayFiles
         title="Recent Videos"
         subtitle="Recent videos"
         isLoading={isLoading}
-        files={files?.filter((file) => file.type.split("/")[0] === "video").reverse().slice(0, 3)}
+        files={files
+          ?.filter((file) => file.type.split("/")[0] === "video")
+          .reverse()
+          .slice(0, 3)}
         address={address}
         user={true}
         style="mt-[20px]"
@@ -75,22 +78,16 @@ const recent = () => {
               <LeftFaceArrow className="w-4 h-4 fill-current" />
             </span>
           </Link>
-        ) : (
-          null
-        )}
+        ) : null}
       </DisplayFiles>
     </div>
   );
 };
 
-export default recent;
+export default Recent;
 
 export async function getServerSideProps(context) {
-  const session = await unstable_getServerSession(
-    context.req,
-    context.res,
-    authOptions
-  );
+  const session = await getServerSession(context.req, context.res, authOptions);
   if (!session) {
     return {
       redirect: {

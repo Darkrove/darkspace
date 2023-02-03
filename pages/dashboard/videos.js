@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { unstable_getServerSession } from "next-auth/next";
+import { getServerSession } from "next-auth/next";
 
 import { authOptions } from "../api/auth/[...nextauth]";
 import { useStateContext } from "../../context";
 import { DisplayFiles } from "../../components";
 
-const videos = () => {
+const Videos = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [files, setFiles] = useState([]);
   const { address, contract, getUserFiles } = useStateContext();
@@ -16,10 +16,10 @@ const videos = () => {
     if (data) setFiles(data);
     setIsLoading(false);
   };
-
   useEffect(() => {
     if (contract) fetchFiles();
   }, [address, contract]);
+
   return (
     <div>
       <DisplayFiles
@@ -36,14 +36,10 @@ const videos = () => {
   );
 };
 
-export default videos;
+export default Videos;
 
 export async function getServerSideProps(context) {
-  const session = await unstable_getServerSession(
-    context.req,
-    context.res,
-    authOptions
-  );
+  const session = await getServerSession(context.req, context.res, authOptions);
   if (!session) {
     return {
       redirect: {
