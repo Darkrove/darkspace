@@ -4,7 +4,7 @@ import Router from "next/router";
 
 const HomeNavbar = () => {
   return (
-    <nav className="fixed z-10 w-full bg-white dark:bg-transparent md:absolute">
+    <nav className="fixed z-10 w-full bg-zinc-900 md:absolute">
       <div className="container m-auto px-2 md:px-12 lg:px-7">
         <div className="flex flex-wrap items-center justify-between py-3 gap-6 md:py-4 md:gap-0">
           <input
@@ -21,15 +21,15 @@ const HomeNavbar = () => {
             >
               <Image
                 src="/assets/logo.svg"
-                className="w-12"
+                className="w-6 lg:w-10"
                 alt="logo"
                 width="144"
                 height="133"
               />
-              <span className="text-2xl font-bold text-black dark:text-white">
+              <span className="text-md lg:text-2xl font-bold text-white">
                 Dark<span className="text-violet-500">Space</span>
               </span>
-              <span class="top-0 right-0 inline-flex items-center py-0.5 px-1.5 rounded-full text-xs font-medium transform -translate-y-1/2 bg-red-500 text-white">
+              <span className="top-0 right-0 inline-flex items-center py-0.5 px-1.5 rounded-full text-[8px] lg:text-xs font-medium transform -translate-y-1/2 bg-red-500 text-white">
                 Beta
               </span>
             </a>
@@ -44,11 +44,11 @@ const HomeNavbar = () => {
               >
                 <div
                   id="line"
-                  className="m-auto h-0.5 w-6 rounded bg-yellow-900 dark:bg-white transition duration-300"
+                  className="m-auto h-0.5 w-6 rounded bg-white transition duration-300"
                 ></div>
                 <div
                   id="line2"
-                  className="m-auto mt-2 h-0.5 w-6 rounded bg-yellow-900 dark:bg-white transition duration-300"
+                  className="m-auto mt-2 h-0.5 w-6 rounded bg-white transition duration-300"
                 ></div>
               </label>
             </div>
@@ -57,15 +57,15 @@ const HomeNavbar = () => {
           <label
             role="button"
             htmlFor="toggle_nav"
-            className="hidden peer-checked:block fixed w-full h-full left-0 top-0 z-10 bg-gray-700 dark:bg-opacity-30 bg-opacity-30 backdrop-blur backdrop-filter"
+            className="hidden peer-checked:block fixed w-full h-full left-0 top-0 z-10 bg-gray-700 bg-opacity-30 backdrop-blur backdrop-filter"
           ></label>
-          <div className="hidden peer-checked:flex w-full flex-col lg:flex lg:flex-row justify-end z-30 items-center gap-y-6 p-6 rounded-xl bg-gray-200 dark:bg-zinc-900 lg:gap-y-0 lg:p-0 md:flex-nowrap lg:bg-transparent lg:w-7/12">
+          <div className="hidden peer-checked:flex w-full flex-col lg:flex lg:flex-row justify-end z-30 items-center gap-y-6 p-6 rounded-xl bg-zinc-900 lg:gap-y-0 lg:p-0 md:flex-nowrap lg:bg-transparent lg:w-7/12">
             <div className="text-gray-600 lg:pr-4 w-full">
               <ul className="tracking-wide font-medium  text-sm flex flex-col gap-y-6 lg:gap-y-0 lg:flex-row w-full">
                 <li>
                   <a
                     href="#"
-                    className="block md:px-4 transition dark:text-gray-300 dark:hover:text-violet-500 text-gray-800"
+                    className="block md:px-4 transition text-gray-300 hover:text-violet-500 "
                   >
                     <span>Home</span>
                   </a>
@@ -73,7 +73,7 @@ const HomeNavbar = () => {
                 <li>
                   <a
                     href="#"
-                    className="block md:px-4 transition dark:text-gray-300 dark:hover:text-violet-500 text-gray-800"
+                    className="block md:px-4 transition text-gray-300 hover:text-violet-500"
                   >
                     <span>Documentation</span>
                   </a>
@@ -81,7 +81,7 @@ const HomeNavbar = () => {
                 <li>
                   <a
                     href="#"
-                    className="block md:px-4 transition dark:text-gray-300 dark:hover:text-violet-500 text-gray-800"
+                    className="block md:px-4 transition text-gray-300 hover:text-violet-500"
                   >
                     <span>About</span>
                   </a>
