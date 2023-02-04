@@ -21,15 +21,15 @@ const HomeNavbar = () => {
             >
               <Image
                 src="/assets/logo.svg"
-                className="w-6 lg:w-10"
+                className="w-8 lg:w-10"
                 alt="logo"
                 width="144"
                 height="133"
               />
-              <span className="text-md lg:text-2xl font-bold text-white">
+              <span className="text-lg lg:text-2xl font-bold text-white">
                 Dark<span className="text-violet-500">Space</span>
               </span>
-              <span className="top-0 right-0 inline-flex items-center py-0.5 px-1.5 rounded-full text-[8px] lg:text-xs font-medium transform -translate-y-1/2 bg-red-500 text-white">
+              <span className="top-0 right-0 inline-flex items-center py-0.5 px-1.5 rounded-full text-[10px] lg:text-xs font-medium transform -translate-y-1/2 bg-red-500 text-white">
                 Beta
               </span>
             </a>

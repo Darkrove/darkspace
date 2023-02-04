@@ -25,12 +25,12 @@ export default function CtaSection() {
             <div className="mt-10 flex items-center justify-center gap-x-6 lg:justify-start">
               <button
                 onClick={() => Router.push("/signin")}
-                className={`${styles.button} border border-violet-500 hover:border-transparent w-full duration-200 transition-all rounded-md bg-violet-500 px-3.5 py-1.5 text-base font-semibold leading-7 text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white`}
+                className={`${styles.button} border border-violet-500 hover:border-transparent w-full duration-200 transition-all rounded-md bg-violet-500 px-3.5 py-1.5 text-base font-semibold leading-7 md:leading-9 text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white`}
               >
                 Join Now 🚀
               </button>
               <button
-                className={`${styles.button} hover:border-transparent w-full rounded-md px-3.5 py-1.5 text-base font-semibold leading-7 text-white border border-violet-500`}
+                className={`${styles.button} hover:border-transparent w-full rounded-md px-3.5 py-1.5 text-base font-semibold leading-7 md:leading-9 text-white border border-violet-500`}
               >
                 Learn more <span aria-hidden="true">→</span>
               </button>

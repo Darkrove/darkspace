@@ -21,10 +21,10 @@ const GetStarted = () => {
             </div>
           </div>
           <div class="m-auto space-y-6 md:w-8/12 lg:w-7/12">
-            <h1 class="text-center text-4xl font-bold text-gray-800 dark:text-white md:text-5xl">
+            <h1 class="text-center text-4xl font-bold text-zinc-100">
               Get Started now
             </h1>
-            <p class="text-center text-xl text-gray-600 dark:text-gray-300">
+            <p class="text-center text-md text-zinc-300">
               <Balancer>
                 The future of storage is here. Start owning your data and
                 experience the power of blockchain technology.
@@ -32,7 +32,7 @@ const GetStarted = () => {
             </p>
             <div class="flex flex-wrap items-center justify-center gap-6">
               <button
-                className={`text-xl w-full rounded-md bg-gradient-to-r from-pink-500 to-violet-500 transition-all duration-200 px-3.5 py-1.5 font-semibold leading-9 text-white shadow-lg`}
+                className={`text-xl w-1/2 h-16 rounded-md bg-gradient-to-r from-pink-500 to-violet-500 transition-all duration-200 px-3.5 py-1.5 font-semibold leading-10 text-white shadow-lg`}
               >
                 Join Now 🚀
               </button>
