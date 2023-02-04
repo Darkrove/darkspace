@@ -4,7 +4,7 @@ import Router from "next/router";
 
 const HomeNavbar = () => {
   return (
-    <nav className="fixed z-10 w-full bg-white dark:bg-zinc-900 md:absolute md:bg-transparent shadow">
+    <nav className="fixed z-10 w-full bg-white dark:bg-transparent md:absolute">
       <div className="container m-auto px-2 md:px-12 lg:px-7">
         <div className="flex flex-wrap items-center justify-between py-3 gap-6 md:py-4 md:gap-0">
           <input
