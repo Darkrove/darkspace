@@ -10,7 +10,7 @@ import {
 } from "react-icons/gi";
 import Link from "next/link";
 
-import { LogoWall, CtaSection, FeatureCard, GetStarted } from "../components";
+import { LogoWall, CtaSection, FeatureCard, GetStarted, Footer } from "../components";
 import Feature from "../components/FeatureCard";
 
 const Index = () => {
@@ -19,7 +19,7 @@ const Index = () => {
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 1024 1024"
-        className="absolute top-[550px] left-1/2 -z-10 h-[74rem] w-[74rem] -translate-y-1/2 sm:left-full sm:-ml-80 lg:left-1/2 lg:ml-0 lg:translate-y-0 lg:-translate-x-1/2"
+        className="absolute blur top-[450px] left-1/2 -z-10 h-[80rem] w-[80rem] -translate-y-1/2 sm:left-full sm:-ml-80 lg:left-1/2 lg:ml-0 lg:translate-y-0 lg:-translate-x-1/2"
         aria-hidden="true"
       >
         <circle

@@ -9,7 +9,7 @@ import { Provider as RWBProvider } from "react-wrap-balancer";
 import NextNProgress from "nextjs-progressbar";
 
 import "../styles/globals.css";
-import { Sidebar, Navbar, HomeNavbar } from "../components";
+import { Sidebar, Navbar, HomeNavbar, Footer } from "../components";
 import { StateContextProvider } from "../context";
 
 // This is the chainId your dApp will work on.
@@ -55,6 +55,7 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }) {
         <>
           <HomeNavbar />
           <Component {...pageProps} />
+          <Footer/>
         </>
       );
     } else if (router.pathname === "/signin" || router.pathname === "/signup") {
