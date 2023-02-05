@@ -17,6 +17,7 @@ const Profile = () => {
   const [webCount, setWebCount] = useState(0);
   const [imageCount, setImageCount] = useState(0);
   const [videoCount, setVideoCount] = useState(0);
+  const [storageSize, setStorageSize] = useState();
   const [host, setHost] = useState(0);
 
   const showStatus = () => {
@@ -38,6 +39,7 @@ const Profile = () => {
     setImageCount(counts[1]);
     setVideoCount(counts[2]);
     setWebCount(counts[3]);
+    setStorageSize(counts[4]);
     setIsLoading(false);
   };
 
@@ -81,6 +83,7 @@ const Profile = () => {
               imageCount={imageCount}
               videoCount={videoCount}
               webCount={webCount}
+              storageUsed={storageSize}
               address={address}
               balance={balance}
             />

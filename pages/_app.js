@@ -71,7 +71,7 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }) {
             <title>
               {currentRoute === "/dashboard"
                 ? "dashboard"
-                : `dashboard // ${currentRoute.split("/")[2]}`}
+                : `dashboard | ${currentRoute.split("/")[2]}`}
             </title>
           </Head>
           <div className="relative sm:-8 p-4 bg-zinc-900 min-h-screen flex flex-row">

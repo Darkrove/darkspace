@@ -4,7 +4,12 @@ import { useSession, signIn, signOut } from "next-auth/react";
 import Link from "next/link";
 import { getServerSession } from "next-auth/next";
 import { authOptions } from "./api/auth/[...nextauth]";
-import { DarkspaceLogo, DiscordLogo, GithubLogo, GoogleLogo } from "../assets/Icons";
+import {
+  DarkspaceLogo,
+  DiscordLogo,
+  GithubLogo,
+  GoogleLogo,
+} from "../assets/Icons";
 import { LoadingDots } from "../components/icons";
 
 export const Button = ({ children, title, handle, signinclicked }) => {
@@ -14,7 +19,7 @@ export const Button = ({ children, title, handle, signinclicked }) => {
       onClick={handle}
       className={`${
         signinclicked && "cursor-not-allowed"
-      }group relative flex h-11 items-center justify-center px-6 before:absolute before:inset-0 before:rounded-full before:bg-white dark:before:bg-gray-600 dark:before:border-gray-600 before:border before:border-gray-200 before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 disabled:before:bg-gray-300 disabled:before:scale-100`}
+      }group relative flex h-11 items-center justify-center px-6 before:absolute before:inset-0 before:rounded-full before:bg-zinc-700 before:border-zinc-700 before:border before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 disabled:before:bg-zinc-600 disabled:before:scale-100`}
     >
       {signinclicked ? (
         <div className="flex justify-center items-center w-full">
@@ -22,7 +27,7 @@ export const Button = ({ children, title, handle, signinclicked }) => {
         </div>
       ) : (
         <>
-          <span className="w-full relative flex justify-center items-center gap-3 text-base font-medium text-gray-600 dark:text-gray-100">
+          <span className="w-full relative flex justify-center items-center gap-3 text-base font-medium text-zinc-100">
             {children}
             <span className="lg:text-base text-xs font-medium">{title}</span>
           </span>
@@ -58,17 +63,17 @@ const Login = () => {
   }
 
   return (
-    <div className="dark:bg-[#13131a] min-h-screen grid content-center m-auto">
+    <div className="bg-zinc-900 min-h-screen grid content-center m-auto">
       <div className="relative py-16">
-        <div className="container relative m-auto px-6 text-gray-500 md:px-12 xl:px-40">
+        <div className="container relative m-auto px-6 text-zinc-500 md:px-12 xl:px-40">
           <div className="m-auto md:w-8/12 lg:w-6/12 xl:w-6/12">
-            <div className="rounded-3xl border border-gray-100 dark:border-[#1c1c24] bg-white dark:bg-[#1c1c24] shadow-2xl shadow-gray-600/10 dark:shadow-none">
+            <div className="rounded-3xl border border-zinc-800 bg-zinc-800 shadow-zinc-600/10">
               <div className="p-8 py-12 sm:p-16">
                 <div className="space-y-4">
                   <Link href="/">
-                    <DarkspaceLogo className="h-[55px]"/>
+                    <DarkspaceLogo className="h-[55px]" />
                   </Link>
-                  <h2 className="mb-8 lg:text-6xl md:text-5xl sm:text-4xl text-3xl font-bold text-gray-800 dark:text-white">
+                  <h2 className="mb-8 lg:text-6xl md:text-5xl sm:text-4xl text-3xl font-bold text-zinc-200">
                     Sign in to <br />
                     Dark<span className="text-violet-500">Space</span>
                   </h2>
@@ -113,7 +118,7 @@ const Login = () => {
                     />
                   </Button>
                 </div>
-                <div className="mt-20 space-y-4 text-center text-gray-600 dark:text-gray-400 sm:-mb-8">
+                <div className="mt-20 space-y-4 text-center text-zinc-400 sm:-mb-8">
                   <p className="text-xs">
                     By continuing, you agree to DarkSpace <br />
                     <a href="#" className="underline">

@@ -11,7 +11,7 @@ const SocialIcon = ({ icon, title, link }) => {
         href={link}
         rel="noreferrer"
         target="_blank"
-        class="text-violet-700 transition hover:text-violet-700/75 dark:text-violet-500 dark:hover:text-violet-500/75"
+        class="text-violet-500 transition hover:text-violet-700/75 dark:text-violet-500 dark:hover:text-violet-500/75"
       >
         <span class="sr-only">{title}</span>
         {icon}

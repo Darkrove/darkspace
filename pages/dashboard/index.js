@@ -25,8 +25,8 @@ const Home = () => {
   return (
     <div className="scroll-smooth">
       <DisplayFiles
-        title="Global"
-        subtitle="All files"
+        title="Feed"
+        subtitle="Shared files"
         isLoading={isLoading}
         files={files}
         address={address}

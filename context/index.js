@@ -11,7 +11,7 @@ import {
   useBalance,
 } from "@thirdweb-dev/react";
 
-import { padString, unpadString, formatDate } from "../utils";
+import { padString, unpadString, formatDate, formatBytes } from "../utils";
 
 const StateContext = createContext();
 
@@ -181,7 +181,10 @@ export const StateContextProvider = ({ children }) => {
       (total, f) => (f.type.split("/")[0] === "video" ? total + 1 : total + 0),
       0
     );
-    return [lastUpdate, imageCount, videoCount, webCount];
+    const storageUsed = allFiles.reduce(
+      (total, f) => (total + f.size), 0
+    )
+    return [lastUpdate, imageCount, videoCount, webCount, formatBytes(storageUsed)];
   };
 
   return (

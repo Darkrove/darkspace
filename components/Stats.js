@@ -5,7 +5,7 @@ import { LinkLogo } from "../assets/Icons";
 import { useStateContext } from "../context";
 import { shortenAddress } from "../utils";
 
-export default function Stats({lastUpdate, imageCount, videoCount, webCount, address, balance}) {
+export default function Stats({lastUpdate, imageCount, videoCount, webCount, address, balance, storageUsed}) {
 
   const {setActivePage} = useStateContext();
   const [mounted, setMounted] = useState(false);
@@ -50,6 +50,18 @@ export default function Stats({lastUpdate, imageCount, videoCount, webCount, add
       value: lastUpdate,
       link: "/dashboard/recent",
       active: "recent",
+    },
+    {
+      title: "Storage Used",
+      value: storageUsed,
+      link: "/dashboard/files",
+      active: "files",
+    },
+    {
+      title: "Total Files Uploaded",
+      value: imageCount + videoCount + webCount,
+      link: "/dashboard/files",
+      active: "files",
     },
   ];
 

@@ -34,7 +34,7 @@ const GetStarted = () => {
             <div class="flex flex-wrap items-center justify-center gap-6">
               <button
                  onClick={() => Router.push("/signin")}
-                className={`text-xl w-1/2 h-16 rounded-md bg-gradient-to-r from-pink-500 to-violet-500 transition-all duration-200 px-3.5 py-1.5 font-semibold leading-10 text-white shadow-lg`}
+                className={`text-xl w-full lg:w-1/2 h-16 rounded-md bg-gradient-to-r from-pink-500 to-violet-500 transition-all duration-200 px-3.5 py-1.5 font-semibold leading-10 text-white shadow-lg`}
               >
                 Start Upload 🚀
               </button>
