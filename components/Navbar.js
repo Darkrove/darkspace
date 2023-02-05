@@ -37,7 +37,7 @@ const Navbar = () => {
               <SearchIcon className="w-[20px] h-[20px] object-contain text-white" />
             </div>
           </div>
-          <div className="pl-6">
+          <div className="pl-2">
             <div
               onClick={() => setOpenWalletPopover((prev) => !prev)}
               className="flex w-[72px] h-full rounded-[20px] bg-violet-500 sm:hidden justify-center items-center cursor-pointer"
