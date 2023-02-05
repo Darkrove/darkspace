@@ -60,8 +60,9 @@ const Navbar = () => {
             {navlinks.map((link) => (
               <Link
                 key={link.name}
-                className="flex flex-row items-center justify-start text-zinc-200 space-x-2 relative w-full rounded-md p-2 text-left text-sm transition-all duration-75 hover:bg-zinc-600"
                 href={link.link}
+                onClick={()=>setActivePage(link.name)}
+                className="flex flex-row items-center justify-start text-zinc-200 space-x-2 relative w-full rounded-md p-2 text-left text-sm transition-all duration-75 hover:bg-zinc-600"
               >
                 {link.icon}
                 <p className="text-sm ">{capitalizeFirstLetter(link.name)}</p>

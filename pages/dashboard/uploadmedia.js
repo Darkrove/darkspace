@@ -22,7 +22,7 @@ const Uploadmedia = () => {
     size: "",
     hash: "",
   };
-  const [form, setForm] = useState({...initState});
+  const [form, setForm] = useState({ ...initState });
   const { mutateAsync: upload } = useStorageUpload();
 
   const handleFormFieldChange = (fieldName, e) => {
@@ -31,13 +31,25 @@ const Uploadmedia = () => {
 
   const captureFile = (e) => {
     const file = e.target.files[0];
+    let filename;
+    if (file?.name.length > 30) {
+      const split = file?.name.split(".");
+      if (split[0].length > 25) {
+        filename = split[0].slice(0, 24) + "." + split[split.length - 1];
+      } else {
+        filename = split[0] + "." + split[split.length - 1];
+      }
+    } else {
+      filename = file?.name;
+    }
     setForm((state) => ({
       ...state,
       file: file,
-      type: file.type,
-      filename: file.name,
-      size: file.size,
+      type: file?.type,
+      filename: filename,
+      size: file?.size,
     }));
+    setIsActive(true);
   };
 
   const uploadToIpfs = async () => {
@@ -61,7 +73,7 @@ const Uploadmedia = () => {
       const hashUrl = await uploadToIpfs();
       if (hashUrl.message) {
         setIsLoading(false);
-        toast.error("😵‍💫 Upload failed, \n please try again.")
+        toast.error("😵‍💫 Upload failed, \n please try again.");
         setForm({ file: "", filename: "", type: "", hash: "", size: "" });
         return;
       }
@@ -75,6 +87,7 @@ const Uploadmedia = () => {
       );
       setIsLoading(false);
       setForm({ file: "", filename: "", type: "", hash: "", size: "" });
+      setIsActive(false);
     } else {
       alert("Provide valid image");
       setForm({ ...form, image: "" });
@@ -162,11 +175,7 @@ const Uploadmedia = () => {
 export default Uploadmedia;
 
 export async function getServerSideProps(context) {
-  const session = await getServerSession(
-    context.req,
-    context.res,
-    authOptions
-  );
+  const session = await getServerSession(context.req, context.res, authOptions);
   if (!session) {
     return {
       redirect: {

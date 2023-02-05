@@ -14,6 +14,7 @@ import {
   TrashIcon,
 } from "../assets/Icons";
 import { useStateContext } from "../context";
+import useCopyToClipboard from "../lib/hooks/useCopyToClipboard";
 
 export default function MediaModal({
   id,
@@ -28,7 +29,7 @@ export default function MediaModal({
 }) {
   const { data: session } = useSession();
   const [isLoading, setLoading] = useState(true);
-  const [copyStatus, setCopyStatus] = useState(false);
+  const [copyToClipboard, { success }] = useCopyToClipboard();
 
   const { updateFile } = useStateContext();
 
@@ -40,9 +41,8 @@ export default function MediaModal({
     }
   };
 
-  const copyToClipboard = (src) => {
-    navigator.clipboard.writeText(src);
-    setCopyStatus(true);
+  const copyClipboard = (src) => {
+    copyToClipboard(src)
     toast.success("Copied!");
   };
 
@@ -132,10 +132,10 @@ export default function MediaModal({
                       </button>
                       <button
                         class="w-full flex items-center gap-x-3.5 py-2 px-3 rounded-md text-sm text-gray-800 hover:bg-gray-100 focus:ring-2 focus:ring-blue-500 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300"
-                        onClick={() => copyToClipboard(src)}
+                        onClick={() => copyClipboard(src)}
                       >
                         <CopyIcon className="w-5 h-5 flex-none" />
-                        Copy link
+                        {success ? "Copied" : "Copy link"}
                       </button>
                       <button
                         onClick={() => shareFile(name, src)}
