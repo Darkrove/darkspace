@@ -1,56 +1,20 @@
 import React, { useState } from "react";
 import Link from "next/link";
-import { useRouter } from "next/router";
 import Image from "next/image";
 import { ConnectWallet } from "@thirdweb-dev/react";
-import { useSession, signOut } from "next-auth/react";
 
-import { CustomButton, UserDropdown } from "./";
+import { UserDropdown } from "./";
 import { capitalizeFirstLetter } from "../utils";
 import { navlinks } from "../constants";
 import { useStateContext } from "../context";
-import { logo, menu, search, userProfile, logout } from "../assets";
-
-const Row = ({ id, styles, name, imgUrl, activePage, handleClick }) => {
-  return (
-    <li
-      key={id}
-      className={`flex p-4 ${activePage === name && "bg-[#3a3a43]"}`}
-      onClick={handleClick}
-    >
-      <Image
-        width={50}
-        height={50}
-        src={imgUrl}
-        alt={name}
-        className={`w-[24px] h-[24px] object-contain ${
-          activePage === name ? "grayscale-0" : "grayscale"
-        }`}
-        c
-      />
-      <p
-        className={`ml-[20px] font-epilogue font-semibold text-[14px] ${
-          activePage === name ? "text-violet-500" : "text-[#808191]"
-        }`}
-      >
-        {capitalizeFirstLetter(name)}
-      </p>
-    </li>
-  );
-};
+import Leaflet from "./shared/Leaflet";
+import { DarkspaceLogo, SearchIcon, MenuIcon } from "../assets/Icons";
+import useWindowSize from "../lib/hooks/useWindowSize";
 
 const Navbar = () => {
-  const { data: session } = useSession();
-  const [toggleDrawer, setToggleDrawer] = useState(false);
-  const { connect, address, activePage, setActivePage, disconnect } =
-    useStateContext();
-
-  const router = useRouter();
-  const push = () => {
-    setActivePage("uploadMedia");
-    router.push("/dashboard/uploadmedia");
-    setToggleDrawer(false);
-  };
+  const { isMobile, isDesktop } = useWindowSize();
+  const [openPopover, setOpenPopover] = useState(false);
+  const { setActivePage } = useStateContext();
 
   return (
     <div className="flex md:flex-row flex-col-reverse justify-between mb-[35px] gap-6">
@@ -60,126 +24,52 @@ const Navbar = () => {
           placeholder="Search for images"
           className="flex w-full font-epilogue font-normal text-[14px] placeholder:text-zinc-500 text-white bg-transparent outline-none"
         />
-
         <div className="w-[72px] h-full rounded-[20px] bg-violet-500 flex justify-center items-center cursor-pointer">
-          <Image
-            width={50}
-            height={50}
-            src={search}
-            loading="lazy"
-            alt="search"
-            className="w-[20px] h-[20px] object-contain"
-          />
+          <SearchIcon className="w-[20px] h-[20px] object-contain text-white" />
         </div>
       </div>
 
       <div className="sm:flex hidden flex-row justify-end gap-4">
-        {/* <CustomButton
-          btnType="button"
-          title={address ? "Upload" : "Connect"}
-          styles={address ? "bg-violet-500" : "bg-[#8c6dfd]"}
-          handleClick={() => {
-            if (address) push();
-            else connect();
-          }}
-        /> */}
         <ConnectWallet
           className="rounded-[100px]"
           accentColor="#8B5CF6"
           colorMode="dark"
         />
         <div className="w-[52px] h-[52px] overflow-hidden rounded-full bg-[#2c2f32] flex justify-center items-center cursor-pointer">
-          {/* <Image
-              width={50}
-              height={50}
-              loading='lazy'
-              src={session? session.user.image : userProfile}
-              alt="user"
-              className="w-[100%] h-[100%] object-fill"
-            /> */}
           <UserDropdown onProfileClick={() => setActivePage("profile")} />
         </div>
       </div>
 
       {/* Small screen navigation */}
       <div className="sm:hidden flex justify-between items-center relative">
-        <Image
-          width={50}
-          height={50}
-          src={menu}
-          alt="menu"
-          loading="lazy"
-          className="w-[34px] h-[34px] object-contain cursor-pointer"
-          onClick={() => setToggleDrawer((prev) => !prev)}
-        />
+        <button onClick={() => setOpenPopover((prev) => !prev)}>
+          <MenuIcon className="w-[34px] h-[34px] text-violet-500 object-contain cursor-pointer" />
+        </button>
         <Link onClick={() => setActivePage("dashboard")} href="/dashboard">
           <div className="w-[40px] h-[40px] rounded-[10px] bg-[#2c2f32] flex justify-center items-center cursor-pointer">
-            <Image
-              width={50}
-              height={50}
-              loading="lazy"
-              src={logo}
-              alt="user"
-              className="w-[60%] h-[60%] object-contain"
-            />
+            <DarkspaceLogo width={50} height={50} className="w-[60%]" />
           </div>
         </Link>
         <div className="w-[34px] h-[34px] overflow-hidden rounded-full bg-[#2c2f32] flex justify-center items-center cursor-pointer">
-          {/* <Image
-              width={50}
-              height={50}
-              loading='lazy'
-              src={session? session.user.image : userProfile}
-              alt="user"
-              className="w-[100%] h-[100%] object-fill"
-            /> */}
           <UserDropdown onProfileClick={() => setActivePage("profile")} />
         </div>
-
-        <div
-          className={`absolute top-[60px] right-0 left-0 bg-zinc-800 z-10 shadow-secondary py-4 ${
-            !toggleDrawer ? "-translate-y-[200vh]" : "translate-y-0"
-          } transition-all duration-700`}
-        >
-          <ul className="mb-4">
-            {navlinks.map((link) => (
-              <Row
-                key={link.name}
-                id={link.name}
-                {...link}
-                activePage={activePage}
-                handleClick={() => {
-                  setActivePage(link.name);
-                  setToggleDrawer(false);
-                  router.push(link.link);
-                }}
-              />
-            ))}
-            {/* {session ? (
-              <Row
-                name="logout"
-                imgUrl={logout}
-                handleClick={() => signOut()}
-              />
-            ) : (
-              ""
-            )} */}
-          </ul>
-
-          <div className="flex mx-4">
-            {/* <CustomButton
-              btnType="button"
-              title={address ? "Upload" : "Connect"}
-              styles={address ? "bg-violet-500" : "bg-[#8c6dfd]"}
-              handleClick={() => {
-                if (address) push();
-                else connect();
-              }}
-            /> */}
-            <ConnectWallet accentColor="#8B5CF6" colorMode="dark" />
-          </div>
-        </div>
       </div>
+      {openPopover && isMobile && (
+        <Leaflet setShow={setOpenPopover}>
+          <div className="w-full rounded-md bg-zinc-800 border-0 p-2 sm:w-56">
+            {navlinks.map((link) => (
+              <Link
+                key={link.name}
+                className="flex flex-row items-center justify-start text-zinc-200 space-x-2 relative w-full rounded-md p-2 text-left text-sm transition-all duration-75 hover:bg-zinc-600"
+                href={link.link}
+              >
+                {link.icon}
+                <p className="text-sm ">{capitalizeFirstLetter(link.name)}</p>
+              </Link>
+            ))}
+          </div>
+        </Leaflet>
+      )}
     </div>
   );
 };

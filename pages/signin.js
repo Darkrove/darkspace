@@ -4,7 +4,7 @@ import { useSession, signIn, signOut } from "next-auth/react";
 import Link from "next/link";
 import { getServerSession } from "next-auth/next";
 import { authOptions } from "./api/auth/[...nextauth]";
-import { DiscordLogo, GithubLogo, GoogleLogo } from "../assets/Icons";
+import { DarkspaceLogo, DiscordLogo, GithubLogo, GoogleLogo } from "../assets/Icons";
 import { LoadingDots } from "../components/icons";
 
 export const Button = ({ children, title, handle, signinclicked }) => {
@@ -66,14 +66,7 @@ const Login = () => {
               <div className="p-8 py-12 sm:p-16">
                 <div className="space-y-4">
                   <Link href="/">
-                    <Image
-                      src="/assets/logo.svg"
-                      loading="lazy"
-                      className="w-10"
-                      width={10}
-                      height={10}
-                      alt="logo"
-                    />
+                    <DarkspaceLogo className="h-[55px]"/>
                   </Link>
                   <h2 className="mb-8 lg:text-6xl md:text-5xl sm:text-4xl text-3xl font-bold text-gray-800 dark:text-white">
                     Sign in to <br />

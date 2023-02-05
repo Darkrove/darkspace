@@ -34,6 +34,7 @@ const LogoWall = () => {
             <Logo src="assets/metamask.svg" alt="logo metamask" />
             <Logo src="assets/ethereum.svg" alt="logo ethereum" />
             <Logo src="assets/filecoin.svg" alt="logo filecoin" />
+            <Logo src="assets/turbo.svg" alt="logo turbo" />
           </div>
         </div>
       </div>

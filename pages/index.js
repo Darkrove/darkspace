@@ -45,14 +45,14 @@ const Index = () => {
       </svg>
       <CtaSection />
       <LogoWall />
-      <section class="bg-transparent text-white">
+      <section class="bg-transparent text-zinc-100">
         <div class="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
           <div class="mx-auto max-w-lg text-center">
             <h2 class="text-4xl font-bold sm:text-4xl">
               <Balancer>Own your data for the first time</Balancer>
             </h2>
 
-            <p class="mt-4 text-gray-300">
+            <p class="mt-4 text-zinc-300">
               <Balancer>
                 Upload your photos, files and videos to the decentralized web
                 and access them from anywhere, anytime, forever.

@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import { signOut, useSession } from "next-auth/react";
-import { User, LogOut } from "lucide-react";
 import Link from "next/link";
-import Popover from "../shared/Popover";
 import Image from "next/image";
 import { motion } from "framer-motion";
+
+import { UserIcon, LogoutIcon } from "../../assets/Icons";
+import Popover from "../shared/Popover";
 import { FADE_IN_ANIMATION_SETTINGS } from "../../lib/constants";
 
 export default function UserDropdown({onProfileClick}) {
@@ -27,7 +28,7 @@ export default function UserDropdown({onProfileClick}) {
               href="/dashboard/profile"
               onClick={onProfileClick}
             >
-              <User className="h-4 w-4" color="currentColor"/>
+              <UserIcon className="h-4 w-4"/>
               <p className="text-sm ">Profile</p>
             </Link>
             {/* <button
@@ -41,7 +42,7 @@ export default function UserDropdown({onProfileClick}) {
               className="relative flex flex-row w-full items-center justify-start text-zinc-200 space-x-2 rounded-md p-2 text-left text-sm transition-all duration-75 hover:bg-zinc-600"
               onClick={() => signOut({ redirect: true })}
             >
-              <LogOut className="h-4 w-4" color="currentColor"/>
+              <LogoutIcon className="h-4 w-4"/>
               <p className="text-sm ">Logout</p>
             </button>
           </div>

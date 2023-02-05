@@ -2,7 +2,7 @@ import React from "react";
 import { FaGithub, FaInstagram, FaDiscord, FaTwitter } from "react-icons/fa";
 import { SiHashnode } from "react-icons/si";
 
-import { DarkSpaceLogo } from "../assets/Icons";
+import { DarkspaceLogoFull } from "../assets/Icons";
 
 const SocialIcon = ({ icon, title, link }) => {
   return (
@@ -26,21 +26,19 @@ const Footer = () => {
       <div class="mx-auto max-w-screen-xl px-4 pt-16 pb-6 sm:px-6 lg:px-8">
         <div class="lg:flex lg:items-center lg:justify-between">
           <div class="flex justify-center text-violet-600 dark:text-violet-300 sm:justify-start">
-            <DarkSpaceLogo
-              width={50}
-              height={50}
-              className="h-8 text-violet-600"
+            <DarkspaceLogoFull
+              className="h-[70px]"
             />
           </div>
 
-          <p class="mx-auto mt-4 max-w-md text-center leading-relaxed text-gray-500 dark:text-gray-400 sm:ml-0 sm:text-left lg:mr-0 lg:mt-0">
+          <p class="mx-auto mt-4 max-w-md text-center leading-relaxed text-zinc-300 sm:ml-0 sm:text-left lg:mr-0 lg:mt-0">
             The Next Generation of Secure and Decentralized Data Storage:
             DarkSpace
           </p>
         </div>
 
-        <div class="mt-16 border-t border-gray-100 pt-6 dark:border-gray-800 sm:flex sm:items-center sm:justify-between">
-          <p class="text-center text-sm text-gray-500 dark:text-gray-400 sm:text-left">
+        <div class="mt-16 border-t pt-10 border-gray-800 sm:flex sm:items-center sm:justify-between">
+          <p class="text-center text-sm text-zinc-500 sm:text-left">
             Copyright &copy; 2023. All rights reserved.
           </p>
 

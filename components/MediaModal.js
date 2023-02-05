@@ -4,7 +4,15 @@ import toast from "react-hot-toast";
 import Router from "next/router";
 import { useSession } from "next-auth/react";
 
-import { download, share, remove, link, copy, info } from "../assets";
+import {
+  DownloadIcon,
+  LinkIcon,
+  DetailIcon,
+  CopyIcon,
+  OpenEyeIcon,
+  CloseEyeIcon,
+  TrashIcon,
+} from "../assets/Icons";
 import { useStateContext } from "../context";
 
 export default function MediaModal({
@@ -119,26 +127,14 @@ export default function MediaModal({
                         class="w-full flex items-center gap-x-3.5 py-2 px-3 rounded-md text-sm text-gray-800 hover:bg-gray-100 focus:ring-2 focus:ring-blue-500 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300"
                         onClick={() => downloadUsingFetch(src, name)}
                       >
-                        <Image
-                          src={download}
-                          className="w-5 h-5 flex-none"
-                          width={16}
-                          height={16}
-                          alt="icon"
-                        />
+                        <DownloadIcon className="w-5 h-5 flex-none" />
                         Download
                       </button>
                       <button
                         class="w-full flex items-center gap-x-3.5 py-2 px-3 rounded-md text-sm text-gray-800 hover:bg-gray-100 focus:ring-2 focus:ring-blue-500 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300"
                         onClick={() => copyToClipboard(src)}
                       >
-                        <Image
-                          src={copy}
-                          className="w-5 h-5 flex-none"
-                          width={16}
-                          height={16}
-                          alt="icon"
-                        />
+                        <CopyIcon className="w-5 h-5 flex-none" />
                         Copy link
                       </button>
                       <button
@@ -146,13 +142,7 @@ export default function MediaModal({
                         class="w-full flex items-center gap-x-3.5 py-2 px-3 rounded-md text-sm text-gray-800 hover:bg-gray-100 focus:ring-2 focus:ring-blue-500 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300"
                         href="#"
                       >
-                        <Image
-                          src={link}
-                          className="w-5 h-5 flex-none"
-                          width={16}
-                          height={16}
-                          alt="icon"
-                        />
+                        <LinkIcon className="w-5 h-5 flex-none" />
                         Share a copy
                       </button>
                       <button
@@ -160,13 +150,7 @@ export default function MediaModal({
                         class="w-full flex items-center gap-x-3.5 py-2 px-3 rounded-md text-sm text-gray-800 hover:bg-gray-100 focus:ring-2 focus:ring-blue-500 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300"
                         href="#"
                       >
-                        <Image
-                          src={info}
-                          className="w-5 h-5 flex-none"
-                          width={16}
-                          height={16}
-                          alt="icon"
-                        />
+                        <DetailIcon className="w-5 h-5 flex-none" />
                         Details
                       </button>
                       {user ? (
@@ -180,13 +164,7 @@ export default function MediaModal({
                               class="w-full flex items-center gap-x-3.5 py-2 px-3 rounded-md text-sm text-gray-800 hover:bg-gray-100 focus:ring-2 focus:ring-blue-500 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300"
                               href="#"
                             >
-                              <Image
-                                src={share}
-                                className="w-5 h-5 flex-none"
-                                width={16}
-                                height={16}
-                                alt="icon"
-                              />
+                              <CloseEyeIcon className="w-5 h-5 flex-none" />
                               Keep private
                             </button>
                           ) : (
@@ -195,13 +173,7 @@ export default function MediaModal({
                               class="w-full flex items-center gap-x-3.5 py-2 px-3 rounded-md text-sm text-gray-800 hover:bg-gray-100 focus:ring-2 focus:ring-blue-500 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300"
                               href="#"
                             >
-                              <Image
-                                src={share}
-                                className="w-5 h-5 flex-none"
-                                width={16}
-                                height={16}
-                                alt="icon"
-                              />
+                              <OpenEyeIcon className="w-5 h-5 flex-none" />
                               Share as public
                             </button>
                           )}
@@ -211,13 +183,7 @@ export default function MediaModal({
                             class="w-full flex items-center gap-x-3.5 py-2 px-3 rounded-md text-sm text-gray-800 hover:bg-gray-100 focus:ring-2 focus:ring-blue-500 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300"
                             href="#"
                           >
-                            <Image
-                              src={remove}
-                              className="w-5 h-5 flex-none"
-                              width={16}
-                              height={16}
-                              alt="icon"
-                            />
+                            <TrashIcon className="w-5 h-5 flex-none" />
                             Remove
                           </button>
                         </div>

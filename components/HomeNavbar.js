@@ -2,10 +2,12 @@ import React from "react";
 import Image from "next/image";
 import Router from "next/router";
 
+import { DarkspaceLogoFull } from "../assets/Icons";
+
 const HomeNavbar = () => {
   return (
     <nav className="fixed z-10 w-full bg-zinc-900 md:absolute">
-      <div className="container m-auto px-2 md:px-12 lg:px-7">
+      <div className="container m-auto max-w-screen-xl px-2 md:px-12 lg:px-7">
         <div className="flex flex-wrap items-center justify-between py-3 gap-6 md:py-4 md:gap-0">
           <input
             type="checkbox"
@@ -17,19 +19,10 @@ const HomeNavbar = () => {
             <a
               href="#"
               aria-label="logo"
-              className="flex space-x-2 items-center"
+              className="flex items-center"
             >
-              <Image
-                src="/assets/logo.svg"
-                className="w-8 lg:w-10"
-                alt="logo"
-                width="144"
-                height="133"
-              />
-              <span className="text-lg lg:text-2xl font-bold text-white">
-                Dark<span className="text-violet-500">Space</span>
-              </span>
-              <span className="top-0 right-0 inline-flex items-center py-0.5 px-1.5 rounded-full text-[10px] lg:text-xs font-medium transform -translate-y-1/2 bg-red-500 text-white">
+              <DarkspaceLogoFull className="h-[50px] lg:h-[70px]" />
+              <span className="top-0 -right-5 inline-flex items-center py-0.5 px-1.5 rounded-full text-[10px] lg:text-xs font-medium transform -translate-y-1/2 bg-red-500 text-white">
                 Beta
               </span>
             </a>
