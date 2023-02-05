@@ -33,14 +33,14 @@ const Navbar = () => {
         />
         <div className="flex divide-x divide-zinc-600">
           <div className="pr-2">
-            <div className="w-[72px] h-full rounded-[20px] bg-violet-500 flex justify-center items-center cursor-pointer">
+            <div className="w-[52px] h-full rounded-[20px] bg-violet-500 flex justify-center items-center cursor-pointer">
               <SearchIcon className="w-[20px] h-[20px] object-contain text-white" />
             </div>
           </div>
           <div className="pl-2">
             <div
               onClick={() => setOpenWalletPopover((prev) => !prev)}
-              className="flex w-[72px] h-full rounded-[20px] bg-violet-500 sm:hidden justify-center items-center cursor-pointer"
+              className="flex w-[52px] h-full rounded-[20px] bg-violet-500 sm:hidden justify-center items-center cursor-pointer"
             >
               <WalletIcon className="w-[20px] h-[20px] object-contain text-white" />
             </div>
