@@ -101,8 +101,7 @@ const Navbar = () => {
                 Connect Wallet
               </h3>
               <p className="text-sm text-zinc-400">
-                This is strictly for demo purposes - only your email and profile
-                picture will be stored.
+                Connect your wallet seamlessly after installing Metamask 🦊.
               </p>
             </div>
 
