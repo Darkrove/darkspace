@@ -56,7 +56,7 @@ const Sidebar = () => {
         href="/dashboard"
         className="w-[48px] h-[48px] rounded-[10px] bg-zinc-800 flex justify-center items-center"
       >
-        <DarkspaceLogo width={50} height={50} className="w-1/2 h-1/2" />
+        <DarkspaceLogo width={50} height={50} className="w-1/2" />
       </Link>
 
       <div className="flex-1 flex flex-col justify-between items-center bg-zinc-800 rounded-[20px] w-[76px] py-4 mt-12">
