@@ -31,13 +31,13 @@ const Navbar = () => {
           placeholder="Search for images"
           className="flex w-full font-epilogue font-normal text-[14px] placeholder:text-zinc-500 text-white bg-transparent outline-none"
         />
-        <div className="flex divide-x divide-zinc-600">
-          <div className="pr-2">
+        <div className="flex sm:divide-x-0 divide-x divide-zinc-600">
+          <div className="sm:pr-0 pr-2">
             <div className="w-[52px] h-full rounded-[20px] bg-violet-500 flex justify-center items-center cursor-pointer">
               <SearchIcon className="w-[20px] h-[20px] object-contain text-white" />
             </div>
           </div>
-          <div className="pl-2">
+          <div className="sm:pl-0 pl-2">
             <div
               onClick={() => setOpenWalletPopover((prev) => !prev)}
               className="flex w-[52px] h-full rounded-[20px] bg-violet-500 sm:hidden justify-center items-center cursor-pointer"
