@@ -59,7 +59,7 @@ export const StateContextProvider = ({ children }) => {
       pid: file.id.toNumber(),
       status: file.fileStatus,
     }));
-    return parsedFiles.filter((file) => file.hash !== "");
+    return parsedFiles.filter((file) => file.hash !== "" && file.status !== "delete");
   }
 
   const publishFile = async (

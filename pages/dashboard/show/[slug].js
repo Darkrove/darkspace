@@ -19,7 +19,6 @@ const Index = (props) => {
   const fetchFile = async () => {
     try {
       const data = await getFileByHash(slug);
-      console.log(data);
       if (data) setFile(data[0]);
     } catch (error) {
       console.log(error);
