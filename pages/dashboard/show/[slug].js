@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import Image from "next/image";
-import { MediaRenderer } from "@thirdweb-dev/react";
 import { getServerSession } from "next-auth/next";
 
 import { authOptions } from "../../api/auth/[...nextauth]";
 import { useStateContext } from "../../../context";
 import { LadyLoader, CardBox } from "../../../components";
-import { capitalizeFirstLetter, formatDate, formatBytes } from "../../../utils";
+import { formatDate, formatBytes } from "../../../utils";
 
 const Index = (props) => {
   const [file, setFile] = useState();
