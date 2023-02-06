@@ -22,10 +22,10 @@ const GetStarted = () => {
             </div>
           </div>
           <div class="m-auto space-y-6 md:w-8/12 lg:w-7/12">
-            <h1 class="text-center text-4xl font-bold text-zinc-100">
+            <h1 class="text-center text-4xl font-bold text-zinc-200">
               Get Started now
             </h1>
-            <p class="text-center text-md text-zinc-300">
+            <p class="text-center text-md text-zinc-400">
               <Balancer>
                 The future of storage is here. Start owning your data and
                 experience the power of blockchain technology.

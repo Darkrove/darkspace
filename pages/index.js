@@ -93,7 +93,7 @@ const Index = () => {
               icon={<GiAbstract024 className="h-10 w-10 text-[#E5344C]" />}
               title={"Integration"}
               description={
-                "arkSpace is designed to be used with the tools you already use. Integrate with your favorite mobile devices, and desktop applications for seamless access to your data."
+                "DarkSpace is designed to be used with the tools you already use. Integrate with your favorite mobile devices, and desktop applications for seamless access to your data."
               }
             />
             <FeatureCard

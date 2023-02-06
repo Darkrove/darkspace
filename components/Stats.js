@@ -71,18 +71,18 @@ export default function Stats({lastUpdate, imageCount, videoCount, webCount, add
         statCards.map((card, index) => {
           return (
             <div
-              className="dark:bg-gradient-to-r dark:from-neutral-700 dark:to-zinc-700 bg-gradient-to-r from-neutral-200 to-zinc-200 rounded-lg shadow-xl p-4 flex flex-col justify-between gap-2"
+              className="bg-gradient-to-r from-neutral-700 to-zinc-700 rounded-lg shadow-xl p-4 flex flex-col justify-between gap-2"
               key={index}
             >
               <Link
-                className="text-zinc-700 dark:text-zinc-400 flex gap-4 m-0 items-center"
+                className="text-zinc-400 flex gap-4 m-0 items-center"
                 href={card.link}
                 rel="noreferrer"
                 onClick={()=>setActivePage(card.active)}
               >
                 {card.title} <LinkLogo className="w-4 h-4" />
               </Link>
-              <h3 className="text-zinc-900 dark:text-zinc-200 m-0">
+              <h3 className="text-zinc-200 m-0">
                 {card.value || "-"}
               </h3>
             </div>

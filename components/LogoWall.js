@@ -22,7 +22,7 @@ const LogoWall = () => {
     <div class="relative flex flex-col items-center overflow-hidden pb-20 bg-transparent">
       <div class="container relative z-[1] m-auto px-6 md:px-12">
         <div class="m-auto text-center md:w-8/12 lg:w-6/12">
-          <h2 class="text-4xl font-bold text-gray-800 dark:text-white sm:text-4xl">
+          <h2 class="text-4xl font-bold text-zinc-200 sm:text-4xl">
           <Balancer> Powered by web3 technologies</Balancer>
            
           </h2>

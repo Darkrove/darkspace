@@ -31,7 +31,7 @@ const Footer = () => {
             />
           </div>
 
-          <p class="mx-auto mt-4 max-w-md text-center leading-relaxed text-zinc-300 sm:ml-0 sm:text-left lg:mr-0 lg:mt-0">
+          <p class="mx-auto mt-4 max-w-md text-center leading-relaxed text-zinc-400 sm:ml-0 sm:text-left lg:mr-0 lg:mt-0">
             The Next Generation of Secure and Decentralized Data Storage:
             DarkSpace
           </p>

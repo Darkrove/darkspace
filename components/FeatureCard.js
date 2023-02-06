@@ -8,9 +8,9 @@ const Feature = ({title, description, icon}) => {
       >
         {icon}
 
-        <h2 className="mt-4 text-xl font-bold text-zinc-100">{title}</h2>
+        <h2 className="mt-4 text-xl font-bold text-zinc-200">{title}</h2>
 
-        <p className="mt-1 text-sm text-zinc-300">
+        <p className="mt-1 text-sm text-zinc-400">
           {description}
         </p>
       </div>
