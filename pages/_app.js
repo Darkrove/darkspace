@@ -58,7 +58,7 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }) {
           <Footer/>
         </>
       );
-    } else if (router.pathname === "/signin" || router.pathname === "/signup") {
+    } else if (router.pathname === "/signin" || router.pathname === "/signup" || router.pathname === "/404") {
       return (
         <>
           <Component {...pageProps} />
