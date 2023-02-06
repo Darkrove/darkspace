@@ -93,7 +93,7 @@ const HomeNavbar = () => {
               <button
                 onClick={() => Router.push("/signin")}
                 type="button"
-                className="ml-3 w-full py-3 px-6 text-center rounded-md transition bg-violet-500 hover:bg-violet-600 active:opacity-80 focus:opacity-80 sm:w-max"
+                className="w-full py-3 px-6 text-center rounded-md transition bg-violet-500 hover:bg-violet-600 active:opacity-80 focus:opacity-80 sm:w-max"
               >
                 <span className="block text-white font-semibold text-sm">
                   Sign in

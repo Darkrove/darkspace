@@ -142,21 +142,21 @@ const Login = () => {
 export default Login;
 
 // Export the `session` prop to use sessions with Server Side Rendering
-// export async function getServerSideProps(context) {
-//   const session = await getServerSession(
-//     context.req,
-//     context.res,
-//     authOptions
-//   );
-//   if(session){
-//     return {
-//       redirect : {
-//         destination: '/dashboard',
-//         permanent: false
-//       }
-//     }
-//   }
-//   return {
-//     props: {session}
-//   };
-// }
+export async function getServerSideProps(context) {
+  const session = await getServerSession(
+    context.req,
+    context.res,
+    authOptions
+  );
+  if(session){
+    return {
+      redirect : {
+        destination: '/dashboard',
+        permanent: false
+      }
+    }
+  }
+  return {
+    props: {session}
+  };
+}
