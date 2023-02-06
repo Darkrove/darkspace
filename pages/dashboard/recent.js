@@ -43,7 +43,7 @@ const Recent = () => {
             href="/dashboard/photos"
             onClick={() => setActivePage("photos")}
             rel="noreferrer"
-            className="flex group gap-2 mt-[10px] items-center duration-200 cursor-pointer no-underline hover:text-zinc-400"
+            className="flex group gap-2 mt-[10px] items-center duration-200 text-zinc-500 cursor-pointer no-underline hover:text-zinc-400"
           >
             See Others{" "}
             <span className="group-hover:translate-x-1 duration-200">
@@ -71,7 +71,7 @@ const Recent = () => {
             href="/dashboard/videos"
             onClick={() => setActivePage("videoss")}
             rel="noreferrer"
-            className="flex group gap-2 mt-[10px] items-center duration-200 cursor-pointer no-underline hover:text-zinc-400"
+            className="flex group gap-2 mt-[10px] items-center duration-200 text-zinc-500 cursor-pointer no-underline hover:text-zinc-400"
           >
             See Others{" "}
             <span className="group-hover:translate-x-1 duration-200">
