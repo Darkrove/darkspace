@@ -31,10 +31,10 @@ const DisplayFiles = ({
   return (
     <div className={`${style}`}>
       <div>
-        <h1 className="dark:text-zinc-200 text-zinc-900 leading-none mb-3 text-[2.5rem] font-extrabold">
+        <h1 className="text-zinc-200 leading-none mb-3 text-[2.5rem] font-extrabold">
           {title}
         </h1>
-        <p className="dark:text-zinc-400 text-zinc-800 m-0 leading-tight">
+        <p className="text-zinc-400  m-0 leading-tight">
           {subtitle} ({files?.length})
         </p>
       </div>

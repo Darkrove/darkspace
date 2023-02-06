@@ -11,9 +11,9 @@ const CustomButton = ({ btnType, title, handleClick, styles, status, disabled })
           disabled
         >
           <div className="flex items-center justify-center space-x-2">
-            <div className="w-3 h-3 rounded-full animate-pulse dark:bg-white"></div>
-            <div className="w-3 h-3 rounded-full animate-pulse dark:bg-white"></div>
-            <div className="w-3 h-3 rounded-full animate-pulse dark:bg-white"></div>
+            <div className="w-3 h-3 rounded-full animate-pulse bg-white"></div>
+            <div className="w-3 h-3 rounded-full animate-pulse bg-white"></div>
+            <div className="w-3 h-3 rounded-full animate-pulse bg-white"></div>
           </div>
         </button>
       ) : (
