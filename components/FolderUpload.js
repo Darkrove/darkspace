@@ -20,7 +20,7 @@ const folderUpload = ({ isActive, handleChange }) => {
             className="relative z-10 opacity-0 h-full w-full cursor-pointer"
           ></input>
           <div className="absolute top-0 right-0 bottom-0 left-0 w-full h-full m-auo flex items-center justify-center">
-            <div className="space-y-6 text-center">
+            <div className="space-y-6 text-center px-2">
               <Image
                 src="/assets/file.png"
                 className="sm:w-40 w-32 m-auto"
