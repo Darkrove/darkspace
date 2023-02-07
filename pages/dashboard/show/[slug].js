@@ -6,7 +6,7 @@ import { getServerSession } from "next-auth/next";
 import { authOptions } from "../../api/auth/[...nextauth]";
 import { useStateContext } from "../../../context";
 import { LadyLoader, CardBox } from "../../../components";
-import { formatDate, formatBytes } from "../../../utils";
+import { formatLongDate, formatBytes } from "../../../utils";
 
 const Index = (props) => {
   const [file, setFile] = useState();
@@ -90,7 +90,7 @@ const Index = (props) => {
             <CardBox title={"Id"} value={`F${file?.pid}`} />
             <CardBox title={"Hash"} value={file?.hash} copyIcon />
             <CardBox title={"Size"} value={formatBytes(file?.size)} />
-            <CardBox title={"Publish"} value={formatDate(file?.uploadTime)} />
+            <CardBox title={"Publish"} value={formatLongDate(file?.uploadTime)} />
             <CardBox
               title={"Link"}
               value={`https://ipfs.io/ipfs/${file?.hash}`}

@@ -150,7 +150,7 @@ export const StateContextProvider = ({ children }) => {
 
   const getUserFiles = async () => {
     const allFiles = await getFiles();
-    if (!allFiles) return 
+    if (!allFiles) return
     const filteredFiles = allFiles.filter(
       (file) => file.owner === address && file.status !== "delete"
     );

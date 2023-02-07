@@ -1,4 +1,7 @@
 import Web3 from "web3"
+import { intlFormatDistance } from 'date-fns'
+import { intlFormat } from 'date-fns'
+
 const web3 = new Web3();
 
 export const checkIfImage = (url, callback) => {
@@ -28,9 +31,30 @@ export const formatBytes = (bytes, decimals = 2) => {
 };
 
 export const formatDate = (epoch) => {
-  const myDate = new Date(epoch * 1000);
-  let dateStr = myDate.getFullYear() + "/" + (myDate.getMonth() + 1) + "/" + myDate.getDate() + " " + myDate.getHours() + ":" + myDate.getMinutes() + ":" + myDate.getSeconds()
-  return dateStr.toString()
+  const uploadDate = new Date(epoch * 1000);
+  // const currentDate = new Date();
+  // let dateDiff = intlFormatDistance(new Date(uploadDate.getFullYear(), uploadDate.getMonth()+1, uploadDate.getDate(), uploadDate.getHours(), uploadDate.getMinutes(), uploadDate.getSeconds()),
+  // new Date(currentDate.getFullYear(), currentDate.getMonth()+1, currentDate.getDate(), currentDate.getHours(), currentDate.getMinutes(), currentDate.getSeconds()))
+  // let dateStr = uploadDate.getFullYear() + "/" + (uploadDate.getMonth() + 1) + "/" + uploadDate.getDate() + " " + uploadDate.getHours() + ":" + uploadDate.getMinutes() + ":" + uploadDate.getSeconds()
+  let date = intlFormat(new Date(uploadDate.getFullYear(), uploadDate.getMonth(), uploadDate.getDate(), uploadDate.getHours(), uploadDate.getMinutes(), uploadDate.getSeconds()), {
+     year: 'numeric',
+     month: 'numeric',
+     day: 'numeric',
+     hour: 'numeric',
+ })
+ return date.toString()
+}
+
+export const formatLongDate = (epoch) => {
+  const uploadDate = new Date(epoch * 1000)
+  let date = intlFormat(new Date(uploadDate.getFullYear(), uploadDate.getMonth(), uploadDate.getDate(), uploadDate.getHours(), uploadDate.getMinutes(), uploadDate.getSeconds()), {
+     year: 'numeric',
+     weekday: 'long',
+     month: 'long',
+     day: 'numeric',
+     hour: 'numeric',
+ })
+ return date.toString()
 }
 
 export const padString = (str) => {
@@ -52,5 +76,5 @@ export const capitalizeFirstLetter = (string) => {
   } else {
     return "Nan"
   }
-  
+
 }
