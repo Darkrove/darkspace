@@ -1,6 +1,28 @@
-## Screen Layout
-![image](https://user-images.githubusercontent.com/53792139/216445634-6b1c5360-e0fc-408f-a4e0-838d127beff7.png)
-![image](https://user-images.githubusercontent.com/53792139/216445689-bbc7f14e-964a-46da-963b-17889ac39b19.png)
-![image](https://user-images.githubusercontent.com/53792139/216445910-46de31d9-7a52-49a7-957d-e05f5f6dc170.png)
-![image](https://user-images.githubusercontent.com/53792139/216445985-98a7e125-32a2-40c7-882e-c988148e1418.png)
-![image](https://user-images.githubusercontent.com/53792139/216446279-d44013d6-81f5-41af-930b-3e946a0a8ae9.png)
+# DarkSpace
+Securely Store and Share Your Videos and Images on the Blockchain with [DarkSpace](https://darkspace.vercel.app/).
+
+![Frame 10](https://user-images.githubusercontent.com/53792139/218177195-9e8948d2-a745-443c-b0a9-61a4497c3a88.png)
+
+## Statistics
+<div style="display: flex; directiom:row">
+
+  ![Stars](https://img.shields.io/github/stars/darkrove/darkspace?color=%239988B6&style=for-the-badge)
+
+  ![Codesize](https://img.shields.io/github/languages/code-size/darkrove/darkspace?style=for-the-badge)
+
+  ![Lastcommit](https://img.shields.io/github/last-commit/darkrove/darkspace?color=%23F213A4&style=for-the-badge)
+
+  [![Peerlist](https://github-readme-badge.peerlist.io/api/sajjad?style=for-the-badge)](https://peerlist.io/sajjad)
+
+</div>
+
+
+## Tech Stack
+- [Next.js](https://nextjs.org/) - frontend / backend
+- [Tailwind](https://tailwindcss.com/) - styling
+- [RedixUI](https://www.radix-ui.com/) - components
+- [Thirdweb](https://thirdweb.com/) - web3 development framework
+- [IPFS](https://ipfs.io/) - p2p network
+
+## How it works?
+![Frame 11](https://user-images.githubusercontent.com/53792139/218177211-cc70d8d2-a80c-423e-9b95-8af95e1f65c7.png)
