@@ -49,7 +49,7 @@ const FileCard = ({
   }, [firstUpdate, type, fileSrc])
 
   return (
-    <div className="sm:w-[230px] md:w-[250px] xl:w-[270px] 2xl:w-[295px] w-full rounded-[15px] bg-zinc-800 cursor-pointer">
+    <div className="sm:w-[230px] md:w-[250px] xl:w-[270px] 2xl:w-[295px] w-full rounded-[15px] bg-white/5 cursor-pointer">
       <div className="relative overflow-hidden rounded-[15px]">
         <Image
           src={thumbnail}

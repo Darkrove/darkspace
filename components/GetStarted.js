@@ -8,7 +8,7 @@ const GetStarted = () => {
   return (
     <div>
       <div class="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
-        <div class="container border rounded-xl border-zinc-800 py-14 shadow-xl m-auto space-y-8 px-6 text-gray-500 md:px-12 lg:px-20">
+        <div class="card container border rounded-xl py-14 shadow-xl m-auto space-y-8 px-6 text-gray-500 md:px-12 lg:px-20">
           <div class="flex items-center justify-center pb-20">
             <div className="relative group flex items-center justify-center">
               <div className="absolute inset-0 bg-gradient-to-r from-pink-600 to-violet-600 w-28 h-28 lg:w-32 lg:h-32 rounded-3xl blur-xl opacity-75 group-hover:opacity-100"></div>

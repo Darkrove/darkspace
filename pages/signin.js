@@ -63,11 +63,11 @@ const Login = () => {
   }
 
   return (
-    <div className="bg-zinc-900 min-h-screen grid content-center m-auto">
+    <div className="min-h-screen grid content-center m-auto">
       <div className="relative py-16">
         <div className="container relative m-auto px-6 text-zinc-500 md:px-12 xl:px-40">
           <div className="m-auto md:w-8/12 lg:w-6/12 xl:w-6/12">
-            <div className="rounded-3xl border border-zinc-800 bg-zinc-800 shadow-zinc-600/10">
+            <div className="rounded-[35px] card">
               <div className="p-8 py-12 sm:p-16">
                 <div className="space-y-4">
                   <Link href="/">
@@ -118,13 +118,13 @@ const Login = () => {
                     />
                   </Button>
                 </div>
-                <div className="mt-20 space-y-4 text-center text-zinc-400 sm:-mb-8">
+                <div className="mt-20 space-y-4 text-center text-white sm:-mb-8">
                   <p className="text-xs">
                     By continuing, you agree to DarkSpace <br />
                     <a href="#" className="underline">
                       Terms of Service
                     </a>
-                    ,
+                    ,{" "}
                     <a href="#" className="underline">
                       Privacy Policy
                     </a>

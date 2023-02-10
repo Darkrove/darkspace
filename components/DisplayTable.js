@@ -27,7 +27,7 @@ const DisplayTable = ({ title, isLoading, files, address, user }) => {
     <div>
       {isLoading && (
         <div className="flex items-center justify-center space-x-2">
-          <div className="w-3 h-3 rounded-full animate-pulse g-violet-400"></div>
+          <div className="w-3 h-3 rounded-full animate-pulse bg-violet-400"></div>
           <div className="w-3 h-3 rounded-full animate-pulse bg-violet-400"></div>
           <div className="w-3 h-3 rounded-full animate-pulse bg-violet-400"></div>
         </div>
@@ -39,9 +39,9 @@ const DisplayTable = ({ title, isLoading, files, address, user }) => {
         <div className="flex flex-col">
           <div className="-m-1.5 overflow-x-auto">
             <div className="p-1.5 min-w-full inline-block align-middle">
-              <div className="border rounded-lg overflow-hidden border-[#1c1c24]">
-                <table className="min-w-full divide-y divide-[#1c1c24]">
-                  <thead className="bg-[#1c1c24]">
+              <div className="border rounded-lg overflow-hidden border-white/10">
+                <table className="min-w-full divide-y divide-white/10">
+                  <thead className="bg-white/10">
                     <tr>
                       <th
                         scope="col"
@@ -85,7 +85,7 @@ const DisplayTable = ({ title, isLoading, files, address, user }) => {
                       </th>
                     </tr>
                   </thead>
-                  <tbody className="divide-y divide-gray-200 divide-[#1c1c24]">
+                  <tbody className="divide-y divide-gray-200">
                     {files
                       .slice(0)
                       .reverse()

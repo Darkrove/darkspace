@@ -71,7 +71,7 @@ export default function Stats({lastUpdate, imageCount, videoCount, webCount, add
         statCards.map((card, index) => {
           return (
             <div
-              className="bg-gradient-to-r from-neutral-700 to-zinc-700 rounded-lg shadow-xl p-4 flex flex-col justify-between gap-2"
+              className="bg-white/5 rounded-lg shadow-xl p-4 flex flex-col justify-between gap-2"
               key={index}
             >
               <Link

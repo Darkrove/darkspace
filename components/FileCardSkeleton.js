@@ -2,7 +2,7 @@ import React from "react";
 
 const FileCardSkeleton = ({ user }) => {
   return (
-    <div class="sm:w-[230px] md:w-[250px] xl:w-[270px] 2xl:w-[295px] w-full rounded-[15px] bg-zinc-800 overflow-hidden shadow hover:shadow-md">
+    <div class="sm:w-[230px] md:w-[250px] xl:w-[270px] 2xl:w-[295px] w-full rounded-[15px] bg-white/5 overflow-hidden shadow hover:shadow-md">
       <div class="flex flex-col">
         <div class="relative w-full h-[158px] object-cover rounded-[15px] loading"></div>
         <div class="flex flex-col p-4">

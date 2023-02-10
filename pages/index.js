@@ -15,8 +15,8 @@ import Feature from "../components/FeatureCard";
 
 const Index = () => {
   return (
-    <div className="bg-zinc-900 relative overflow-hidden isolate">
-      <svg
+    <div className="relative overflow-hidden isolate">
+      {/* <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 1024 1024"
         className="absolute blur top-[450px] left-1/2 -z-10 h-[80rem] w-[80rem] -translate-y-1/2 sm:left-full sm:-ml-80 lg:left-1/2 lg:ml-0 lg:translate-y-0 lg:-translate-x-1/2"
@@ -42,7 +42,7 @@ const Index = () => {
             <stop offset={1} stopColor="#E935C1" stopOpacity={0} />
           </radialGradient>
         </defs>
-      </svg>
+      </svg> */}
       <CtaSection />
       <LogoWall />
       <section class="bg-transparent text-zinc-100">

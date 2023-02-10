@@ -24,7 +24,7 @@ export default function UserDropdown({onProfileClick}) {
         content={
           <div className="w-full rounded-md bg-zinc-800 border-0 p-2 sm:w-56">
             <Link
-              className="flex flex-row items-center justify-start text-zinc-200 space-x-2 relative w-full rounded-md p-2 text-left text-sm transition-all duration-75 hover:bg-zinc-600"
+              className="flex flex-row items-center justify-start text-zinc-200 space-x-2 relative w-full rounded-md p-2 text-left text-sm transition-all duration-75 hover:bg-white/10"
               href="/dashboard/profile"
               onClick={onProfileClick}
             >
@@ -39,7 +39,7 @@ export default function UserDropdown({onProfileClick}) {
               <p className="text-sm">Dashboard</p>
             </button> */}
             <button
-              className="relative flex flex-row w-full items-center justify-start text-zinc-200 space-x-2 rounded-md p-2 text-left text-sm transition-all duration-75 hover:bg-zinc-600"
+              className="relative flex flex-row w-full items-center justify-start text-zinc-200 space-x-2 rounded-md p-2 text-left text-sm transition-all duration-75 hover:bg-white/10"
               onClick={() => signOut({ redirect: true })}
             >
               <LogoutIcon className="h-4 w-4"/>

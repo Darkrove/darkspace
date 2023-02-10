@@ -33,8 +33,8 @@ module.exports = {
       },
       skeletonScreen: {
         DEFAULT: {
-          baseColor: '#3f3f46',
-          movingColor: 'linear-gradient(to right, transparent 0%, #52525b 50%, transparent 100%)',
+          baseColor: '#8d8d8f',
+          movingColor: 'linear-gradient(to right, transparent 0%, #9f9fa1 50%, transparent 100%)',
           duration: '1s',
           timing: 'linear',
         },

@@ -94,7 +94,7 @@ export default function MediaModal({
           onClick={() => setOpenModal(false)}
         ></div>
         <div className="flex items-center min-h-screen px-4 py-8" id={id}>
-          <div className="relative w-full max-w-lg p-4 mx-auto bg-[#1c1c24] rounded-xl shadow-lg">
+          <div className="relative w-full max-w-lg p-4 mx-auto bg-zinc-800 rounded-xl shadow-lg">
             <div className="sm:flex">
               <div className="text-center">
                 <div className="flex flex-1 justify-between items-center">
@@ -105,7 +105,7 @@ export default function MediaModal({
                     <button
                       id="hs-dropdown-custom-icon-trigger"
                       type="button"
-                      class="hs-dropdown-toggle p-3 inline-flex justify-center items-center gap-2 rounded-md font-medium shadow-sm align-middle focus:outline-none transition-all text-sm bg-[#1c1c24] hover:bg-slate-800 border-gray-700 text-gray-400 hover:text-white"
+                      class="hs-dropdown-toggle p-3 inline-flex justify-center items-center gap-2 rounded-md font-medium shadow-sm align-middle focus:outline-none transition-all text-sm hover:bg-zinc-700 text-gray-400"
                     >
                       <svg
                         class="w-4 h-4 text-[#808191]"
@@ -120,7 +120,7 @@ export default function MediaModal({
                     </button>
 
                     <div
-                      class="hs-dropdown-menu transition-[opacity,margin] duration hs-dropdown-open:opacity-100 opacity-0 hidden mt-2 min-w-[15rem] shadow-md rounded-lg p-2 bg-[#1c1c24]"
+                      class="hs-dropdown-menu transition-[opacity,margin] duration hs-dropdown-open:opacity-100 opacity-0 hidden mt-2 min-w-[15rem] shadow-md rounded-lg p-2 bg-zinc-800"
                       aria-labelledby="hs-dropdown-custom-icon-trigger"
                     >
                       <button
@@ -221,7 +221,7 @@ export default function MediaModal({
                     Download
                   </button>
                   <button
-                    className="w-full mt-2 p-2.5 flex-1 text-white rounded-md font-medium outline-none border ring-offset-2 ring-[#1dc071] focus:ring-2"
+                    className="w-full mt-2 p-2.5 flex-1 text-white rounded-md font-medium outline-none border ring-offset-2 ring-violet-500 focus:ring-2"
                     onClick={() => setOpenModal(false)}
                   >
                     Close

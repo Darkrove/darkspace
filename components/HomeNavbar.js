@@ -6,9 +6,9 @@ import { DarkspaceLogoFull } from "../assets/Icons";
 
 const HomeNavbar = () => {
   return (
-    <nav className="fixed z-10 w-full bg-zinc-900 md:absolute">
+    <nav className="fixed z-10 w-full bg-zinc-900/20 backdrop-blur-md border-b border-white/20">
       <div className="container m-auto max-w-screen-xl px-2 md:px-12 lg:px-7">
-        <div className="flex flex-wrap items-center justify-between py-3 gap-6 md:py-4 md:gap-0">
+        <div className="flex flex-wrap items-center justify-between py-3 gap-6 md:gap-0">
           <input
             type="checkbox"
             name="toggle_nav"

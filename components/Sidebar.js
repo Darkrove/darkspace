@@ -50,16 +50,16 @@ const Sidebar = () => {
   const router = useRouter();
 
   return (
-    <div className="flex justify-between items-center flex-col sticky top-5 z-10 h-[93vh]">
+    <div className="flex justify-between items-center flex-col fixed top-5 z-10 h-[93vh]">
       <Link
         onClick={() => setActivePage("dashboard")}
         href="/dashboard"
-        className="w-[48px] h-[48px] rounded-[10px] bg-zinc-800 flex justify-center items-center"
+        className="w-[48px] h-[48px] rounded-[10px] bg-white/5 flex justify-center items-center"
       >
         <DarkspaceLogo width={50} height={50} className="w-1/2" />
       </Link>
 
-      <div className="flex-1 flex flex-col justify-between items-center bg-zinc-800 rounded-[20px] w-[76px] py-4 mt-12">
+      <div className="flex-1 flex flex-col justify-between items-center bg-white/5 rounded-[20px] w-[76px] py-4 mt-12">
         <div className="flex flex-col justify-center items-center gap-3">
           {navlinks.map((link) => (
             <ToolTip key={link.name} tip={link.tip}>

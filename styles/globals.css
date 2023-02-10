@@ -4,6 +4,22 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  @apply text-white/70 bg-zinc-900 relative;
+}
+body::before {
+  width: 100%;
+  height: 100%;
+  content: "";
+  position: fixed;
+  background: radial-gradient(
+    75.61% 75.61% at 50% 24.39%,
+    rgba(107, 9, 146, 0.2) 0%,
+    rgba(107, 9, 146, 0) 100%
+  );
+  z-index: -1;
+}
+
 * {
   -webkit-tap-highlight-color: transparent;
 }
@@ -19,4 +35,8 @@
 input[type="date"]::-webkit-calendar-picker-indicator {
   cursor: pointer;
   filter: invert(0.8);
+}
+
+.card{
+  @apply bg-white/5 backdrop-blur-lg border border-white/10 rounded-xl;
 }

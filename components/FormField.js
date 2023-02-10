@@ -24,7 +24,7 @@ const FormField = (props) => {
         <div className="m-auto px-0 sm:px-0 w-full">
           <div className="relative group w-full h-[20rem] flex justify-center items-center">
             <div
-              className={`absolute inset-0 w-full h-full rounded-xl border-[1px] bg-transparent bg-opacity-80 shadow-2xl backdrop-blur-xl group-hover:bg-opacity-70 group-hover:border-violet-500 transition duration-300 ${
+              className={`absolute inset-0 w-full h-full rounded-xl border-[1px] bg-white/5 shadow-2xl group-hover:bg-opacity-70 group-hover:border-violet-500 transition duration-300 ${
                 isActive ? "border-green-400" : "border-[#3a3a43]"
               }`}
             ></div>
@@ -46,7 +46,7 @@ const FormField = (props) => {
                   height={500}
                   width={600}
                 />
-                <p className="text-gray-700 text-lg">
+                <p className="text-zinc-400 text-lg">
                   Drag and drop a file or{" "}
                   <label
                     htmlFor="dragOver"
@@ -83,7 +83,7 @@ const FormField = (props) => {
           type={inputType}
           step="0.1"
           placeholder={placeholder}
-          className={`py-[15px] sm:px-[25px] px-[15px] outline-none border-[1px] focus:border-violet-500 hover:border-violet-500 border-[#3a3a43] bg-transparent font-epilogue text-white text-[14px] transition  duration-300 placeholder:text-[#4b5264] rounded-[10px] sm:min-w-[300px] ${
+          className={`py-[15px] sm:px-[25px] bg-white/5 px-[15px] outline-none border-[1px] focus:border-violet-500 hover:border-violet-500 border-[#3a3a43] font-epilogue text-white text-[14px] transition  duration-300 placeholder:text-[#4b5264] rounded-[10px] sm:min-w-[300px] ${
             isActive ? "border-green-400" : "border-[#3a3a43]"
           }"}`}
         />

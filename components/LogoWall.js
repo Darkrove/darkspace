@@ -4,7 +4,7 @@ import Balancer from "react-wrap-balancer";
 
 const Logo = ({ src, description }) => {
   return (
-    <div class="group rounded-xl border border-zinc-800 shadow bg-white bg-opacity-5 py-2 px-4 hover:bg-opacity-10 hover:border-violet-500/10 hover:shadow-violet-500/10">
+    <div class="group rounded-xl border card shadow py-2 px-4">
       <Image
         src={src}
         class="transition"

@@ -74,7 +74,7 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }) {
                 : `dashboard | ${currentRoute.split("/")[2]}`}
             </title>
           </Head>
-          <div className="relative sm:-8 p-4 bg-zinc-900 min-h-screen flex flex-row overflow-hidden">
+          <div className="relative sm:-8 p-4 min-h-screen flex flex-row overflow-hidden">
             <div className="sm:flex hidden mr-10 relative">
               <Sidebar />
             </div>

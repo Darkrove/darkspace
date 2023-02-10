@@ -4,7 +4,7 @@ const Feature = ({title, description, icon}) => {
   return (
     <>
       <div
-        className="block rounded-xl border border-zinc-800 p-8 shadow-xl transition hover:border-violet-500/10 hover:shadow-violet-500/10"
+        className="card block rounded-xl p-8 shadow-xl transition hover:border-violet-500/10 hover:shadow-violet-500/10"
       >
         {icon}
 

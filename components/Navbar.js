@@ -25,7 +25,7 @@ const Navbar = () => {
 
   return (
     <div className="flex md:flex-row flex-col-reverse justify-between mb-[35px] gap-6">
-      <div className=" lg:flex-1 flex flex-row lg:max-w-[458px] py-2 pl-4 pr-2 h-[52px] bg-zinc-800 rounded-[100px] ">
+      <div className=" lg:flex-1 flex flex-row lg:max-w-[458px] py-2 pl-4 pr-2 h-[52px] bg-white/5 rounded-[100px] ">
         <input
           type="text"
           placeholder="Search for images"
@@ -54,7 +54,7 @@ const Navbar = () => {
           accentColor="#8B5CF6"
           colorMode="dark"
         />
-        <div className="w-[52px] h-[52px] overflow-hidden rounded-full bg-[#2c2f32] flex justify-center items-center cursor-pointer">
+        <div className="w-[52px] h-[52px] overflow-hidden rounded-full bg-white/5 flex justify-center items-center cursor-pointer">
           <UserDropdown onProfileClick={() => setActivePage("profile")} />
         </div>
       </div>
@@ -65,11 +65,11 @@ const Navbar = () => {
           <MenuIcon className="w-[34px] h-[34px] text-violet-500 object-contain cursor-pointer" />
         </button>
         <Link onClick={() => setActivePage("dashboard")} href="/dashboard">
-          <div className="w-[40px] h-[40px] rounded-[10px] bg-[#2c2f32] flex justify-center items-center cursor-pointer">
+          <div className="w-[40px] h-[40px] rounded-[10px] bg-white/5 flex justify-center items-center cursor-pointer">
             <DarkspaceLogo width={50} height={50} className="w-[60%]" />
           </div>
         </Link>
-        <div className="w-[34px] h-[34px] overflow-hidden rounded-full bg-[#2c2f32] flex justify-center items-center cursor-pointer">
+        <div className="w-[34px] h-[34px] overflow-hidden rounded-full bg-zinc-800 flex justify-center items-center cursor-pointer">
           <UserDropdown onProfileClick={() => setActivePage("profile")} />
         </div>
       </div>
