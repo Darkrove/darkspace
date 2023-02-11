@@ -1,6 +1,7 @@
 import Web3 from "web3"
-import { intlFormatDistance } from 'date-fns'
-import { intlFormat } from 'date-fns'
+import { intlFormatDistance } from "date-fns"
+import { intlFormat } from "date-fns"
+import dateFormat from "dateformat"
 
 const web3 = new Web3();
 
@@ -36,13 +37,15 @@ export const formatDate = (epoch) => {
   // let dateDiff = intlFormatDistance(new Date(uploadDate.getFullYear(), uploadDate.getMonth()+1, uploadDate.getDate(), uploadDate.getHours(), uploadDate.getMinutes(), uploadDate.getSeconds()),
   // new Date(currentDate.getFullYear(), currentDate.getMonth()+1, currentDate.getDate(), currentDate.getHours(), currentDate.getMinutes(), currentDate.getSeconds()))
   // let dateStr = uploadDate.getFullYear() + "/" + (uploadDate.getMonth() + 1) + "/" + uploadDate.getDate() + " " + uploadDate.getHours() + ":" + uploadDate.getMinutes() + ":" + uploadDate.getSeconds()
-  let date = intlFormat(new Date(uploadDate.getFullYear(), uploadDate.getMonth(), uploadDate.getDate(), uploadDate.getHours(), uploadDate.getMinutes(), uploadDate.getSeconds()), {
-     year: 'numeric',
-     month: 'numeric',
-     day: 'numeric',
-     hour: 'numeric',
- })
- return date.toString()
+  // let date = intlFormat(new Date(uploadDate.getFullYear(), uploadDate.getMonth(), uploadDate.getDate(), uploadDate.getHours(), uploadDate.getMinutes(), uploadDate.getSeconds()), {
+  //     year: 'numeric',
+  //     month: 'numeric',
+  //     day: 'numeric',
+  //     hour: 'numeric',
+  // })
+  const now = new Date(uploadDate.getFullYear(), uploadDate.getMonth(), uploadDate.getDate(), uploadDate.getHours(), uploadDate.getMinutes(), uploadDate.getSeconds())
+  const date = dateFormat(now, "mmmm dS, yyyy, h:MM TT");
+  return date.toString()
 }
 
 export const formatLongDate = (epoch) => {

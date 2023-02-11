@@ -44,27 +44,27 @@ const Footer = () => {
 
           <ul className="mt-4 flex justify-center gap-6 sm:mt-0 sm:justify-start">
             <SocialIcon
-              icon={<FaGithub classNameName="h-5 w-5" />}
+              icon={<FaGithub className="h-5 w-5" />}
               title="github"
               link="https://github.com/Darkrove/darkspace"
             />
             <SocialIcon
-              icon={<FaInstagram classNameName="h-5 w-5" />}
+              icon={<FaInstagram className="h-5 w-5" />}
               title="instagram"
               link="https://www.instagram.com/sajjadshaikh.io/"
             />
             <SocialIcon
-              icon={<FaTwitter classNameName="h-5 w-5" />}
+              icon={<FaTwitter className="h-5 w-5" />}
               title="twitter"
               link="https://twitter.com/sajjads72619701"
             />
             <SocialIcon
-              icon={<FaDiscord classNameName="h-5 w-5" />}
+              icon={<FaDiscord className="h-5 w-5" />}
               title="discord"
               link="https://discord.gg/Ftg4SY7NEj"
             />
             <SocialIcon
-              icon={<SiHashnode classNameName="h-5 w-5" />}
+              icon={<SiHashnode className="h-5 w-5" />}
               title="hashnode"
               link="https://hashnode.com/@darkrove"
             />

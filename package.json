@@ -23,6 +23,7 @@
     "clsx": "^1.2.1",
     "daisyui": "^2.46.0",
     "date-fns": "^2.29.3",
+    "dateformat": "^5.0.3",
     "deployment-badge": "^1.1.0",
     "ethers": "^5.6.8",
     "framer-motion": "^8.5.3",
