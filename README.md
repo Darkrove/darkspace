@@ -6,15 +6,17 @@ Securely Store and Share Your Videos and Images on the Blockchain with [DarkSpac
 
 ## Statistics
 
-![Stars](https://img.shields.io/github/stars/darkrove/darkspace?logo=apachespark&color=%239988B6&style=for-the-badge&logoColor=white)
+![Stars](https://img.shields.io/github/stars/darkrove/darkspace?logo=dbt&color=%239988B6&style=for-the-badge&logoColor=white)
 
 [![Perrlist](https://img.shields.io/badge/PEERLIST-SAJJAD-orange?logo=scribd&logoColor=white&style=for-the-badge)](https://peerlist.io/sajjad)
 
 ![Codesize](https://img.shields.io/github/languages/code-size/darkrove/darkspace?logo=nextdotjs&logoColor=white&style=for-the-badge)
 
+![License](https://img.shields.io/github/license/darkrove/darkspace?style=for-the-badge&logo=cmake&logoColor=white)
+
 ![Lastcommit](https://img.shields.io/github/last-commit/darkrove/darkspace?color=%23F213A4&style=for-the-badge&logo=quicktime&logoColot=white)
 
-![Perrlist](https://img.shields.io/badge/BUY%20ME%20A%20COFEE-BUY-%2357bcad?logo=buymeacoffee&logoColor=white&style=for-the-badge)
+![Coffee](https://img.shields.io/badge/BUY%20ME%20A%20COFEE-BUY-%2357bcad?logo=buymeacoffee&logoColor=white&style=for-the-badge)
 
 ## Tech Stack
 
