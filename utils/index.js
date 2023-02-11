@@ -50,14 +50,9 @@ export const formatDate = (epoch) => {
 
 export const formatLongDate = (epoch) => {
   const uploadDate = new Date(epoch * 1000)
-  let date = intlFormat(new Date(uploadDate.getFullYear(), uploadDate.getMonth(), uploadDate.getDate(), uploadDate.getHours(), uploadDate.getMinutes(), uploadDate.getSeconds()), {
-     year: 'numeric',
-     weekday: 'long',
-     month: 'long',
-     day: 'numeric',
-     hour: 'numeric',
- })
- return date.toString()
+  const now = new Date(uploadDate.getFullYear(), uploadDate.getMonth(), uploadDate.getDate(), uploadDate.getHours(), uploadDate.getMinutes(), uploadDate.getSeconds())
+  const date = dateFormat(now, "dddd, mmmm dS, yyyy, h:MM:ss TT");
+  return date.toString()
 }
 
 export const padString = (str) => {
