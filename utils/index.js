@@ -44,7 +44,7 @@ export const formatDate = (epoch) => {
   //     hour: 'numeric',
   // })
   const now = new Date(uploadDate.getFullYear(), uploadDate.getMonth(), uploadDate.getDate(), uploadDate.getHours(), uploadDate.getMinutes(), uploadDate.getSeconds())
-  const date = dateFormat(now, "mmmm dS, yyyy, h:MM TT");
+  const date = dateFormat(now, "mmm dS, yyyy, h:MM TT");
   return date.toString()
 }
 
