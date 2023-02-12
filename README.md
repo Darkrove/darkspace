@@ -25,6 +25,7 @@ Securely Store and Share Your Videos and Images on the Blockchain with [DarkSpac
 - [RedixUI](https://www.radix-ui.com/) - components
 - [Thirdweb](https://thirdweb.com/) - web3 development framework
 - [IPFS](https://ipfs.io/) - p2p network
+- [Goerli](https://goerli.etherscan.io/) - blockchain test network
 
 ## How it works?
 
