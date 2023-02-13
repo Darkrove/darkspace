@@ -3,8 +3,10 @@ import Balancer from "react-wrap-balancer";
 import Router from "next/router";
 
 import { DarkspaceLogo } from "../assets/Icons";
+import { useStateContext } from "../context";
 
 const GetStarted = () => {
+  const { activePage, setActivePage } = useStateContext();
   return (
     <div>
       <div class="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
@@ -33,7 +35,10 @@ const GetStarted = () => {
             </p>
             <div class="flex flex-wrap items-center justify-center gap-6">
               <button
-                 onClick={() => Router.push("/signin")}
+                onClick={() => {
+                  setActivePage("dashboard");
+                  Router.push("/dashboard");
+                }}
                 className={`text-xl w-full lg:w-1/2 h-16 rounded-md bg-gradient-to-r from-pink-500 to-violet-500 transition-all duration-200 px-3.5 py-1.5 font-semibold leading-10 text-white shadow-lg`}
               >
                 Start Upload 🚀

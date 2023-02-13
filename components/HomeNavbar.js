@@ -3,8 +3,10 @@ import Image from "next/image";
 import Router from "next/router";
 
 import { DarkspaceLogoFull } from "../assets/Icons";
+import { useStateContext } from "../context";
 
 const HomeNavbar = () => {
+  const { activePage, setActivePage } = useStateContext();
   return (
     <nav className="fixed z-10 w-full bg-zinc-900/20 backdrop-blur-md border-b border-white/20">
       <div className="container m-auto max-w-screen-xl px-2 md:px-12 lg:px-7">
@@ -16,11 +18,7 @@ const HomeNavbar = () => {
             className="peer hidden"
           />
           <div className="w-full px-6 flex justify-between lg:w-max md:px-0 z-30">
-            <a
-              href="#"
-              aria-label="logo"
-              className="flex items-center"
-            >
+            <a href="#" aria-label="logo" className="flex items-center">
               <DarkspaceLogoFull className="h-[50px] lg:h-[70px]" />
               <span className="top-0 -right-5 inline-flex items-center py-0.5 px-1.5 rounded-full text-[10px] lg:text-xs font-medium transform -translate-y-1/2 bg-red-500 text-white">
                 Beta
@@ -91,7 +89,10 @@ const HomeNavbar = () => {
                 Signin
               </button> */}
               <button
-                onClick={() => Router.push("/signin")}
+                onClick={() => {
+                  setActivePage("dashboard");
+                  Router.push("/dashboard");
+                }}
                 type="button"
                 className="w-full py-3 px-6 text-center rounded-md transition bg-violet-500 hover:bg-violet-600 active:opacity-80 focus:opacity-80 sm:w-max"
               >

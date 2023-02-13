@@ -75,7 +75,7 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }) {
             </title>
           </Head>
           <div className="relative sm:-8 p-4 min-h-screen flex flex-row overflow-hidden">
-            <div className="sm:flex hidden mr-10 relative">
+            <div className="sm:flex hidden mr-24 relative">
               <Sidebar />
             </div>
             <div className="flex-1 max-sm:w-full max-w-[1280px] mx-auto sm:pr-5">

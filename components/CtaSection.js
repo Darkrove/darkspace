@@ -3,9 +3,11 @@ import Balancer from "react-wrap-balancer";
 import Router from "next/router";
 import Image from "next/image";
 
+import { useStateContext } from "../context";
 import styles from "../styles/Button.module.css";
 
 export default function CtaSection() {
+  const { activePage, setActivePage } = useStateContext();
   return (
     <div className="relative overflow-hidden isolate">
       <div className="mx-auto max-w-screen-xl py-24 sm:px-6 sm:py-32 lg:px-8">
@@ -25,7 +27,10 @@ export default function CtaSection() {
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6 lg:justify-start">
               <button
-                onClick={() => Router.push("/signin")}
+                onClick={() =>{
+                  setActivePage("dashboard")
+                  Router.push("/dashboard")
+                }}
                 className={`${styles.button} border border-violet-500 hover:border-transparent w-full duration-200 transition-all rounded-md bg-violet-500 px-3.5 py-1.5 text-base font-semibold leading-7 md:leading-9 text-zinc-100 shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white`}
               >
                 Join Now 🚀
