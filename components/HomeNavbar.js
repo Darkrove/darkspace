@@ -83,25 +83,32 @@ const HomeNavbar = () => {
             </div>
 
             <div className="w-full min-w-max space-y-2 border-violet-500 lg:space-y-0 sm:w-max">
-              {/* <button
-                onClick={() => Router.push("/signin")}
-                type="button"
-                class="ml-3 py-3 rounded-full px-4 inline-flex justify-center items-center gap-2 bg-purple-100 border border-transparent font-semibold text-purple-500 hover:text-white hover:bg-purple-500 focus:outline-none focus:ring-2 ring-offset-white focus:ring-purple-500 focus:ring-offset-2 transition-all text-sm dark:focus:ring-offset-gray-800"
-              >
-                Signin
-              </button> */}
-              <button
-                onClick={() => {
-                  setActivePage("dashboard");
-                  Router.push("/dashboard");
-                }}
-                type="button"
-                className="w-full py-3 px-6 text-center rounded-md transition bg-violet-500 hover:bg-violet-600 active:opacity-80 focus:opacity-80 sm:w-max"
-              >
-                <span className="block text-white font-semibold text-sm">
-                  {session?.user ? "Dashboard →" : "Sign in"}
-                </span>
-              </button>
+              {session?.user ? (
+                <button
+                  onClick={() => {
+                    setActivePage("dashboard");
+                    Router.push("/dashboard");
+                  }}
+                  type="button"
+                  className="w-full py-3 px-6 text-center rounded-md transition bg-violet-500 hover:bg-violet-600 active:opacity-80 focus:opacity-80 sm:w-max"
+                >
+                  <span className="block text-white font-semibold text-sm">
+                    Go To Dashboard
+                  </span>
+                </button>
+              ) : (
+                <button
+                  onClick={() => {
+                    Router.push("/signin");
+                  }}
+                  type="button"
+                  className="w-full py-3 px-6 text-center rounded-md transition bg-violet-500 hover:bg-violet-600 active:opacity-80 focus:opacity-80 sm:w-max"
+                >
+                  <span className="block text-white font-semibold text-sm">
+                    Sign in
+                  </span>
+                </button>
+              )}
             </div>
           </div>
         </div>
