@@ -1,12 +1,14 @@
 import React from "react";
 import Image from "next/image";
 import Router from "next/router";
+import { useSession } from "next-auth/react";
 
 import { DarkspaceLogoFull } from "../assets/Icons";
 import { useStateContext } from "../context";
 
 const HomeNavbar = () => {
   const { activePage, setActivePage } = useStateContext();
+  const { data: session } = useSession();
   return (
     <nav className="fixed z-10 w-full bg-zinc-900/20 backdrop-blur-md border-b border-white/20">
       <div className="container m-auto max-w-screen-xl px-2 md:px-12 lg:px-7">
@@ -97,7 +99,7 @@ const HomeNavbar = () => {
                 className="w-full py-3 px-6 text-center rounded-md transition bg-violet-500 hover:bg-violet-600 active:opacity-80 focus:opacity-80 sm:w-max"
               >
                 <span className="block text-white font-semibold text-sm">
-                  Sign in
+                  {session?.user ? "Dashboard →" : "Sign in"}
                 </span>
               </button>
             </div>
