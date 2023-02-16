@@ -249,7 +249,7 @@ export default function MediaModal({
           </div>
         </div>
         {isLoading && (
-          <Loader message={message} isTransacting={isTransacting} />
+          <Loader message={message} />
         )}
       </div>
     </>
