@@ -40,3 +40,27 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 .card{
   @apply bg-white/5 backdrop-blur-lg border border-white/10 rounded-xl;
 }
+
+.loader-pulse {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: #8f44fd;
+  animation: load-pulse 0.85s infinite linear;
+}
+
+@keyframes load-pulse {
+  0% {
+    transform: scale(0.15);
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+}

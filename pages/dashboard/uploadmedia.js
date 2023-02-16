@@ -13,6 +13,8 @@ import { useStateContext } from "../../context";
 const Uploadmedia = () => {
   const { data: session } = useSession();
   const [isLoading, setIsLoading] = useState(false);
+  const [message, setMessage] = useState("Hold on, we're getting things ready...");
+  const [isTransacting, setIsTransacting] = useState(false);
   const [isActive, setIsActive] = useState(false);
   const { address, uploadFile } = useStateContext();
   const initState = {
@@ -69,6 +71,7 @@ const Uploadmedia = () => {
     e.preventDefault();
 
     if (form.file) {
+      setMessage("Uploading to ipfs...");
       setIsLoading(true);
       const hashUrl = await uploadToIpfs();
       if (hashUrl.message) {
@@ -77,6 +80,8 @@ const Uploadmedia = () => {
         setForm({ file: "", filename: "", type: "", hash: "", size: "" });
         return;
       }
+      setMessage("Transaction in progress...");
+      setIsTransacting(true);
       await uploadFile(
         form.filename,
         form.type,
@@ -104,7 +109,7 @@ const Uploadmedia = () => {
 
   return (
     <div className="">
-      {/* {isLoading && <Loader />} */}
+      {isLoading && <Loader message={message} isTransacting={isTransacting}/>}
       <div>
         <div>
           <h1 className="text-zinc-200 leading-none mb-3 text-[2.5rem] font-extrabold">

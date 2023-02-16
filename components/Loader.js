@@ -1,19 +1,48 @@
-import React from 'react'
-import Image from 'next/image';
+import React from "react";
+import Image from "next/image";
+import Balancer from "react-wrap-balancer";
 
-import { loader } from '../assets';
+import { loader } from "../assets";
 
-const Loader = () => {
+const msg = [
+  "Please hold on, this could take several seconds to complete.",
+  "Your Space is getting created.",
+  "This can take a few minutes depending on gas. Don’t leave this page.",
+];
+
+const Loader = ({ message, isTransacting }) => {
   return (
     <div className="fixed inset-0 z-10 h-screen bg-[rgba(0,0,0,0.7)] flex items-center justify-center flex-col">
-      <Image src={loader} alt="loader" height={100} width={100} className="w-[100px] h-[100px] object-contain"/>
-      <p className="mt-[20px] font-epilogue font-bold text-[20px] text-white text-center">Transaction is in progress<br /> Please wait...</p>
+      <div className="card block border rounded-xl py-14 shadow-xl mx-6 space-y-8 px-6 text-gray-500 md:px-12 lg:px-20">
+        <div class="flex flex-col items-center justify-center">
+          {/* <Image
+            src={loader}
+            alt="loader"
+            height={100}
+            width={100}
+            className="w-[100px] h-[100px] object-contain"
+          /> */}
+          <div class="loader-pulse"></div>
+          <p className="mt-[20px] font-epilogue font-bold text-[20px] text-white text-center">
+            {message}
+          </p>
+          <Balancer className="text-white text-center text-lg">
+            {msg[2]}
+          </Balancer>
+          {isTransacting && (
+            <a
+              className="text-zinc-200 text-bold text-center text-md mt-4 bg-zinc-800 py-2 px-4 rounded-xl"
+              href="https://goerli.etherscan.io/address/0xF59c8EbE7a730C02800C59010a998948c203EBDc"
+              target="_blank"
+              rel="noreferrer"
+            >
+              VIEW STATUS ON ETHERSCAN
+            </a>
+          )}
+        </div>
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default Loader
-
-// Your Space is getting created...
-
-// Please hold on, this could take several seconds to complete.
+export default Loader;
