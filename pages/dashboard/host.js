@@ -6,7 +6,6 @@ import toast from "react-hot-toast";
 import { getServerSession } from "next-auth/next";
 
 import { authOptions } from "../api/auth/[...nextauth]";
-
 import {
   FolderUpload,
   CustomButton,
