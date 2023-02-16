@@ -13,6 +13,7 @@ import {
   CloseEyeIcon,
   TrashIcon,
 } from "../assets/Icons";
+import { Loader } from "../components";
 import { useStateContext } from "../context";
 import useCopyToClipboard from "../lib/hooks/useCopyToClipboard";
 
@@ -28,8 +29,11 @@ export default function MediaModal({
   status,
 }) {
   const { data: session } = useSession();
-  const [isLoading, setLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
   const [copyToClipboard, { success }] = useCopyToClipboard();
+  const [message, setMessage] = useState(
+    "Hold on, we're getting things ready..."
+  );
 
   const { updateFile } = useStateContext();
 
@@ -83,6 +87,19 @@ export default function MediaModal({
         .catch(console.error);
     } else {
       console.log("provide fallback share");
+    }
+  };
+
+  const handleUpdate = async (cid, status) => {
+    setMessage("Initiating...");
+    setIsLoading(true);
+    try {
+      setMessage("Transaction in progress...");
+      await updateFile(cid, status);
+      setIsLoading(false);
+    } catch (error) {
+      console.log(error);
+      setIsLoading(false);
     }
   };
 
@@ -158,7 +175,7 @@ export default function MediaModal({
                           </span>
                           {status === "public" ? (
                             <button
-                              onClick={() => updateFile(id, "private")}
+                              onClick={() => handleUpdate(id, "private")}
                               class="w-full flex items-center gap-x-3.5 py-2 px-3 rounded-md text-sm focus:ring-2 focus:ring-blue-500 text-gray-400 hover:bg-gray-700 hover:text-gray-300"
                             >
                               <CloseEyeIcon className="w-5 h-5 flex-none" />
@@ -166,7 +183,7 @@ export default function MediaModal({
                             </button>
                           ) : (
                             <button
-                              onClick={() => updateFile(id, "public")}
+                              onClick={() => handleUpdate(id, "public")}
                               class="w-full flex items-center gap-x-3.5 py-2 px-3 rounded-md text-sm focus:ring-2 focus:ring-blue-500 text-gray-400 hover:bg-gray-700 hover:text-gray-300"
                             >
                               <OpenEyeIcon className="w-5 h-5 flex-none" />
@@ -175,7 +192,7 @@ export default function MediaModal({
                           )}
 
                           <button
-                            onClick={() => updateFile(id, "delete")}
+                            onClick={() => handleUpdate(id, "delete")}
                             class="w-full flex items-center gap-x-3.5 py-2 px-3 rounded-md text-sm focus:ring-2 focus:ring-blue-500 text-gray-400 hover:bg-gray-700 hover:text-gray-300"
                           >
                             <TrashIcon className="w-5 h-5 flex-none" />
@@ -231,6 +248,9 @@ export default function MediaModal({
             </div>
           </div>
         </div>
+        {isLoading && (
+          <Loader message={message} isTransacting={isTransacting} />
+        )}
       </div>
     </>
   );

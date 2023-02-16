@@ -12,6 +12,7 @@ import {
   CustomButton,
   DisplayTable,
   Snackbar,
+  Loader,
 } from "../../components";
 import { useStateContext } from "../../context";
 
@@ -24,7 +25,11 @@ const Host = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [dataLoading, setDataLoading] = useState(false);
   const [isActive, setIsActive] = useState(false);
-  const { address, contract, getUserFiles, uploadFile } = useStateContext();
+  const [message, setMessage] = useState(
+    "Hold on, we're getting things ready..."
+  );
+  const [isTransacting, setIsTransacting] = useState(false);
+  const { address, contract, getUserFiles, uploadFile, updateFile } = useStateContext();
 
   const handleChange = (e) => {
     setSelectedFiles(e.target.files);
@@ -32,6 +37,7 @@ const Host = () => {
   };
 
   const handleSubmit = async () => {
+    setMessage("Uploading to ipfs...");
     setIsLoading(true);
     const NFT_STORAGE_TOKEN = process.env.NEXT_PUBLIC_STORAGE_API;
     const client = new NFTStorage({ token: NFT_STORAGE_TOKEN });
@@ -51,6 +57,8 @@ const Host = () => {
         setIsLoading(false);
         toast.error("😵‍💫 Upload failed, \n please try again.");
       }
+      setMessage("Transaction in progress...");
+      setIsTransacting(true);
       await uploadFile(
         folderName[0].toLowerCase(),
         "directory",
@@ -64,7 +72,9 @@ const Host = () => {
       console.log(error);
     }
     setSelectedFiles([]);
+    setIsTransacting(false);
     setIsActive(false);
+    setMessage("")
     setIsLoading(false);
   };
 
@@ -74,6 +84,20 @@ const Host = () => {
     setFiles(data);
     setDataLoading(false);
   };
+
+  const handleDelete = async (cid) => { 
+    setMessage("Deleting file...");
+    setIsLoading(true);
+    try {
+      setMessage("Transaction in progress...");
+      await updateFile(cid, "delete");
+      setIsLoading(false);
+      setMessage("")
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  
   useEffect(() => {
     if (selectedFiles.length > 0) {
       setIsActive(true);
@@ -85,6 +109,7 @@ const Host = () => {
 
   return (
     <div>
+      {isLoading && <Loader message={message} isTransacting={isTransacting} />}
       <div>
         <h1 className="text-zinc-200 leading-none mb-3 text-[2.5rem] font-extrabold">
           Website Hosting
@@ -112,6 +137,7 @@ const Host = () => {
               address={address}
               user={true}
               isLoading={dataLoading}
+              handleDelete={handleDelete}
             />
           </div>
         </div>

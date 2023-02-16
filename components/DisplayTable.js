@@ -2,12 +2,17 @@ import Image from "next/image";
 import React from "react";
 
 import { ethereum } from "../assets";
-import { formatBytes, formatDate, shortenAddress } from "../utils";
+import { formatBytes, formatDate } from "../utils";
 import { useStateContext } from "../context";
 
-const DisplayTable = ({ title, isLoading, files, address, user }) => {
-  const { updateFile } = useStateContext();
-
+const DisplayTable = ({
+  title,
+  isLoading,
+  files,
+  address,
+  user,
+  handleDelete,
+}) => {
   const showStatus = () => {
     if (!address && !isLoading && user) {
       return (
@@ -118,7 +123,7 @@ const DisplayTable = ({ title, isLoading, files, address, user }) => {
                             <a
                               href={`https://gateway.pinata.cloud/ipfs/${file.hash}/`}
                               target="_blank"
-                              className="text-blue-500 hover:text-blue-700" 
+                              className="text-blue-500 hover:text-blue-700"
                               rel="noreferrer"
                             >
                               link
@@ -127,7 +132,7 @@ const DisplayTable = ({ title, isLoading, files, address, user }) => {
                           <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                             <button
                               className="text-blue-500 hover:text-blue-700"
-                              onClick={() => updateFile(file.pid, "delete")}
+                              onClick={() => handleDelete(file.pid)}
                             >
                               delete
                             </button>

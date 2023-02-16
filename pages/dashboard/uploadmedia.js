@@ -91,6 +91,7 @@ const Uploadmedia = () => {
         session?.user.image
       );
       setIsLoading(false);
+      setIsTransacting(false);
       setForm({ file: "", filename: "", type: "", hash: "", size: "" });
       setIsActive(false);
     } else {
