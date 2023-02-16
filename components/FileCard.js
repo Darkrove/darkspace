@@ -49,7 +49,7 @@ const FileCard = ({
   }, [firstUpdate, type, fileSrc])
 
   return (
-    <div className="sm:w-[230px] md:w-[250px] xl:w-[270px] 2xl:w-[295px] w-full rounded-[15px] bg-white/5 cursor-pointer">
+    <div className="sm:w-[230px] md:w-[250px] xl:w-[270px] 2xl:w-[295px] w-full border border-white/10 rounded-[15px] bg-white/5">
       <div className="relative overflow-hidden rounded-[15px]">
         <Image
           src={thumbnail}
@@ -60,7 +60,7 @@ const FileCard = ({
           onLoadingComplete={() => setIsLoading(false)}
           onClick={() => setShowModal(true)}
           className={
-            "duration-700 ease w-full h-[158px] object-cover rounded-[15px] hover:opacity-60 " +
+            "duration-700 ease w-full h-[158px] object-cover rounded-[15px] hover:opacity-60 cursor-pointer " +
             (isLoading
               ? "scale-110 grayscale blur-2xl"
               : "scale-100 blur-0 grayscale-0")

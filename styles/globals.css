@@ -42,10 +42,10 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 .loader-pulse {
+  @apply bg-violet-500;
   width: 64px;
   height: 64px;
   border-radius: 50%;
-  background: #8f44fd;
   animation: load-pulse 0.85s infinite linear;
 }
 
