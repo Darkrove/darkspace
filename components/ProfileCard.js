@@ -8,7 +8,7 @@ import clsx from 'clsx';
 export default function ProfileCard({host, user}) {
   const status = useOnlineStatus()
   return (
-    <div className="bg-white/5 rounded-lg shadow-xl p-4 flex justify-between gap-2">
+    <div className="card bg-white/5 rounded-lg shadow-xl p-4 flex justify-between gap-2">
       <div className="flex flex-col justify-between gap-2">
         <p
           // className={clsx({

@@ -7,7 +7,7 @@ import useCopyToClipboard from "../lib/hooks/useCopyToClipboard";
 const CardBox = ({ copyIcon, value, title }) => {
   const [copyToClipboard, { success }] = useCopyToClipboard();
   return (
-    <div className="bg-white/5 rounded-lg shadow-xl p-4 flex flex-col justify-between gap-2">
+    <div className="card bg-white/5 rounded-lg shadow-xl p-4 flex flex-col justify-between gap-2">
       <div className="text-zinc-400 flex gap-4 m-0 justify-between items-center">
         <p>{title}</p>
         {copyIcon && (

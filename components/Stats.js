@@ -71,7 +71,7 @@ export default function Stats({lastUpdate, imageCount, videoCount, webCount, add
         statCards.map((card, index) => {
           return (
             <div
-              className="bg-white/5 rounded-lg shadow-xl p-4 flex flex-col justify-between gap-2"
+              className="card bg-white/5 rounded-lg shadow-xl p-4 flex flex-col justify-between gap-2"
               key={index}
             >
               <Link
