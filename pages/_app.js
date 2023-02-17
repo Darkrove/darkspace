@@ -101,10 +101,25 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }) {
               options={{ showSpinner: false, easing: "ease" }}
             />
             <Head>
-              <title>DarkSpace</title>
-              <meta name="description" content={"web3 storage provider"} />
-              <meta name="theme-color" content="#27272a" />
-              <meta property="og:site_name" content="darkspace" />
+              {/* <!-- Open Graph / Facebook --> */}
+              <title>DarkSpace - The Next Generation of Secure and Decentralized Data Storage</title>
+              <meta name="title" content="DarkSpace - The Next Generation of Secure and Decentralized Data Storage"/>
+              <meta name="description" content="Securely Store and Share Your Videos and Images on the Blockchain with DarkSpace."/>
+
+              {/* <!-- Open Graph / Facebook --> */}
+              <meta property="og:type" content="website"/>
+              <meta property="og:url" content="https://darkspace.vercel.app/"/>
+              <meta property="og:title" content="DarkSpace - The Next Generation of Secure and Decentralized Data Storage"/>
+              <meta property="og:description" content="Securely Store and Share Your Videos and Images on the Blockchain with DarkSpace."/>
+              <meta property="og:image" content="https://user-images.githubusercontent.com/53792139/219534621-8718c7ec-577a-4527-a144-e89b7a609ab2.jpg"/>
+
+              {/* <!-- Twitter --> */}
+              <meta property="twitter:card" content="summary_large_image"/>
+              <meta property="twitter:url" content="https://darkspace.vercel.app/"/>
+              <meta property="twitter:title" content="DarkSpace - The Next Generation of Secure and Decentralized Data Storage"/>
+              <meta property="twitter:description" content="Securely Store and Share Your Videos and Images on the Blockchain with DarkSpace."/>
+              <meta property="twitter:image" content="https://user-images.githubusercontent.com/53792139/219534621-8718c7ec-577a-4527-a144-e89b7a609ab2.jpg"/>
+              
               <script
                 async
                 defer
