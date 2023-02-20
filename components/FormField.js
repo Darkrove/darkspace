@@ -31,7 +31,7 @@ const FormField = (props) => {
             <input
               required
               onChange={handleChange}
-              accept=".jpg, .jpeg .png, .gif, .mp4, .mkv"
+              accept=".jpg, .jpeg, .png, .gif, .mp4, .mkv"
               className="relative z-10 opacity-0 h-full w-full cursor-pointer"
               type="file"
               name="bgfile"
