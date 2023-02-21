@@ -7,14 +7,14 @@ import { useStateContext } from "../../context";
 import { DisplayFiles } from "../../components";
 
 const Home = () => {
-  const { address, getPublicFiles } = useStateContext();
+  const { address } = useStateContext();
 
-  const fetchFiles = async () => {
-    const data = await getPublicFiles();
-    return data.reverse()
-  };
+  const fetcher = (url) => fetch(url).then((res) => res.json());
 
-  const { data, error, isLoading } = useSWR(["publicFiles"], fetchFiles);
+  const { data, error, isLoading } = useSWR(
+    "/api/fetch/fetchpublicfiles",
+    fetcher
+  );
 
   useEffect(() => {
     console.log("Mounted");

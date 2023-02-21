@@ -21,15 +21,15 @@ export default function CtaSection() {
             </h2>
             <p className="mt-6 text-lg leading-8 text-zinc-300">
               <Balancer>
-                Experience the power of decentralization and never worry about
-                your stuff being lost or snooped.
+                Dive and Experience the power of decentralization and never
+                worry about your stuff being lost or snooped.
               </Balancer>
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6 lg:justify-start">
               <button
-                onClick={() =>{
-                  setActivePage("dashboard")
-                  Router.push("/dashboard")
+                onClick={() => {
+                  setActivePage("dashboard");
+                  Router.push("/dashboard");
                 }}
                 className={`${styles.button} border border-violet-500 hover:border-transparent w-full duration-200 transition-all rounded-md bg-violet-500 px-3.5 py-1.5 text-base font-semibold leading-7 md:leading-9 text-zinc-100 shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white`}
               >
@@ -45,13 +45,13 @@ export default function CtaSection() {
               Completely free to use. No hidden fees.
             </p>
           </div>
-          <div className="relative mt-16 h-80 lg:mt-8">
+          <div className="relative mt-16 h-80 lg:mt-8 mx-auto lg:mx-0">
             <Image
               alt="hero image"
-              src="/assets/hero-geometry.webp"
+              src="/assets/hero-02.png"
               width={600}
               height={600}
-              className="absolute top-0 left-0 w-[33rem] lg:w-[45rem] max-w-none rounded-md"
+              className="absolute top-0 left-0 w-[33rem] md:w-[45rem] max-w-none rounded-md"
             />
             {/* <SafariMockup
               className="absolute top-0 left-0 w-[50rem] max-w-none rounded-md"
