@@ -1,25 +1,19 @@
 import React, { useState, useEffect } from "react";
 import { getServerSession } from "next-auth/next";
+import useSWR from "swr";
 
 import { authOptions } from "../api/auth/[...nextauth]";
 import { useStateContext } from "../../context";
 import { DisplayFiles } from "../../components";
 
 const Files = () => {
-  const [isLoading, setIsLoading] = useState(false);
-  const [files, setFiles] = useState([]);
   const { address, contract, getUserFiles } = useStateContext();
 
   const fetchFiles = async () => {
-    setIsLoading(true);
     const data = await getUserFiles();
-    if (data) setFiles(data);
-    setIsLoading(false);
+    return data;
   };
-  
-  useEffect(() => {
-    if (contract) fetchFiles();
-  }, [address, contract]);
+  const { data, error, isLoading } = useSWR(["userFiles"], fetchFiles);
 
   return (
     <div>
@@ -27,7 +21,7 @@ const Files = () => {
         title="Files"
         subtitle="All files"
         isLoading={isLoading}
-        files={files?.filter((file) => file.type !== "directory").reverse()}
+        files={data?.filter((file) => file.type !== "directory").reverse()}
         address={address}
         user={true}
       />

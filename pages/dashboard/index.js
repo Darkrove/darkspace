@@ -1,26 +1,24 @@
 import React, { useState, useEffect } from "react";
 import { getServerSession } from "next-auth/next";
+import useSWR from "swr";
 
 import { authOptions } from "../api/auth/[...nextauth]";
 import { useStateContext } from "../../context";
 import { DisplayFiles } from "../../components";
 
 const Home = () => {
-  const [isLoading, setIsLoading] = useState(false);
-  const [files, setFiles] = useState([]);
-  const { address, contract, getPublicFiles } = useStateContext();
+  const { address } = useStateContext();
 
-  const fetchFiles = async () => {
-    setIsLoading(true);
-    const data = await getPublicFiles();
-    if (data) {
-      setFiles(data.reverse());
-    }
-    setIsLoading(false);
-  };
+  const fetcher = (url) => fetch(url).then((res) => res.json());
+
+  const { data, error, isLoading } = useSWR(
+    "/api/fetch/fetchpublicfiles",
+    fetcher
+  );
+
   useEffect(() => {
-    if (contract) fetchFiles();
-  }, [address, contract]);
+    console.log("Mounted");
+  });
 
   return (
     <div className="scroll-smooth">
@@ -28,7 +26,7 @@ const Home = () => {
         title="Feed"
         subtitle="Shared files"
         isLoading={isLoading}
-        files={files}
+        files={data}
         address={address}
         user={false}
       />

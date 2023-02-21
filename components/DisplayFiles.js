@@ -1,6 +1,5 @@
 import React from "react";
 
-import { loader } from "../assets";
 import { FileCard, FileCardSkeleton } from "./";
 
 const DisplayFiles = ({
@@ -12,6 +11,7 @@ const DisplayFiles = ({
   address,
   user,
   style,
+  error
 }) => {
   const showStatus = () => {
     if (!address && !isLoading && user) {
@@ -28,6 +28,7 @@ const DisplayFiles = ({
       );
     }
   };
+
   return (
     <div className={`${style}`}>
       <div>
@@ -35,7 +36,7 @@ const DisplayFiles = ({
           {title}
         </h1>
         <p className="text-zinc-400  m-0 leading-tight">
-          {subtitle} ({files?.length})
+          {subtitle} ({files? files?.length : '0'})
         </p>
       </div>
       {isLoading && (

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { getServerSession } from "next-auth/next";
+import useSWR from "swr";
 
 import { authOptions } from "../api/auth/[...nextauth]";
 import { useStateContext } from "../../context";
@@ -8,20 +9,14 @@ import { LeftFaceArrow } from "../../assets/Icons";
 import { DisplayFiles } from "../../components";
 
 const Recent = () => {
-  const [isLoading, setIsLoading] = useState(false);
-  const [files, setFiles] = useState([]);
   const { address, contract, setActivePage, getUserFiles } = useStateContext();
 
   const fetchFiles = async () => {
-    setIsLoading(true);
-    console.log();
     const data = await getUserFiles();
-    if (data) setFiles(data);
-    setIsLoading(false);
+    return data
   };
-  useEffect(() => {
-    if (contract) fetchFiles();
-  }, [address, contract]);
+
+  const { data, error, isLoading } = useSWR(["userFiles"], fetchFiles);
 
   return (
     <div>
@@ -29,7 +24,7 @@ const Recent = () => {
         title="Recent Images"
         subtitle="Recent images"
         isLoading={isLoading}
-        files={files
+        files={data
           ?.filter((file) => file.type.split("/")[0] === "image")
           .reverse()
           .slice(0, 3)}
@@ -37,7 +32,7 @@ const Recent = () => {
         user={true}
       >
         {address &&
-        files?.filter((file) => file.type.split("/")[0] === "image").length >
+        data?.filter((file) => file.type.split("/")[0] === "image").length >
           0 ? (
           <Link
             href="/dashboard/photos"
@@ -65,7 +60,7 @@ const Recent = () => {
         style="mt-[20px]"
       >
         {address &&
-        files?.filter((file) => file.type.split("/")[0] === "video").length >
+        data?.filter((file) => file.type.split("/")[0] === "video").length >
           0 ? (
           <Link
             href="/dashboard/videos"
