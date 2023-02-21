@@ -4,6 +4,7 @@ import { useStorageUpload } from "@thirdweb-dev/react";
 import { useSession } from "next-auth/react";
 import toast from "react-hot-toast";
 import { getServerSession } from "next-auth/next";
+import useSWR from "swr";
 
 import { authOptions } from "../api/auth/[...nextauth]";
 import {
@@ -21,7 +22,7 @@ const Host = () => {
 
   const [files, setFiles] = useState([]);
   const [selectedFiles, setSelectedFiles] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
+  const [Loading, setLoading] = useState(false);
   const [dataLoading, setDataLoading] = useState(false);
   const [isActive, setIsActive] = useState(false);
   const [message, setMessage] = useState(
@@ -37,7 +38,7 @@ const Host = () => {
 
   const handleSubmit = async () => {
     setMessage("Uploading to ipfs...");
-    setIsLoading(true);
+    setLoading(true);
     const NFT_STORAGE_TOKEN = process.env.NEXT_PUBLIC_STORAGE_API;
     const client = new NFTStorage({ token: NFT_STORAGE_TOKEN });
     const myFiles = [];
@@ -53,7 +54,7 @@ const Host = () => {
     try {
       const cid = await client.storeDirectory(myFiles);
       if (cid.message) {
-        setIsLoading(false);
+        setLoading(false);
         toast.error("😵‍💫 Upload failed, \n please try again.");
       }
       setMessage("Transaction in progress...");
@@ -74,41 +75,40 @@ const Host = () => {
     setIsTransacting(false);
     setIsActive(false);
     setMessage("")
-    setIsLoading(false);
+    setLoading(false);
   };
 
   const fetchFiles = async () => {
-    setDataLoading(true);
     const data = await getUserFiles();
-    setFiles(data);
-    setDataLoading(false);
+    return data
   };
 
   const handleDelete = async (cid) => { 
     setMessage("Deleting file...");
-    setIsLoading(true);
+    setLoading(true);
     try {
       setMessage("Transaction in progress...");
       await updateFile(cid, "delete");
-      setIsLoading(false);
+      setLoading(false);
       setMessage("")
     } catch (error) {
       console.log(error);
     }
   };
-  
+
+  const { data, error, isLoading } = useSWR(["userFiles"], fetchFiles);
+
   useEffect(() => {
     if (selectedFiles.length > 0) {
       setIsActive(true);
     } else {
       setIsActive(false);
     }
-    if (contract) fetchFiles();
-  }, [address, contract, selectedFiles]);
+  }, [selectedFiles]);
 
   return (
     <div>
-      {isLoading && <Loader message={message} isTransacting={isTransacting} />}
+      {Loading && <Loader message={message} isTransacting={isTransacting} />}
       <div>
         <h1 className="text-zinc-200 leading-none mb-3 text-[2.5rem] font-extrabold">
           Website Hosting
@@ -126,16 +126,16 @@ const Host = () => {
               styles="bg-violet-500 w-72"
               title="Deploy"
               handleClick={handleSubmit}
-              status={isLoading}
+              status={Loading}
             />
           </div>
           <div className="mt-5">
             <DisplayTable
               title=""
-              files={files?.filter((file) => file.type === "directory")}
+              files={data?.filter((file) => file.type === "directory")}
               address={address}
               user={true}
-              isLoading={dataLoading}
+              isLoading={isLoading}
               handleDelete={handleDelete}
             />
           </div>
