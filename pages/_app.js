@@ -111,14 +111,14 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }) {
               <meta property="og:url" content="https://darkspace.vercel.app/"/>
               <meta property="og:title" content="DarkSpace - The Next Generation of Secure and Decentralized Data Storage"/>
               <meta property="og:description" content="Securely Store and Share Your Videos and Images on the Blockchain with DarkSpace."/>
-              <meta property="og:image" content="https://user-images.githubusercontent.com/53792139/220366899-cfa45ecb-20b8-4021-8aa7-788e74095309.png"/>
+              <meta property="og:image" content="https://user-images.githubusercontent.com/53792139/220374322-2d64a5c1-f789-4cf3-88f9-1abb30e915b2.jpg"/>
 
               {/* <!-- Twitter --> */}
               <meta property="twitter:card" content="summary_large_image"/>
               <meta property="twitter:url" content="https://darkspace.vercel.app/"/>
               <meta property="twitter:title" content="DarkSpace - The Next Generation of Secure and Decentralized Data Storage"/>
               <meta property="twitter:description" content="Securely Store and Share Your Videos and Images on the Blockchain with DarkSpace."/>
-              <meta property="twitter:image" content="https://user-images.githubusercontent.com/53792139/220366899-cfa45ecb-20b8-4021-8aa7-788e74095309.png"/>
+              <meta property="twitter:image" content="https://user-images.githubusercontent.com/53792139/220374322-2d64a5c1-f789-4cf3-88f9-1abb30e915b2.jpg"/>
               
               <script
                 async
