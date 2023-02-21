@@ -17,7 +17,7 @@ const DisplayFiles = ({
     if (!address && !isLoading && user) {
       return (
         <p className="font-epilogue font-semibold text-[16px] mt-2 leading-[30px] text-zinc-500">
-          Please connect your wallet 🙏
+          Please connect your wallet!!
         </p>
       );
     } else if (!isLoading && files?.length === 0) {

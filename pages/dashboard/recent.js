@@ -27,7 +27,7 @@ const Recent = () => {
         files={data
           ?.filter((file) => file.type.split("/")[0] === "image")
           .reverse()
-          .slice(0, 3)}
+          .slice(0, 4)}
         address={address}
         user={true}
       >
@@ -51,10 +51,10 @@ const Recent = () => {
         title="Recent Videos"
         subtitle="Recent videos"
         isLoading={isLoading}
-        files={files
+        files={data
           ?.filter((file) => file.type.split("/")[0] === "video")
           .reverse()
-          .slice(0, 3)}
+          .slice(0, 4)}
         address={address}
         user={true}
         style="mt-[20px]"

@@ -80,7 +80,7 @@ const DisplayTable = ({
     if (!address && !isLoading && user) {
       return (
         <p className="flex items-center justify-center space-x-2 font-epilogue font-semibold text-[16px] leading-[30px] text-[#818183]">
-          Wallet is not connected!! please connect your wallet 🙏
+          Wallet is not connected!! please connect your wallet.
         </p>
       );
     } else if (!isLoading && files?.length === 0) {
