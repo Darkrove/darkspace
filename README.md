@@ -16,6 +16,8 @@
 
 </div>
 
+![image](https://user-images.githubusercontent.com/53792139/220375290-5636169c-25b5-428d-bf98-178ff5cf4c5e.png)
+
 ## 🛠 Tech Stack
 
 - [Next.js](https://nextjs.org/) - frontend / backend
