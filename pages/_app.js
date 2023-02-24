@@ -129,7 +129,7 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }) {
             </Head>
             {map()}
             <Toaster
-              position="top-right"
+              position="bottom-center"
               reverseOrder={true}
               toastOptions={{ ...toastStyle, duration: 7000 }}
             />

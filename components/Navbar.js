@@ -1,6 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import { ConnectWallet } from "@thirdweb-dev/react";
+import {
+  ConnectWallet,
+  useAddress,
+  useNetwork,
+  useNetworkMismatch,
+  ChainId,
+} from "@thirdweb-dev/react";
+import { toast, Toast } from "react-hot-toast";
 
 import { UserDropdown } from "./";
 import { capitalizeFirstLetter } from "../utils";
@@ -21,6 +28,19 @@ const Navbar = () => {
   const [openWalletPopover, setOpenWalletPopover] = useState(false);
   const [signInClicked, setSignInClicked] = useState(false);
   const { setActivePage } = useStateContext();
+
+  const address = useAddress();
+  const [, switchNetwork] = useNetwork();
+  const isWrongChain = useNetworkMismatch();
+
+  useEffect(() => {
+    if (isWrongChain && switchNetwork) {
+      toast.error("Wrong network detected, switch back to goerli testnet.");
+      setTimeout(() => {
+        switchNetwork(ChainId.Goerli);
+      }, 3000);
+    }
+  }, [isWrongChain, address, switchNetwork]);
 
   return (
     <div className="flex md:flex-row flex-col-reverse justify-between mb-[35px] gap-6">
@@ -50,7 +70,7 @@ const Navbar = () => {
       <div className="sm:flex hidden flex-row justify-end gap-4">
         <ConnectWallet
           className="rounded-[100px]"
-          accentColor="#8B5CF6"
+          accentColor={isWrongChain ? "#ef4444" : "#8B5CF6"}
           colorMode="dark"
         />
         <div className="w-[52px] h-[52px] overflow-hidden rounded-full bg-white/5 flex justify-center items-center cursor-pointer">
@@ -104,10 +124,14 @@ const Navbar = () => {
               </p>
             </div>
 
-            <div className="flex justify-center bg-[#8B5CF6] space-y-4 px-4 py-8 md:px-16">
+            <div
+              className={`flex justify-center ${
+                isWrongChain ? "bg-[#ef4444]" : "bg-[#8B5CF6]"
+              } space-y-4 px-4 py-8 md:px-16`}
+            >
               <ConnectWallet
                 className="border-0"
-                accentColor="#8B5CF6"
+                accentColor={isWrongChain ? "#ef4444" : "#8B5CF6"}
                 colorMode="dark"
               />
             </div>
