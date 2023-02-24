@@ -1,9 +1,7 @@
-import React from 'react'
+import React from "react";
 
 const HeaderSection = () => {
-  return (
-    <div>HeaderSection</div>
-  )
-}
+  return <div>HeaderSection</div>;
+};
 
-export default HeaderSection
+export default HeaderSection;

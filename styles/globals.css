@@ -37,7 +37,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   filter: invert(0.8);
 }
 
-.card{
+.card {
   @apply bg-white/5 backdrop-blur-lg border border-white/10 rounded-xl;
 }
 
@@ -63,4 +63,13 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     transform: scale(1);
     opacity: 0;
   }
+}
+
+.gridcard {
+  background-color: #18181b;
+  opacity: 1;
+  background-image: radial-gradient(#cc23ff 0.65px, transparent 0.65px),
+    radial-gradient(#cc23ff 0.65px, #18181b 0.65px);
+  background-size: 26px 26px;
+  background-position: 0 0, 13px 13px;
 }

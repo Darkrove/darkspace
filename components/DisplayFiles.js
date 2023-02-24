@@ -11,7 +11,7 @@ const DisplayFiles = ({
   address,
   user,
   style,
-  error
+  error,
 }) => {
   const showStatus = () => {
     if (!address && !isLoading && user) {
@@ -36,7 +36,7 @@ const DisplayFiles = ({
           {title}
         </h1>
         <p className="text-zinc-400  m-0 leading-tight">
-          {subtitle} ({files? files?.length : '0'})
+          {subtitle} ({files ? files?.length : "0"})
         </p>
       </div>
       {isLoading && (
@@ -52,7 +52,9 @@ const DisplayFiles = ({
           files?.length > 0 &&
           files
             .slice(0)
-            .map((file, id) => <FileCard key={file.pid} {...file} user={user} />)}
+            .map((file, id) => (
+              <FileCard key={file.pid} {...file} user={user} />
+            ))}
       </div>
       {children}
     </div>

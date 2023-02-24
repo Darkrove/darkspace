@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
-import {FaPlay, FaPause, FaVolumeUp, FaVolumeMute} from "react-icons/fa"
+import { FaPlay, FaPause, FaVolumeUp, FaVolumeMute } from "react-icons/fa";
 
-import styles from "../styles/Video.module.css"
+import styles from "../styles/Video.module.css";
 import useVideoPlayer from "../lib/hooks/useVideoPlayer";
 
 const VideoPlayer = (props) => {
@@ -29,9 +29,9 @@ const VideoPlayer = (props) => {
           <div className={styles.actions}>
             <button className={styles.btn} onClick={togglePlay}>
               {!playerState.isPlaying ? (
-                <FaPlay className="text-white"/>
+                <FaPlay className="text-white" />
               ) : (
-                <FaPause className="text-white"/>
+                <FaPause className="text-white" />
               )}
             </button>
           </div>
@@ -48,16 +48,24 @@ const VideoPlayer = (props) => {
             value={playerState.speed}
             onChange={(e) => handleVideoSpeed(e)}
           >
-            <option className="bg-zinc-600" value="0.50">0.50x</option>
-            <option className="bg-zinc-600" value="1">1x</option>
-            <option className="bg-zinc-600" value="1.25">1.25x</option>
-            <option className="bg-zinc-600" value="2">2x</option>
+            <option className="bg-zinc-600" value="0.50">
+              0.50x
+            </option>
+            <option className="bg-zinc-600" value="1">
+              1x
+            </option>
+            <option className="bg-zinc-600" value="1.25">
+              1.25x
+            </option>
+            <option className="bg-zinc-600" value="2">
+              2x
+            </option>
           </select>
           <button className={styles.mutebtn} onClick={toggleMute}>
             {!playerState.isMuted ? (
-              <FaVolumeUp className="text-white"/>
+              <FaVolumeUp className="text-white" />
             ) : (
-              <FaVolumeMute className="text-white"/>
+              <FaVolumeMute className="text-white" />
             )}
           </button>
         </div>

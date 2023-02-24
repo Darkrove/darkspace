@@ -1,6 +1,6 @@
 import React, { Children, useState } from "react";
 
-const ToolTip = ({children, tip}) => {
+const ToolTip = ({ children, tip }) => {
   const [tooltipStatus, setTooltipStatus] = useState(0);
   return (
     <>
@@ -11,9 +11,7 @@ const ToolTip = ({children, tip}) => {
           onMouseEnter={() => setTooltipStatus(3)}
           onMouseLeave={() => setTooltipStatus(0)}
         >
-          <div className="cursor-pointer">
-            {children}
-          </div>
+          <div className="cursor-pointer">{children}</div>
           {tooltipStatus == 3 && (
             <div
               role="tooltip"
@@ -58,9 +56,7 @@ const ToolTip = ({children, tip}) => {
                   </g>
                 </g>
               </svg>
-              <p className="text-sm font-bold text-white pb-1">
-                {tip}
-              </p>
+              <p className="text-sm font-bold text-white pb-1">{tip}</p>
               {/* <p className="text-xs leading-4 text-white pb-3">
                 Reach out to more prospects at the right moment.
               </p>

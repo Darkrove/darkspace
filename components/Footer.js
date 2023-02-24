@@ -22,13 +22,14 @@ const SocialIcon = ({ icon, title, link }) => {
 
 const Footer = () => {
   return (
-    <footer aria-label="Site Footer" className="bg-zinc-900/20 backdrop-blur-m border-t border-white/20">
+    <footer
+      aria-label="Site Footer"
+      className="bg-zinc-900/20 backdrop-blur-m border-t border-white/20"
+    >
       <div className="mx-auto max-w-screen-xl px-4 pt-16 pb-6 sm:px-6 lg:px-8">
         <div className="lg:flex lg:items-center lg:justify-between">
           <div className="flex justify-center text-violet-600 dark:text-violet-300 sm:justify-start">
-            <DarkspaceLogoFull
-              className="h-[70px]"
-            />
+            <DarkspaceLogoFull className="h-[70px]" />
           </div>
 
           <p className="mx-auto mt-4 max-w-md text-center leading-relaxed text-zinc-400 sm:ml-0 sm:text-left lg:mr-0 lg:mt-0">

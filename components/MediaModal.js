@@ -248,9 +248,7 @@ export default function MediaModal({
             </div>
           </div>
         </div>
-        {isLoading && (
-          <Loader message={message} />
-        )}
+        {isLoading && <Loader message={message} />}
       </div>
     </>
   );

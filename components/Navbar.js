@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { ConnectWallet } from "@thirdweb-dev/react";
 
 import { UserDropdown } from "./";

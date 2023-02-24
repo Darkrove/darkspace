@@ -1,6 +1,3 @@
-import Image from "next/image";
-import Link from "next/link";
-
 import { BiCheck, BiCopy } from "react-icons/bi";
 import useCopyToClipboard from "../lib/hooks/useCopyToClipboard";
 
@@ -11,11 +8,14 @@ const CardBox = ({ copyIcon, value, title }) => {
       <div className="text-zinc-400 flex gap-4 m-0 justify-between items-center">
         <p>{title}</p>
         {copyIcon && (
-          <button className="p-2 hover:rounded-md hover:bg-zinc-800 hover:backdrop-blur-sm" onClick={() => copyToClipboard(value)}>
+          <button
+            className="p-2 hover:rounded-md hover:bg-zinc-800 hover:backdrop-blur-sm"
+            onClick={() => copyToClipboard(value)}
+          >
             {success ? (
               <BiCheck size="1rem" className="text-green-400" />
             ) : (
-              <BiCopy size="1rem" className="text-white"/>
+              <BiCopy size="1rem" className="text-white" />
             )}
           </button>
         )}

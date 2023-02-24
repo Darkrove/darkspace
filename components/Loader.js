@@ -12,13 +12,6 @@ const Loader = ({ message, isTransacting }) => {
     <div className="fixed inset-0 z-30 h-screen bg-[rgba(0,0,0,0.7)] flex items-center justify-center flex-col">
       <div className="card block py-14 shadow-xl mx-6 space-y-8 px-6 text-gray-500 md:px-12 lg:px-20">
         <div class="flex flex-col items-center justify-center">
-          {/* <Image
-            src={loader}
-            alt="loader"
-            height={100}
-            width={100}
-            className="w-[100px] h-[100px] object-contain"
-          /> */}
           <div class="loader-pulse"></div>
           <p className="mt-[20px] font-epilogue font-bold text-[20px] text-white text-center">
             {message}

@@ -6,32 +6,32 @@ const Header = () => {
   return (
     <section className="relative isolate text-gray-400 bg-zinc-900 body-font overflow-hidden">
       <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 1024 1024"
-          className="absolute top-1/2 left-1/2 -z-10 h-[64rem] w-[64rem] -translate-y-1/2 sm:left-full sm:-ml-80 lg:left-1/2 lg:ml-0 lg:translate-y-0 lg:-translate-x-1/2"
-          aria-hidden="true"
-        >
-          <circle
-            cx={512}
-            cy={512}
-            r={512}
-            fill="url(#759c1415-0410-454c-8f7c-9a820de03641)"
-            fillOpacity="0.7"
-          />
-          <defs>
-            <radialGradient
-              id="759c1415-0410-454c-8f7c-9a820de03641"
-              cx={0}
-              cy={0}
-              r={1}
-              gradientUnits="userSpaceOnUse"
-              gradientTransform="translate(512 512) rotate(90) scale(512)"
-            >
-              <stop stopColor="#7775D6" />
-              <stop offset={1} stopColor="#E935C1" stopOpacity={0} />
-            </radialGradient>
-          </defs>
-        </svg>
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 1024 1024"
+        className="absolute top-1/2 left-1/2 -z-10 h-[64rem] w-[64rem] -translate-y-1/2 sm:left-full sm:-ml-80 lg:left-1/2 lg:ml-0 lg:translate-y-0 lg:-translate-x-1/2"
+        aria-hidden="true"
+      >
+        <circle
+          cx={512}
+          cy={512}
+          r={512}
+          fill="url(#759c1415-0410-454c-8f7c-9a820de03641)"
+          fillOpacity="0.7"
+        />
+        <defs>
+          <radialGradient
+            id="759c1415-0410-454c-8f7c-9a820de03641"
+            cx={0}
+            cy={0}
+            r={1}
+            gradientUnits="userSpaceOnUse"
+            gradientTransform="translate(512 512) rotate(90) scale(512)"
+          >
+            <stop stopColor="#7775D6" />
+            <stop offset={1} stopColor="#E935C1" stopOpacity={0} />
+          </radialGradient>
+        </defs>
+      </svg>
       <div className="container mx-auto flex px-10 lg:px-32 pt-32 pb-12 md:flex-row flex-col items-center">
         <div className="lg:flex-grow md:w-1/2 lg:pr-32 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
           <h1 className="title-font sm:text-3xl lg:text-3xl xl:text-5xl text-[1.9rem] mb-4 text-zinc-200 font-extrabold">
@@ -78,8 +78,8 @@ const Header = () => {
           <SafariMockup className="xl:w-[870px] lg:w-[670px]" />
         </div>
         {/* <div class="relative mt-16 h-80 lg:mt-8"> */}
-          {/* <img class="absolute top-0 left-0 w-[57rem] max-w-none rounded-md bg-white/5 ring-1 ring-white/10" src="https://tailwindui.com/img/component-images/dark-project-app-screenshot.png" alt="App screenshot" width="1824" height="1080"> */}
-          {/* <SafariMockup width={1824} height={1080} className="absolute top-0 left-0 w-[57rem] max-w-none rounded-md bg-white/5 ring-1 ring-white/10" />
+        {/* <img class="absolute top-0 left-0 w-[57rem] max-w-none rounded-md bg-white/5 ring-1 ring-white/10" src="https://tailwindui.com/img/component-images/dark-project-app-screenshot.png" alt="App screenshot" width="1824" height="1080"> */}
+        {/* <SafariMockup width={1824} height={1080} className="absolute top-0 left-0 w-[57rem] max-w-none rounded-md bg-white/5 ring-1 ring-white/10" />
         </div> */}
       </div>
     </section>

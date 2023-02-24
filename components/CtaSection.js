@@ -1,4 +1,3 @@
-import { SafariMockup } from "../assets/Icons";
 import Balancer from "react-wrap-balancer";
 import Router from "next/router";
 import Image from "next/image";
@@ -53,11 +52,6 @@ export default function CtaSection() {
               height={600}
               className="absolute top-0 left-0 w-[33rem] md:w-[45rem] max-w-none rounded-md"
             />
-            {/* <SafariMockup
-              className="absolute top-0 left-0 w-[50rem] max-w-none rounded-md"
-              width={1824}
-              height={540}
-            /> */}
           </div>
         </div>
       </div>

@@ -77,7 +77,7 @@ const Sidebar = () => {
             </ToolTip>
           ))}
         </div>
-        <Icon styles="bg-zinc-800 shadow-secondary" imgUrl={sun} />
+        {/* <Icon styles="bg-zinc-800 shadow-secondary" imgUrl={sun} /> */}
       </div>
     </div>
   );
