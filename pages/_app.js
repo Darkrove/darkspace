@@ -55,10 +55,14 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }) {
         <>
           <HomeNavbar />
           <Component {...pageProps} />
-          <Footer/>
+          <Footer />
         </>
       );
-    } else if (router.pathname === "/signin" || router.pathname === "/signup" || router.pathname === "/404") {
+    } else if (
+      router.pathname === "/signin" ||
+      router.pathname === "/signup" ||
+      router.pathname === "/404"
+    ) {
       return (
         <>
           <Component {...pageProps} />
@@ -102,29 +106,65 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }) {
             />
             <Head>
               {/* <!-- Open Graph / Facebook --> */}
-              <title>DarkSpace - The Next Generation of Secure and Decentralized Data Storage</title>
-              <meta name="title" content="DarkSpace - The Next Generation of Secure and Decentralized Data Storage"/>
-              <meta name="description" content="Securely Store and Share Your Videos and Images on the Blockchain with DarkSpace."/>
+              <title>
+                DarkSpace - The Next Generation of Secure and Decentralized Data
+                Storage
+              </title>
+              <meta
+                name="title"
+                content="DarkSpace - The Next Generation of Secure and Decentralized Data Storage"
+              />
+              <meta
+                name="description"
+                content="Securely Store and Share Your Videos and Images on the Blockchain with DarkSpace."
+              />
 
               {/* <!-- Open Graph / Facebook --> */}
-              <meta property="og:type" content="website"/>
-              <meta property="og:url" content="https://darkspace.vercel.app/"/>
-              <meta property="og:title" content="DarkSpace - The Next Generation of Secure and Decentralized Data Storage"/>
-              <meta property="og:description" content="Securely Store and Share Your Videos and Images on the Blockchain with DarkSpace."/>
-              <meta property="og:image" content="https://user-images.githubusercontent.com/53792139/220374322-2d64a5c1-f789-4cf3-88f9-1abb30e915b2.jpg"/>
+              <meta property="og:type" content="website" />
+              <meta property="og:url" content="https://darkspace.vercel.app/" />
+              <meta
+                property="og:title"
+                content="DarkSpace - The Next Generation of Secure and Decentralized Data Storage"
+              />
+              <meta
+                property="og:description"
+                content="Securely Store and Share Your Videos and Images on the Blockchain with DarkSpace."
+              />
+              <meta
+                property="og:image"
+                content="https://user-images.githubusercontent.com/53792139/220374322-2d64a5c1-f789-4cf3-88f9-1abb30e915b2.jpg"
+              />
 
               {/* <!-- Twitter --> */}
-              <meta property="twitter:card" content="summary_large_image"/>
-              <meta property="twitter:url" content="https://darkspace.vercel.app/"/>
-              <meta property="twitter:title" content="DarkSpace - The Next Generation of Secure and Decentralized Data Storage"/>
-              <meta property="twitter:description" content="Securely Store and Share Your Videos and Images on the Blockchain with DarkSpace."/>
-              <meta property="twitter:image" content="https://user-images.githubusercontent.com/53792139/220374322-2d64a5c1-f789-4cf3-88f9-1abb30e915b2.jpg"/>
-              
-              <script
+              <meta property="twitter:card" content="summary_large_image" />
+              <meta
+                property="twitter:url"
+                content="https://darkspace.vercel.app/"
+              />
+              <meta
+                property="twitter:title"
+                content="DarkSpace - The Next Generation of Secure and Decentralized Data Storage"
+              />
+              <meta
+                property="twitter:description"
+                content="Securely Store and Share Your Videos and Images on the Blockchain with DarkSpace."
+              />
+              <meta
+                property="twitter:image"
+                content="https://user-images.githubusercontent.com/53792139/220374322-2d64a5c1-f789-4cf3-88f9-1abb30e915b2.jpg"
+              />
+
+              {/* <script
                 async
                 defer
                 data-website-id="411c18c7-5acf-48b5-9276-6862e28bb56b"
                 src="https://umami-production-c771.up.railway.app/umami.js"
+              ></script> */}
+              <script
+                defer
+                src="https://unpkg.com/@tinybirdco/flock.js"
+                data-host="https://api.tinybird.co"
+                data-token="p.eyJ1IjogIjIxNmYxZTQyLTc3NGUtNGUwZC1iOWVlLTJjODQ3M2RkOTk5YiIsICJpZCI6ICI0MTcxZmNkMC1kOGNkLTQxYTUtYTAxMS1lYTU0NGZhZDVmNTIifQ.XTjBkG3c_nkAVEOJJHXusozan3rE4Tpl8nSgYnmM01w"
               ></script>
             </Head>
             {map()}
