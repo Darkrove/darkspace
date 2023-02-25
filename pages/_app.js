@@ -150,12 +150,12 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }) {
                 property="twitter:image"
                 content="https://user-images.githubusercontent.com/53792139/220374322-2d64a5c1-f789-4cf3-88f9-1abb30e915b2.jpg"
               />
-              {/* Tiny bird analytics */}
+              {/* Umami analytics */}
               <script
+                async
                 defer
-                src="https://unpkg.com/@tinybirdco/flock.js"
-                data-host="https://api.tinybird.co"
-                data-token="p.eyJ1IjogIjIxNmYxZTQyLTc3NGUtNGUwZC1iOWVlLTJjODQ3M2RkOTk5YiIsICJpZCI6ICI0MTcxZmNkMC1kOGNkLTQxYTUtYTAxMS1lYTU0NGZhZDVmNTIifQ.XTjBkG3c_nkAVEOJJHXusozan3rE4Tpl8nSgYnmM01w"
+                data-website-id="96a61cba-83cb-4307-9abe-ca5f3ee64129"
+                src="https://umami-darkspace.vercel.app/umami.js"
               ></script>
             </Head>
             {map()}
