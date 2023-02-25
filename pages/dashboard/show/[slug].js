@@ -33,7 +33,7 @@ const Index = (props) => {
     <div>
       {isLoading ? (
         <div className="fixed inset-0 z-60 h-screen flex items-center justify-center flex-col">
-          <div class="loader-pulse"></div>
+          <div className="loader-pulse"></div>
         </div>
       ) : (
         <>

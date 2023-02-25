@@ -118,14 +118,14 @@ export default function MediaModal({
                   <h4 className="text-sm text-left xl:text-lg font-medium text-[#808191]">
                     by @{username}
                   </h4>
-                  <div class="hs-dropdown relative inline-flex z-20">
+                  <div className="hs-dropdown relative inline-flex z-20">
                     <button
                       id="hs-dropdown-custom-icon-trigger"
                       type="button"
-                      class="hs-dropdown-toggle p-3 inline-flex justify-center items-center gap-2 rounded-md font-medium shadow-sm align-middle focus:outline-none transition-all text-sm hover:bg-zinc-700 text-gray-400"
+                      className="hs-dropdown-toggle p-3 inline-flex justify-center items-center gap-2 rounded-md font-medium shadow-sm align-middle focus:outline-none transition-all text-sm hover:bg-zinc-700 text-gray-400"
                     >
                       <svg
-                        class="w-4 h-4 text-[#808191]"
+                        className="w-4 h-4 text-[#808191]"
                         xmlns="http://www.w3.org/2000/svg"
                         width="16"
                         height="16"
@@ -137,18 +137,18 @@ export default function MediaModal({
                     </button>
 
                     <div
-                      class="hs-dropdown-menu transition-[opacity,margin] duration hs-dropdown-open:opacity-100 opacity-0 hidden mt-2 min-w-[15rem] shadow-md rounded-lg p-2 bg-zinc-800"
+                      className="hs-dropdown-menu transition-[opacity,margin] duration hs-dropdown-open:opacity-100 opacity-0 hidden mt-2 min-w-[15rem] shadow-md rounded-lg p-2 bg-zinc-800"
                       aria-labelledby="hs-dropdown-custom-icon-trigger"
                     >
                       <button
-                        class="w-full flex items-center gap-x-3.5 py-2 px-3 rounded-md text-sm focus:ring-2 focus:ring-blue-500 text-gray-400 hover:bg-gray-700 hover:text-gray-300"
+                        className="w-full flex items-center gap-x-3.5 py-2 px-3 rounded-md text-sm focus:ring-2 focus:ring-blue-500 text-gray-400 hover:bg-gray-700 hover:text-gray-300"
                         onClick={() => downloadUsingFetch(src, name)}
                       >
                         <DownloadIcon className="w-5 h-5 flex-none" />
                         Download
                       </button>
                       <button
-                        class="w-full flex items-center gap-x-3.5 py-2 px-3 rounded-md text-sm focus:ring-2 focus:ring-blue-500 text-gray-400 hover:bg-gray-700 hover:text-gray-300"
+                        className="w-full flex items-center gap-x-3.5 py-2 px-3 rounded-md text-sm focus:ring-2 focus:ring-blue-500 text-gray-400 hover:bg-gray-700 hover:text-gray-300"
                         onClick={() => copyClipboard(src)}
                       >
                         <CopyIcon className="w-5 h-5 flex-none" />
@@ -156,27 +156,27 @@ export default function MediaModal({
                       </button>
                       <button
                         onClick={() => shareFile(name, src)}
-                        class="w-full flex items-center gap-x-3.5 py-2 px-3 rounded-md text-sm focus:ring-2 focus:ring-blue-500 text-gray-400 hover:bg-gray-700 hover:text-gray-300"
+                        className="w-full flex items-center gap-x-3.5 py-2 px-3 rounded-md text-sm focus:ring-2 focus:ring-blue-500 text-gray-400 hover:bg-gray-700 hover:text-gray-300"
                       >
                         <LinkIcon className="w-5 h-5 flex-none" />
                         Share a copy
                       </button>
                       <button
                         onClick={() => Router.push(`/dashboard/show/${hash}`)}
-                        class="w-full flex items-center gap-x-3.5 py-2 px-3 rounded-md text-sm focus:ring-2 focus:ring-blue-500 text-gray-400 hover:bg-gray-700 hover:text-gray-300"
+                        className="w-full flex items-center gap-x-3.5 py-2 px-3 rounded-md text-sm focus:ring-2 focus:ring-blue-500 text-gray-400 hover:bg-gray-700 hover:text-gray-300"
                       >
                         <DetailIcon className="w-5 h-5 flex-none" />
                         Details
                       </button>
                       {user ? (
-                        <div class="py-2 first:pt-0 last:pb-0">
-                          <span class="text-left block py-2 px-3 text-xs font-medium uppercase text-gray-500">
+                        <div className="py-2 first:pt-0 last:pb-0">
+                          <span className="text-left block py-2 px-3 text-xs font-medium uppercase text-gray-500">
                             Admin
                           </span>
                           {status === "public" ? (
                             <button
                               onClick={() => handleUpdate(id, "private")}
-                              class="w-full flex items-center gap-x-3.5 py-2 px-3 rounded-md text-sm focus:ring-2 focus:ring-blue-500 text-gray-400 hover:bg-gray-700 hover:text-gray-300"
+                              className="w-full flex items-center gap-x-3.5 py-2 px-3 rounded-md text-sm focus:ring-2 focus:ring-blue-500 text-gray-400 hover:bg-gray-700 hover:text-gray-300"
                             >
                               <CloseEyeIcon className="w-5 h-5 flex-none" />
                               Keep private
@@ -184,7 +184,7 @@ export default function MediaModal({
                           ) : (
                             <button
                               onClick={() => handleUpdate(id, "public")}
-                              class="w-full flex items-center gap-x-3.5 py-2 px-3 rounded-md text-sm focus:ring-2 focus:ring-blue-500 text-gray-400 hover:bg-gray-700 hover:text-gray-300"
+                              className="w-full flex items-center gap-x-3.5 py-2 px-3 rounded-md text-sm focus:ring-2 focus:ring-blue-500 text-gray-400 hover:bg-gray-700 hover:text-gray-300"
                             >
                               <OpenEyeIcon className="w-5 h-5 flex-none" />
                               Share as public
@@ -193,7 +193,7 @@ export default function MediaModal({
 
                           <button
                             onClick={() => handleUpdate(id, "delete")}
-                            class="w-full flex items-center gap-x-3.5 py-2 px-3 rounded-md text-sm focus:ring-2 focus:ring-blue-500 text-gray-400 hover:bg-gray-700 hover:text-gray-300"
+                            className="w-full flex items-center gap-x-3.5 py-2 px-3 rounded-md text-sm focus:ring-2 focus:ring-blue-500 text-gray-400 hover:bg-gray-700 hover:text-gray-300"
                           >
                             <TrashIcon className="w-5 h-5 flex-none" />
                             Remove

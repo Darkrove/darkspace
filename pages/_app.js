@@ -92,9 +92,6 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }) {
     }
   };
 
-  // TODO add Layout
-  // TODO svg icons component
-  // TODO SWR
   return (
     <ThirdwebProvider desiredChainId={activeChainId}>
       <StateContextProvider>
@@ -153,13 +150,7 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }) {
                 property="twitter:image"
                 content="https://user-images.githubusercontent.com/53792139/220374322-2d64a5c1-f789-4cf3-88f9-1abb30e915b2.jpg"
               />
-
-              {/* <script
-                async
-                defer
-                data-website-id="411c18c7-5acf-48b5-9276-6862e28bb56b"
-                src="https://umami-production-c771.up.railway.app/umami.js"
-              ></script> */}
+              {/* Tiny bird analytics */}
               <script
                 defer
                 src="https://unpkg.com/@tinybirdco/flock.js"

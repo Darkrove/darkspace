@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { getServerSession } from "next-auth/next";
 import useSWR from "swr";
 
@@ -15,10 +15,6 @@ const Home = () => {
     "/api/fetch/fetchpublicfiles",
     fetcher
   );
-
-  useEffect(() => {
-    console.log("Mounted");
-  });
 
   return (
     <div className="scroll-smooth">

@@ -11,7 +11,7 @@ const Logo = ({ src, description }) => {
         loading="lazy"
         width={50}
         height={50}
-        alt={description}
+        alt={description ? description : "logo"}
       />
     </div>
   );

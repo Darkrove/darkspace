@@ -2,11 +2,11 @@ import React from "react";
 
 const FileCardSkeleton = ({ user }) => {
   return (
-    <div class="sm:w-[230px] md:w-[250px] xl:w-[270px] 2xl:w-[295px] w-full border border-white/10 rounded-[15px] bg-white/5 overflow-hidden shadow hover:shadow-md">
-      <div class="flex flex-col">
-        <div class="relative w-full h-[158px] object-cover rounded-[15px] loading"></div>
-        <div class="flex flex-col p-4">
-          <div class="block w-full h-[26px] rounded-[15px] loading"></div>
+    <div className="sm:w-[230px] md:w-[250px] xl:w-[270px] 2xl:w-[295px] w-full border border-white/10 rounded-[15px] bg-white/5 overflow-hidden shadow hover:shadow-md">
+      <div className="flex flex-col">
+        <div className="relative w-full h-[158px] object-cover rounded-[15px] loading"></div>
+        <div className="flex flex-col p-4">
+          <div className="block w-full h-[26px] rounded-[15px] loading"></div>
           <div className="flex justify-between flex-row mt-[15px] gap-2">
             <div className="flex w-2/6 flex-col items-start">
               <div className="h-5 rounded-[15px] w-full loading"></div>

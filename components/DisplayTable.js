@@ -11,7 +11,7 @@ const Row = ({ file, handleDelete }) => {
   return (
     <tr key={file.pid}>
       <td className="px-6 py-4 text-center whitespace-nowrap">
-        <span class="inline-flex items-center p-1 rounded-full bg-violet-300 text-white">
+        <span className="inline-flex items-center p-1 rounded-full bg-violet-300 text-white">
           <Image
             alt="logo"
             src={ethereum}
@@ -34,11 +34,11 @@ const Row = ({ file, handleDelete }) => {
         {formatBytes(file.size)}
       </td>
       <td className="px-6 py-4 whitespace-nowrap text-center text-sm font-medium">
-        <div class="inline-flex rounded-md shadow-sm">
+        <div className="inline-flex rounded-md shadow-sm">
           <button
             type="button"
             onClick={() => handleDelete(file.pid)}
-            class="p-2 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium align-middle focus:z-10 focus:outline-none focus:ring-1 focus:ring-violet-600 transition-all text-sm bg-zinc-800 hover:bg-zinc-600 border-zinc-700 text-zinc-400"
+            className="p-2 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium align-middle focus:z-10 focus:outline-none focus:ring-1 focus:ring-violet-600 transition-all text-sm bg-zinc-800 hover:bg-zinc-600 border-zinc-700 text-zinc-400"
           >
             <BiTrash size="1rem" className="text-white" />
           </button>
@@ -46,12 +46,12 @@ const Row = ({ file, handleDelete }) => {
             href={`https://gateway.pinata.cloud/ipfs/${file.hash}/`}
             target="_blank"
             rel="noreferrer"
-            class="p-2 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium align-middle focus:z-10 focus:outline-none focus:ring-1 focus:ring-violet-600 transition-all text-sm bg-zinc-800 hover:bg-zinc-600 border-zinc-700 text-zinc-400"
+            className="p-2 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium align-middle focus:z-10 focus:outline-none focus:ring-1 focus:ring-violet-600 transition-all text-sm bg-zinc-800 hover:bg-zinc-600 border-zinc-700 text-zinc-400"
           >
             <BiLinkExternal size="1rem" className="text-white" />
           </a>
           <button
-            class="p-2 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium align-middle focus:z-10 focus:outline-none focus:ring-1 focus:ring-violet-600 transition-all text-sm bg-zinc-800 hover:bg-zinc-600 border-zinc-700 text-zinc-400"
+            className="p-2 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium align-middle focus:z-10 focus:outline-none focus:ring-1 focus:ring-violet-600 transition-all text-sm bg-zinc-800 hover:bg-zinc-600 border-zinc-700 text-zinc-400"
             onClick={() =>
               copyToClipboard(`https://gateway.pinata.cloud/ipfs/${file.hash}`)
             }
