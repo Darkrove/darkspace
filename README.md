@@ -16,7 +16,7 @@
 
 </div>
 
-![image](https://user-images.githubusercontent.com/53792139/220375290-5636169c-25b5-428d-bf98-178ff5cf4c5e.png)
+![image](https://user-images.githubusercontent.com/53792139/221344274-ee29764b-5140-458f-9610-4ee37600b080.png)
 
 ## 🛠 Tech Stack
 
