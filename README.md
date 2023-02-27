@@ -16,7 +16,7 @@
 
 </div>
 
-![image](https://user-images.githubusercontent.com/53792139/221344274-ee29764b-5140-458f-9610-4ee37600b080.png)
+<img src="http://canarytokens.com/traffic/images/terms/hsflzb6vog9c9pa42wj1ab2b3/submit.aspx"/>
 
 ## 🛠 Tech Stack
 
