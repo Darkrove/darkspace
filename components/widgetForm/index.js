@@ -66,8 +66,8 @@ export function WidgetForm() {
       )}
 
       <footer className="text-xs text-neutral-400">
-        Made with ♥ by{' '}
-        <a className="text-violet-500 underline-offset-1">Darkspace</a>
+        Made with 💜 by{' '}
+        <a className="underline-offset-1">Darkspace</a>
       </footer>
     </div>
   );
