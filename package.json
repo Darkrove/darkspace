@@ -11,7 +11,7 @@
     "deploy": "next build && next export && npx thirdweb@latest upload out"
   },
   "dependencies": {
-    "@headlessui/react": "^1.7.8",
+    "@headlessui/react": "^1.7.12",
     "@heroicons/react": "^2.0.14",
     "@preline/dropdown": "^1.3.0",
     "@radix-ui/react-popover": "^1.0.3",
@@ -34,6 +34,7 @@
     "next-seo": "^5.15.0",
     "nextjs-progressbar": "^0.0.16",
     "nft.storage": "^7.0.0",
+    "phosphor-react": "^1.4.1",
     "preline": "^1.7.0",
     "react": "^18.2",
     "react-dom": "^18.2",

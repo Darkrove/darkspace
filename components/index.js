@@ -27,3 +27,4 @@ export { default as LogoWall } from "./LogoWall";
 export { default as FeatureCard } from "./FeatureCard";
 export { default as GetStarted } from "./GetStarted";
 export { default as Footer } from "./Footer";
+export { default as Widget } from "./Widget";

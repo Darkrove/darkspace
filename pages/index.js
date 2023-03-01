@@ -10,7 +10,7 @@ import {
 } from "react-icons/gi";
 import Link from "next/link";
 
-import { LogoWall, CtaSection, FeatureCard, GetStarted, Footer } from "../components";
+import { LogoWall, CtaSection, FeatureCard, GetStarted, Footer, Widget } from "../components";
 import Feature from "../components/FeatureCard";
 
 const Index = () => {
@@ -80,6 +80,7 @@ const Index = () => {
         </div>
       </section>
       <GetStarted/>
+      <Widget />
     </div>
   );
 };
