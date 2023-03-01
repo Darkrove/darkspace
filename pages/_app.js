@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import toast, { Toaster } from "react-hot-toast";
 import { Analytics } from "@vercel/analytics/react";
 import Head from "next/head";
+import Script from "next/script";
 import { ChainId, ThirdwebProvider } from "@thirdweb-dev/react";
 import { useRouter } from "next/router";
 import { SessionProvider } from "next-auth/react";
@@ -150,14 +151,14 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }) {
                 property="twitter:image"
                 content="https://user-images.githubusercontent.com/53792139/220374322-2d64a5c1-f789-4cf3-88f9-1abb30e915b2.jpg"
               />
-              {/* Umami analytics */}
-              <script
-                async
-                defer
-                data-website-id="96a61cba-83cb-4307-9abe-ca5f3ee64129"
-                src="https://umami-darkspace.vercel.app/umami.js"
-              ></script>
             </Head>
+            {/* Umami analytics */}
+            <Script
+              async
+              defer
+              data-website-id="96a61cba-83cb-4307-9abe-ca5f3ee64129"
+              src="https://umami-darkspace.vercel.app/umami.js"
+            ></Script>
             {map()}
             <Toaster
               position="bottom-center"
