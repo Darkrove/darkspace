@@ -16,8 +16,6 @@
 
 </div>
 
-<img src="http://canarytokens.com/traffic/images/terms/hsflzb6vog9c9pa42wj1ab2b3/submit.aspx"/>
-
 ## 🛠 Tech Stack
 
 - [Next.js](https://nextjs.org/) - frontend / backend
