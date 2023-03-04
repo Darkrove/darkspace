@@ -12,7 +12,7 @@
   ![Codesize](https://img.shields.io/github/languages/code-size/darkrove/darkspace?logo=nextdotjs&logoColor=white&style=for-the-badge)
   ![License](https://img.shields.io/github/license/darkrove/darkspace?style=for-the-badge&logo=cmake&logoColor=white)
   ![Lastcommit](https://img.shields.io/github/last-commit/darkrove/darkspace?color=%23F213A4&style=for-the-badge&logo=quicktime&logoColot=white)
-  ![Coffee](https://img.shields.io/badge/BUY%20ME%20A%20COFEE-BUY-%2357bcad?logo=buymeacoffee&logoColor=white&style=for-the-badge)
+  [![Coffee](https://img.shields.io/badge/BUY%20ME%20A%20COFEE-BUY-%2357bcad?logo=buymeacoffee&logoColor=white&style=for-the-badge)](https://www.buymeacoffee.com/sajjadshaikh)
 
 </div>
 
