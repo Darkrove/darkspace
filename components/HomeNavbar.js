@@ -1,7 +1,7 @@
 import React from "react";
-import Image from "next/image";
 import Router from "next/router";
 import { useSession } from "next-auth/react";
+import { CaretRight } from "phosphor-react";
 
 import { DarkspaceLogoFull } from "../assets/Icons";
 import { useStateContext } from "../context";
@@ -92,8 +92,8 @@ const HomeNavbar = () => {
                   type="button"
                   className="w-full py-3 px-6 text-center rounded-md transition bg-violet-500 hover:bg-violet-600 active:opacity-80 focus:opacity-80 sm:w-max"
                 >
-                  <span className="block text-white font-semibold text-sm">
-                    Go To Dashboard
+                  <span className="flex justify-center items-center text-white font-semibold text-sm">
+                    Dashboard <CaretRight className="w-4 h-4 font-extrabold" /> 
                   </span>
                 </button>
               ) : (

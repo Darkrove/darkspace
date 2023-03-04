@@ -40,7 +40,7 @@ export default function CtaSection() {
                 Learn more <span aria-hidden="true">→</span>
               </button>
             </div>
-            <p className="mt-2 italic font-bold text-[13px] text-zinc-500">
+            <p className="mt-2 italic font-bold text-[13px] text-zinc-200">
               Completely free to use. No hidden fees.
             </p>
           </div>

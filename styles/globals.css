@@ -14,7 +14,7 @@ body::before {
   position: fixed;
   background: radial-gradient(
     75.61% 75.61% at 50% 24.39%,
-    rgba(107, 9, 146, 0.2) 0%,
+    rgba(133, 19, 179, 0.596) 0%,
     rgba(107, 9, 146, 0) 100%
   );
   z-index: -1;

@@ -4,7 +4,7 @@ import { feedbackTypes } from '..';
 import { CloseButton } from '../../CloseButton';
 
 
-export function FeedbackTypeStep({ onFeedbackTypeChanged }) {
+export default function FeedbackTypeStep({ onFeedbackTypeChanged }) {
   return (
     <>
       <header>
