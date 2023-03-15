@@ -9,7 +9,7 @@ import {
   GiAbstract103,
 } from "react-icons/gi";
 
-import { LogoWall, CtaSection, FeatureCard, GetStarted, Footer, Widget } from "../components";
+import { LogoWall, CtaSection, FeatureCard, GetStarted, Footer, Widget, GlobalStat } from "../components";
 
 const Index = () => {
   return (
@@ -78,6 +78,7 @@ const Index = () => {
             </div>
           </div>
         </section>
+        <GlobalStat />
         <GetStarted />
       </div>
       <Widget />

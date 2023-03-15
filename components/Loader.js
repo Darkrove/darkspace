@@ -7,17 +7,17 @@ const msg = [
   "This can take a few minutes depending on gas. Don’t leave this page.",
 ];
 
-const Loader = ({ message, isTransacting }) => {
+const Loader = ({ message, subMessage, isTransacting }) => {
   return (
     <div className="fixed inset-0 z-30 h-screen bg-[rgba(0,0,0,0.7)] flex items-center justify-center flex-col">
-      <div className="card block py-14 shadow-xl mx-6 space-y-8 px-6 text-gray-500 md:px-12 lg:px-20">
+      <div className="card lg:w-1/2 block py-14 shadow-xl mx-6 space-y-8 px-6 text-gray-500 md:px-12 lg:px-20">
         <div className="flex flex-col items-center justify-center">
           <div className="loader-pulse"></div>
           <p className="mt-[20px] font-epilogue font-bold text-[20px] text-white text-center">
             {message}
           </p>
           <Balancer className="text-white text-center text-lg">
-            {msg[2]}
+            {subMessage}
           </Balancer>
           {isTransacting && (
             <a

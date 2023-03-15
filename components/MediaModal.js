@@ -34,7 +34,8 @@ export default function MediaModal({
   const [message, setMessage] = useState(
     "Hold on, we're getting things ready..."
   );
-
+  const [subMessage, setSubMessage] = useState("")
+  const [isTransacting, setIsTransacting] = useState(false);
   const { updateFile } = useStateContext();
 
   const updateStatus = async (id, status) => {
@@ -92,9 +93,11 @@ export default function MediaModal({
 
   const handleUpdate = async (cid, status) => {
     setMessage("Initiating...");
+    setSubMessage("This can take a few minutes depending on gas. Don’t leave this page.")
     setIsLoading(true);
     try {
       setMessage("Transaction in progress...");
+      setIsTransacting(true);
       await updateFile(cid, status);
       setIsLoading(false);
     } catch (error) {
@@ -248,7 +251,7 @@ export default function MediaModal({
             </div>
           </div>
         </div>
-        {isLoading && <Loader message={message} />}
+        {isLoading && <Loader message={message} subMessage={subMessage} isTransacting={isTransacting}/>}
       </div>
     </>
   );
