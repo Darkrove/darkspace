@@ -34,7 +34,7 @@ export default function MediaModal({
   const [message, setMessage] = useState(
     "Hold on, we're getting things ready..."
   );
-  const [subMessage, setSubMessage] = useState("")
+  const [subMessage, setSubMessage] = useState("⌛ Please hold on, this could take several seconds to complete.")
   const [isTransacting, setIsTransacting] = useState(false);
   const { updateFile } = useStateContext();
 
@@ -93,7 +93,6 @@ export default function MediaModal({
 
   const handleUpdate = async (cid, status) => {
     setMessage("Initiating...");
-    setSubMessage("This can take a few minutes depending on gas. Don’t leave this page.")
     setIsLoading(true);
     try {
       setMessage("Transaction in progress...");

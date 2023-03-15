@@ -14,8 +14,8 @@ const Uploadmedia = () => {
   const { data: session } = useSession();
   const [isLoading, setIsLoading] = useState(false);
   const [message, setMessage] = useState("Hold on, we're getting things ready...");
-  const [subMessage, setSubMessage] = useState("")
-  const [isTransacting, setIsTransacting] = useState(false);
+  const [subMessage, setSubMessage] = useState("⌛ Please hold on, this could take several seconds to complete.")
+  const [isTransacting, setIsTransacting] = useState(true);
   const [isActive, setIsActive] = useState(false);
   const { address, uploadFile } = useStateContext();
   const initState = {
@@ -73,7 +73,6 @@ const Uploadmedia = () => {
 
     if (form.file) {
       setMessage("Uploading to ipfs...");
-      setSubMessage("Hold on, we're uploading your data on IPFS")
       setIsLoading(true);
       const hashUrl = await uploadToIpfs();
       if (hashUrl.message) {
@@ -83,7 +82,6 @@ const Uploadmedia = () => {
         return;
       }
       setMessage("Transaction in progress...");
-      setSubMessage("This can take a few minutes depending on gas. Don’t leave this page.")
       setIsTransacting(true);
       await uploadFile(
         form.filename,
