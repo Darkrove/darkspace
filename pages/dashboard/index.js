@@ -12,7 +12,7 @@ const Home = () => {
   const fetcher = (url) => fetch(url).then((res) => res.json());
 
   const { data, error, isLoading } = useSWR(
-    "/api/fetch/fetchpublicfiles",
+    "/api/fetch/publicfiles",
     fetcher
   );
 
@@ -31,18 +31,3 @@ const Home = () => {
 };
 
 export default Home;
-
-export async function getServerSideProps(context) {
-  const session = await getServerSession(context.req, context.res, authOptions);
-  if (!session) {
-    return {
-      redirect: {
-        destination: "/signin",
-        permanent: false,
-      },
-    };
-  }
-  return {
-    props: { session },
-  };
-}

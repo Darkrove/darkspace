@@ -104,21 +104,3 @@ const Index = (props) => {
 };
 
 export default Index;
-export async function getServerSideProps(context) {
-  const session = await getServerSession(
-    context.req,
-    context.res,
-    authOptions
-  );
-  if (!session) {
-    return {
-      redirect: {
-        destination: "/signin",
-        permanent: false,
-      },
-    };
-  }
-  return {
-    props: { session, query: context.query },
-  };
-}

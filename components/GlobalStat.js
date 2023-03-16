@@ -6,7 +6,7 @@ import { formatBytes } from '../utils';
 const GlobalStat = () => {
     const fetcher = (url) => fetch(url).then((res) => res.json());
     const { data, error, isLoading } = useSWR(
-        "/api/fetch/fetchstats",
+        "/api/fetch/stats",
         fetcher
       );
     return (
