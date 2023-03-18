@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import Image from "next/image";
-import { useSession, signIn, signOut } from "next-auth/react";
+import { useRouter } from "next/router"
+import { useSession, signIn } from "next-auth/react";
 import Link from "next/link";
 import { getServerSession } from "next-auth/next";
 import { authOptions } from "./api/auth/[...nextauth]";
@@ -11,6 +11,7 @@ import {
   GoogleLogo,
 } from "../assets/Icons";
 import { LoadingDots } from "../components/icons";
+import { toast } from "react-hot-toast";
 
 export const Button = ({ children, title, handle, signinclicked }) => {
   return (
@@ -38,12 +39,21 @@ export const Button = ({ children, title, handle, signinclicked }) => {
 };
 
 const Login = () => {
+  const router = useRouter()
+  const query = router.query?.error;
   const { data: session } = useSession();
   const [signInGoogleClicked, setSignInGooleClicked] = useState(false);
   const [signInGithubClicked, setSignInGithubClicked] = useState(false);
   const [signInDiscordClicked, setSignInDiscordClicked] = useState(false);
   const [signInClicked, setSignInClicked] = useState(false);
   const environment = process.env.NODE_ENV;
+
+  useEffect(() => {
+    if (query) {
+      toast.error(query);
+    }
+  });
+
   const URL =
     environment === "development"
       ? process.env.NEXT_PUBLIC_DEVELOPMENT_URL

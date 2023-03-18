@@ -2,9 +2,9 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { useSession } from "next-auth/react";
 import { useStorageUpload } from "@thirdweb-dev/react";
-import toast from "react-hot-toast";
 import { getServerSession } from "next-auth/next";
 
+import { toast } from "../../components/ui/toast"
 import { authOptions } from "../api/auth/[...nextauth]";
 import { CustomButton, FormField, Loader } from "../../components";
 import { secure } from "../../assets";
@@ -77,7 +77,14 @@ const Uploadmedia = () => {
       const hashUrl = await uploadToIpfs();
       if (hashUrl.message) {
         setIsLoading(false);
-        toast.error("😵‍💫 Upload failed, \n please try again.");
+        const msg = hashUrl.message
+        // TODO toast updated
+        toast({
+          icon: 'X',
+          title: 'Upload failed',
+          message: 'Please try again',
+          type: 'error',
+        })
         setForm({ file: "", filename: "", type: "", hash: "", size: "" });
         return;
       }

@@ -1,6 +1,5 @@
 import React, { useContext, createContext, useState } from "react";
 import { useRouter } from "next/router";
-import toast from "react-hot-toast";
 import Web3 from "web3";
 import {
   useAddress,
@@ -12,6 +11,7 @@ import {
 } from "@thirdweb-dev/react";
 
 import { padString, unpadString, formatDate, formatBytes } from "../utils";
+import { toast } from "../components/ui/toast"
 
 const StateContext = createContext();
 
@@ -85,10 +85,22 @@ export const StateContextProvider = ({ children }) => {
         _filetype,
         _filehash,
       ]);
-      toast.success("Congratulation 🎉✨, \nYour data is now on blockchain.")
+      // TODO toast updated
+      toast({
+        icon: 'Network',
+        title: 'Uploaded',
+        message: 'Congratulation, Your data is now on blockchain',
+        type: 'success',
+      })
       console.info("contract call successs", data);
     } catch (err) {
-      toast.error("Oops 😵‍💫, \nGot some issues please try again.")
+      // TODO toast updated
+      toast({
+        icon: 'X',
+        title: 'Something went wrong',
+        message: 'Got some issues please try again',
+        type: 'error',
+      })
       console.error("contract call failure", err);
     }
   };
@@ -96,10 +108,22 @@ export const StateContextProvider = ({ children }) => {
   const updateFile = async (_index, _status) => {
     try {
       const data = await updateFileStatus([_index, _status]);
-      toast.success("Your data is updated 🎉✨")
+      // TODO toast updated
+      toast({
+        icon: 'Network',
+        title: 'Updated',
+        message: 'Your data is updated',
+        type: 'success',
+      })
       console.info("contract call successs", data);
     } catch (err) {
-      toast.error("Oops 😵‍💫, \nGot some issues please try again.")
+      // TODO toast updated
+      toast({
+        icon: 'X',
+        title: 'Something went wrong',
+        message: 'Got some issues please try again',
+        type: 'error',
+      })
       console.error("contract call failure", err);
     }
   };

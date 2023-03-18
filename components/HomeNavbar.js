@@ -1,5 +1,6 @@
 import React from "react";
 import Router from "next/router";
+import Link from "next/link";
 import { useSession } from "next-auth/react";
 import { CaretRight } from "phosphor-react";
 
@@ -56,20 +57,20 @@ const HomeNavbar = () => {
             <div className="text-gray-600 lg:pr-4 w-full">
               <ul className="tracking-wide font-medium  text-sm flex flex-col gap-y-6 lg:gap-y-0 lg:flex-row w-full">
                 <li>
-                  <a
-                    href="#"
+                  <Link
+                    href="/"
                     className="block md:px-4 transition text-gray-300 hover:text-violet-500 "
                   >
                     <span>Home</span>
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
-                    href="#"
+                  <Link
+                    href="/docs"
                     className="block md:px-4 transition text-gray-300 hover:text-violet-500"
                   >
                     <span>Documentation</span>
-                  </a>
+                  </Link>
                 </li>
                 <li>
                   <a

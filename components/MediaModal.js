@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Image from "next/image";
-import toast from "react-hot-toast";
+import { toast } from "./ui/toast"
 import Router from "next/router";
 import { useSession } from "next-auth/react";
 
@@ -48,7 +48,13 @@ export default function MediaModal({
 
   const copyClipboard = (src) => {
     copyToClipboard(src);
-    toast.success("Copied!");
+    // TODO toast updated
+    toast({
+      icon: 'CheckCircle',
+      title: 'Copied',
+      message: 'Link copied to clipboard',
+      type: 'success',
+    })
   };
 
   const downloadUsingFetch = async (HREF, name) => {
@@ -66,10 +72,23 @@ export default function MediaModal({
           document.body.appendChild(link);
           link.click();
           document.body.removeChild(link);
-          toast.success("Downloaded!");
+          // TODO toast updated
+          toast({
+            icon: 'Download',
+            title: 'Downloaded',
+            message: 'Your file downloaded',
+            type: 'success',
+          })
         });
       })
       .catch((err) => {
+        // TODO toast updated
+        toast({
+          icon: 'Failed',
+          title: 'Something went wrong',
+          message: {err},
+          type: 'error',
+        })
         console.log(err);
       });
   };

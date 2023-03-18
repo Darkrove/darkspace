@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import toast, { Toaster } from "react-hot-toast";
+// import toast, { Toaster } from "react-hot-toast";
 import { Analytics } from "@vercel/analytics/react";
 import Head from "next/head";
 import Script from "next/script";
@@ -10,6 +10,7 @@ import { Provider as RWBProvider } from "react-wrap-balancer";
 import NextNProgress from "nextjs-progressbar";
 
 import "../styles/globals.css";
+import { Toaster } from "../components/ui/toast"
 import { Sidebar, Navbar, HomeNavbar, Footer } from "../components";
 import { StateContextProvider } from "../context";
 
@@ -160,11 +161,12 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }) {
               src="https://umami-darkspace.vercel.app/umami.js"
             ></Script>
             {map()}
-            <Toaster
+            {/* <Toaster
               position="bottom-center"
               reverseOrder={true}
               toastOptions={{ ...toastStyle, duration: 7000 }}
-            />
+            /> */}
+            <Toaster position='bottom-center' />
             <Analytics />
           </RWBProvider>
         </SessionProvider>
