@@ -44,7 +44,7 @@ function getDiscordCredentials() {
 
 export const authOptions = {
   pages: {
-    signIn: '/signin'
+    signIn: '/signin',
   },
   providers: [
     DiscordProvider({

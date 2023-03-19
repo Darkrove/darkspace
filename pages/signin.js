@@ -3,6 +3,8 @@ import { useRouter } from "next/router"
 import { useSession, signIn } from "next-auth/react";
 import Link from "next/link";
 import { getServerSession } from "next-auth/next";
+
+import { toast } from "../components/ui/toast"
 import { authOptions } from "./api/auth/[...nextauth]";
 import {
   DarkspaceLogo,
@@ -11,7 +13,6 @@ import {
   GoogleLogo,
 } from "../assets/Icons";
 import { LoadingDots } from "../components/icons";
-import { toast } from "react-hot-toast";
 
 export const Button = ({ children, title, handle, signinclicked }) => {
   return (
@@ -40,7 +41,6 @@ export const Button = ({ children, title, handle, signinclicked }) => {
 
 const Login = () => {
   const router = useRouter()
-  const query = router.query?.error;
   const { data: session } = useSession();
   const [signInGoogleClicked, setSignInGooleClicked] = useState(false);
   const [signInGithubClicked, setSignInGithubClicked] = useState(false);
@@ -49,8 +49,15 @@ const Login = () => {
   const environment = process.env.NODE_ENV;
 
   useEffect(() => {
+    console.log(router.query)
+    const query = router.query?.error;
     if (query) {
-      toast.error(query);
+      toast({
+        icon: 'X',
+        title: 'Authentication failed',
+        message: 'Please try again',
+        type: 'error',
+      })
     }
   });
 
