@@ -43,8 +43,8 @@ const Index = (props) => {
               <div>
                 <h4 className="font-epilogue font-semibold text-[18px] text-white uppercase"></h4>
                 <div className="flex flex-row items-center flex-wrap gap-[14px]">
-                  <div className="w-[45px] h-[45px] flex justify-center rounded-full bg-[#2c2f32] cursor-pointer">
-                    <Profile image={file?.profile} name={file?.username} className="" />
+                  <div className="w-[45px] h-[45px] flex justify-center items-center rounded-full bg-[#2c2f32] cursor-pointer">
+                    <Profile image={file?.profile} name={file?.username} className="rounded-full" />
                   </div>
                   <div>
                     <h4 className="font-epilogue font-semibold text-[14px] text-white break-all">

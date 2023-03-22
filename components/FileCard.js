@@ -109,7 +109,7 @@ const FileCard = ({
         </div>
         {!user ? (
           <div className="flex items-center justify-start mt-[20px] gap-[12px]">
-            <div className="w-[30px] h-[30px] overflow-hidden rounded-full flex justify-center bg-[#13131a]">
+            <div className="w-[30px] h-[30px] overflow-hidden rounded-full flex justify-center items-center bg-[#13131a]">
               {/* <Image
                 src={profile}
                 alt="user"
