@@ -1,5 +1,4 @@
 import React from 'react'
-import Balancer from "react-wrap-balancer";
 
 const docs = () => {
   return (
@@ -8,7 +7,7 @@ const docs = () => {
         <h1 className="text-zinc-200 leading-none mb-3 text-[2.5rem] font-extrabold">
           Comming Soon ⏱
         </h1>
-        <Balancer className="text-zinc-300 text-lg m-0 leading-tight">
+        <p className="text-zinc-300 text-lg m-0 leading-tight">
           Stay Tuned 🔔 for more updates, and star ⭐ this repo on {" "}
           <a
             className="text-violet-500 underline transition hover:text-violet-700/75"
@@ -17,7 +16,7 @@ const docs = () => {
             target="_blank">github</a> {" "}
           📌 Also this project is open source, so you can contribute to this project
           by forking 🔮 this repo and making pull requests.
-        </Balancer>
+        </p>
       </div>
     </div>
   )
