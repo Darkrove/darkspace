@@ -16,7 +16,7 @@ const Profile = ({ image, name, className, ...props }) => {
                     src={image}
                     alt={name}
                 />
-                <Avatar.Fallback className="AvatarFallback flex justify-center items-center" delayMs={600}>
+                <Avatar.Fallback className="AvatarFallback flex h-full w-full justify-center items-center" delayMs={600}>
                     {fallback}
                 </Avatar.Fallback>
             </Avatar.Root>
