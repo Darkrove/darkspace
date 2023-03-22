@@ -1,5 +1,5 @@
 import React from 'react'
-import Balancer from "react-wrap-Balancer";
+import Balancer from "react-wrap-balancer";
 
 const docs = () => {
   return (
