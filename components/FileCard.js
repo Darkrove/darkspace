@@ -117,7 +117,7 @@ const FileCard = ({
                 width={100}
                 height={100}
               /> */}
-              <Profile image={profile} name={name} className="" />
+              <Profile image={profile} name={username} className="" />
             </div>
             <p className="flex-1 text-left font-epilogue font-normal text-[12px] text-zinc-500 truncate">
               by <span className="text-zinc-300">{capitalizeFirstLetter(username)}</span>
