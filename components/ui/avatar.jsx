@@ -10,7 +10,7 @@ const Profile = ({ image, name, className, ...props }) => {
 
     return (
         <div>
-            <Avatar.Root className={cn("AvatarRoot", className)} {...props}>
+            <Avatar.Root className={cn("AvatarRoot flex justify-center items-centers", className)} {...props}>
                 <Avatar.Image
                     className="AvatarImage"
                     src={image}
