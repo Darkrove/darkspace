@@ -98,9 +98,8 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: white;
-  color: var(--violet11);
-  font-size: 10px;
+  color: white;
+  font-size: 15px;
   line-height: 1;
   font-weight: 500;
 }
