@@ -1,11 +1,13 @@
-import React, {useState, ueEffect} from "react";
+import React, { useState, ueEffect } from "react";
 import Image from "next/image";
+
 import { GoogleLogo, GithubLogo, DiscordLogo } from "../assets/Icons"
+import Profile from "./ui/avatar";
 import { capitalizeFirstLetter } from "../utils";
 import useOnlineStatus from "../lib/hooks/useOnlineStatus"
 import clsx from 'clsx';
 
-export default function ProfileCard({host, user}) {
+export default function ProfileCard({ host, user }) {
   const status = useOnlineStatus()
   return (
     <div className="card bg-white/5 rounded-lg shadow-xl p-4 flex justify-between gap-2">
@@ -19,10 +21,10 @@ export default function ProfileCard({host, user}) {
           // })}
           className="text-zinc-400 text-xs lg:text-sm md:text-sm"
         >
-          {host === 'github' && <GithubLogo className={`inline-block mr-2 w-4 h-4 ${status ? "text-green-400": "text-red-400"}`}/>}{" "}
-          {host === 'google' && <GoogleLogo className={`inline-block mr-2 w-4 h-4 ${status ? "text-green-400": "text-red-400"}`} />}{" "}
-          {host === 'discord' && <DiscordLogo className={`inline-block mr-2 w-4 h-4 ${status ? "text-green-400": "text-red-400"}`} />}{" "}
-          
+          {host === 'github' && <GithubLogo className={`inline-block mr-2 w-4 h-4 ${status ? "text-green-400" : "text-red-400"}`} />}{" "}
+          {host === 'google' && <GoogleLogo className={`inline-block mr-2 w-4 h-4 ${status ? "text-green-400" : "text-red-400"}`} />}{" "}
+          {host === 'discord' && <DiscordLogo className={`inline-block mr-2 w-4 h-4 ${status ? "text-green-400" : "text-red-400"}`} />}{" "}
+
           {user?.email}
         </p>
         <div className="flex gap-2 lg:gap-4 md:gap-3 text-sm lg:text-base md:text-base text-zinc-200 w-full">
@@ -32,13 +34,14 @@ export default function ProfileCard({host, user}) {
         </div>
       </div>
       <div className="h-16 w-16 lg:h-20 lg:w-20 md:w-20 md:h-20 justify-center items-center flex">
-        <Image
+        {/* <Image
           className="rounded-lg object-fit shadow-lg"
           src={user?.image}
           alt={user?.name}
           height={70}
           width={70}
-        />
+        /> */}
+        <Profile image={user?.image} name={user?.name} className="rounded-lg object-fit shadow-lg" />
       </div>
     </div>
   );

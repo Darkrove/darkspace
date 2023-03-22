@@ -6,6 +6,7 @@ import { getServerSession } from "next-auth/next";
 import { authOptions } from "../../api/auth/[...nextauth]";
 import { useStateContext } from "../../../context";
 import { LadyLoader, CardBox } from "../../../components";
+import Profile from "../../../components/ui/avatar";
 import { formatLongDate, formatBytes } from "../../../utils";
 
 const Index = (props) => {
@@ -43,13 +44,7 @@ const Index = (props) => {
                 <h4 className="font-epilogue font-semibold text-[18px] text-white uppercase"></h4>
                 <div className="flex flex-row items-center flex-wrap gap-[14px]">
                   <div className="w-[45px] h-[45px] flex items-center justify-center rounded-full bg-[#2c2f32] cursor-pointer">
-                    <Image
-                      src={file?.profile}
-                      alt="user"
-                      width={100}
-                      height={100}
-                      className="object-fill rounded-full"
-                    />
+                    <Profile image={file?.profile} name={file?.username} className="object-fill rounded-full" />
                   </div>
                   <div>
                     <h4 className="font-epilogue font-semibold text-[14px] text-white break-all">

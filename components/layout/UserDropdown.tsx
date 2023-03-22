@@ -5,12 +5,13 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 
 import { UserIcon, LogoutIcon } from "../../assets/Icons";
+import Profile from "../ui/avatar";
 import Popover from "../shared/Popover";
 import { FADE_IN_ANIMATION_SETTINGS } from "../../lib/constants";
 
-export default function UserDropdown({onProfileClick}) {
+export default function UserDropdown({ onProfileClick }) {
   const { data: session } = useSession();
-  const { email, image } = session?.user || {};
+  const { name, email, image } = session?.user || {};
   const [openPopover, setOpenPopover] = useState(false);
 
   if (!email) return null;
@@ -28,7 +29,7 @@ export default function UserDropdown({onProfileClick}) {
               href="/dashboard/profile"
               onClick={onProfileClick}
             >
-              <UserIcon className="h-4 w-4"/>
+              <UserIcon className="h-4 w-4" />
               <p className="text-sm ">Profile</p>
             </Link>
             {/* <button
@@ -42,7 +43,7 @@ export default function UserDropdown({onProfileClick}) {
               className="relative flex flex-row w-full items-center justify-start text-zinc-200 space-x-2 rounded-md p-2 text-left text-sm transition-all duration-75 hover:bg-white/10"
               onClick={() => signOut({ redirect: true })}
             >
-              <LogoutIcon className="h-4 w-4"/>
+              <LogoutIcon className="h-4 w-4" />
               <p className="text-sm ">Logout</p>
             </button>
           </div>
@@ -55,13 +56,7 @@ export default function UserDropdown({onProfileClick}) {
           onClick={() => setOpenPopover(!openPopover)}
           className="flex flex-row w-[100%] h-[100%] items-center justify-center overflow-hidden rounded-full transition-all duration-75 focus:outline-none active:scale-95"
         >
-          <Image
-            alt={email}
-            src={image || `https://avatars.dicebear.com/api/micah/${email}.svg`}
-            width={50}
-            height={50}
-            className="object-fill"
-          />
+          <Profile image={image} name={name} className="w-[100%] h-[100%]" />
         </button>
       </Popover>
     </motion.div>

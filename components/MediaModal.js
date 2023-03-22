@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import Image from "next/image";
-import { toast } from "./ui/toast"
 import Router from "next/router";
 import { useSession } from "next-auth/react";
 
@@ -16,6 +15,7 @@ import {
 import { Loader } from "../components";
 import { useStateContext } from "../context";
 import useCopyToClipboard from "../lib/hooks/useCopyToClipboard";
+import { toast } from "./ui/toast"
 
 export default function MediaModal({
   id,
@@ -86,7 +86,7 @@ export default function MediaModal({
         toast({
           icon: 'Failed',
           title: 'Something went wrong',
-          message: {err},
+          message: { err },
           type: 'error',
         })
         console.log(err);
@@ -269,7 +269,7 @@ export default function MediaModal({
             </div>
           </div>
         </div>
-        {isLoading && <Loader message={message} subMessage={subMessage} isTransacting={isTransacting}/>}
+        {isLoading && <Loader message={message} subMessage={subMessage} isTransacting={isTransacting} />}
       </div>
     </>
   );

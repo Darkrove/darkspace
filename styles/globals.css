@@ -73,3 +73,32 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   background-size: 26px 26px;
   background-position: 0 0, 13px 13px;
 }
+
+.AvatarRoot {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+  overflow: hidden;
+  user-select: none;
+  background-color: var(--blackA3);
+}
+
+.AvatarImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.AvatarFallback {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  color: var(--violet11);
+  font-size: 10px;
+  line-height: 1;
+  font-weight: 500;
+}

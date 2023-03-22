@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 
 import { MediaModal } from "./";
+import Profile from "./ui/avatar";
 import { tagType, profile, userProfile, verticalMenu, videoIcon, imageIcon } from "../assets";
 import { formatBytes, formatDate, capitalizeFirstLetter } from "../utils";
 import { generateVideoThumbnailViaUrl } from "../utils/thumbnailGenerator"
@@ -109,13 +110,14 @@ const FileCard = ({
         {!user ? (
           <div className="flex items-center justify-start mt-[20px] gap-[12px]">
             <div className="w-[30px] h-[30px] overflow-hidden rounded-full flex justify-center items-center bg-[#13131a]">
-              <Image
+              {/* <Image
                 src={profile}
                 alt="user"
                 className="object-fill"
                 width={100}
                 height={100}
-              />
+              /> */}
+              <Profile image={profile} name={name} className="object-fill" />
             </div>
             <p className="flex-1 text-left font-epilogue font-normal text-[12px] text-zinc-500 truncate">
               by <span className="text-zinc-300">{capitalizeFirstLetter(username)}</span>

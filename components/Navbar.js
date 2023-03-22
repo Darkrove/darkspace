@@ -7,8 +7,8 @@ import {
   useNetworkMismatch,
   ChainId,
 } from "@thirdweb-dev/react";
-import { toast, Toast } from "react-hot-toast";
 
+import { toast } from "./ui/toast"
 import { UserDropdown } from "./";
 import { capitalizeFirstLetter } from "../utils";
 import { navlinks } from "../constants";
@@ -35,7 +35,12 @@ const Navbar = () => {
 
   useEffect(() => {
     if (isWrongChain && switchNetwork) {
-      toast.error("Wrong network detected, switch back to goerli testnet.");
+      toast({
+        icon: 'X',
+        title: "Switching to Goerli testnet in 3 seconds...",
+        message: "Wrong network detected, switch back to goerli testnet.",
+        type: "error",
+      })
       setTimeout(() => {
         switchNetwork(ChainId.Goerli);
       }, 3000);
@@ -125,9 +130,8 @@ const Navbar = () => {
             </div>
 
             <div
-              className={`flex justify-center ${
-                isWrongChain ? "bg-[#ef4444]" : "bg-[#8B5CF6]"
-              } space-y-4 px-4 py-8 md:px-16`}
+              className={`flex justify-center ${isWrongChain ? "bg-[#ef4444]" : "bg-[#8B5CF6]"
+                } space-y-4 px-4 py-8 md:px-16`}
             >
               <ConnectWallet
                 className="border-0"
