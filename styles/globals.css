@@ -1,4 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Epilogue:wght@400;500;600;700&display=swap");
+@import "@radix-ui/colors/blackA.css";
+@import "@radix-ui/colors/violet.css";
 
 @tailwind base;
 @tailwind components;
