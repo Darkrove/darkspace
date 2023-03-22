@@ -56,7 +56,7 @@ export default function UserDropdown({ onProfileClick }) {
           onClick={() => setOpenPopover(!openPopover)}
           className="flex flex-row w-[100%] h-[100%] items-center justify-center overflow-hidden rounded-full transition-all duration-75 focus:outline-none active:scale-95"
         >
-          <Profile image={image} name={name} className="w-[100%] h-[100%]" />
+          <Profile image={image} name={name} className="" />
         </button>
       </Popover>
     </motion.div>

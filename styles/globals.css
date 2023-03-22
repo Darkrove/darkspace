@@ -93,11 +93,6 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 .AvatarFallback {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   color: white;
   font-size: 15px;
   line-height: 1;

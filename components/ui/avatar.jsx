@@ -7,6 +7,7 @@ const Profile = ({ image, name, className, ...props }) => {
         ?.split(" ")
         .map((word) => word[0])
         .join("");
+
     return (
         <div>
             <Avatar.Root className={cn("AvatarRoot", className)} {...props}>
@@ -15,8 +16,8 @@ const Profile = ({ image, name, className, ...props }) => {
                     src={image}
                     alt={name}
                 />
-                <Avatar.Fallback className="AvatarFallback" delayMs={600}>
-                    {fallback}
+                <Avatar.Fallback className="AvatarFallback flex justify-center items-center" delayMs={600}>
+                    {fallback.toUpperCase()}
                 </Avatar.Fallback>
             </Avatar.Root>
         </div>
