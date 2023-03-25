@@ -1,4 +1,4 @@
-import { ChevronLeft, ChevronRight, Moon, Sun, Laptop, CheckCircle, Download, X, Network } from 'lucide-react'
+import { ChevronLeft, ChevronRight, Moon, Sun, Laptop, CheckCircle, Download, X, Network, User } from 'lucide-react'
 
 export const Icons = {
     ChevronLeft,
@@ -9,7 +9,8 @@ export const Icons = {
     CheckCircle,
     Download,
     X,
-    Network
+    Network,
+    User
 }
 
 export default Icons

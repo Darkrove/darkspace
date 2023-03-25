@@ -8,16 +8,16 @@ const GlobalStat = () => {
     const { data, error, isLoading } = useSWR(
         "/api/fetch/stats",
         fetcher
-      );
+    );
     return (
         <div> <div className="py-8">
             <div className="mx-auto max-w-screen-xl container px-4 lg:px-8">
                 <div className="flex flex-col justify-center items-center mb-8 text-center">
                     <h1 className="text-4xl font-bold text-white mb-4">
-                        Higlights
-                    </h1>
+                        Highlight
+                    </  h1>
                     <Balancer className="text-zinc-300 text-lg">
-                        Important higlights about darkspace activity 🚀
+                        Important highlights about darkspace activity 🚀
                     </Balancer>
                 </div>
                 <div className="max-w-screen-xl mx-auto flex flex-col sm:flex-row justify-center items-center">

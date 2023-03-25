@@ -9,18 +9,16 @@ const Profile = ({ image, name, className, ...props }) => {
         .join("").toUpperCase();
 
     return (
-        <div>
-            <Avatar.Root className={cn("AvatarRoot flex justify-center items-center", className)} {...props}>
-                <Avatar.Image
-                    className="AvatarImage"
-                    src={image}
-                    alt={name}
-                />
-                <Avatar.Fallback className="AvatarFallback flex h-full w-full justify-center items-center" delayMs={600}>
-                    {fallback}
-                </Avatar.Fallback>
-            </Avatar.Root>
-        </div>
+        <Avatar.Root className={cn("AvatarRoot flex justify-center items-center", className)} {...props}>
+            <Avatar.Image
+                className="AvatarImage"
+                src={image}
+                alt={name}
+            />
+            <Avatar.Fallback className="AvatarFallback flex h-full w-full justify-center items-center" delayMs={600}>
+                {fallback}
+            </Avatar.Fallback>
+        </Avatar.Root>
     )
 }
 

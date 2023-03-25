@@ -2,16 +2,8 @@ import React, { useState } from "react";
 import Image from "next/image";
 import Router from "next/router";
 import { useSession } from "next-auth/react";
+import { User, Eye, EyeOff, Trash, HelpCircle, Download, Copy, Share2 } from "lucide-react"
 
-import {
-  DownloadIcon,
-  LinkIcon,
-  DetailIcon,
-  CopyIcon,
-  OpenEyeIcon,
-  CloseEyeIcon,
-  TrashIcon,
-} from "../assets/Icons";
 import { Loader } from "../components";
 import { useStateContext } from "../context";
 import useCopyToClipboard from "../lib/hooks/useCopyToClipboard";
@@ -165,28 +157,28 @@ export default function MediaModal({
                         className="w-full flex items-center gap-x-3.5 py-2 px-3 rounded-md text-sm focus:ring-2 focus:ring-blue-500 text-gray-400 hover:bg-gray-700 hover:text-gray-300"
                         onClick={() => downloadUsingFetch(src, name)}
                       >
-                        <DownloadIcon className="w-5 h-5 flex-none" />
+                        <Download className="w-5 h-5 flex-none" />
                         Download
                       </button>
                       <button
                         className="w-full flex items-center gap-x-3.5 py-2 px-3 rounded-md text-sm focus:ring-2 focus:ring-blue-500 text-gray-400 hover:bg-gray-700 hover:text-gray-300"
                         onClick={() => copyClipboard(src)}
                       >
-                        <CopyIcon className="w-5 h-5 flex-none" />
-                        {success ? "Copied" : "Copy link"}
+                        <Copy className="w-5 h-5 flex-none" />
+                        {success ? "Copied" : "Copy Link"}
                       </button>
                       <button
                         onClick={() => shareFile(name, src)}
                         className="w-full flex items-center gap-x-3.5 py-2 px-3 rounded-md text-sm focus:ring-2 focus:ring-blue-500 text-gray-400 hover:bg-gray-700 hover:text-gray-300"
                       >
-                        <LinkIcon className="w-5 h-5 flex-none" />
-                        Share a copy
+                        <Share2 className="w-5 h-5 flex-none" />
+                        Share Link
                       </button>
                       <button
                         onClick={() => Router.push(`/dashboard/show/${hash}`)}
                         className="w-full flex items-center gap-x-3.5 py-2 px-3 rounded-md text-sm focus:ring-2 focus:ring-blue-500 text-gray-400 hover:bg-gray-700 hover:text-gray-300"
                       >
-                        <DetailIcon className="w-5 h-5 flex-none" />
+                        <HelpCircle className="w-5 h-5 flex-none" />
                         Details
                       </button>
                       {user ? (
@@ -194,12 +186,19 @@ export default function MediaModal({
                           <span className="text-left block py-2 px-3 text-xs font-medium uppercase text-gray-500">
                             Admin
                           </span>
+                          <button
+                            onClick={() => handleUpdate(id, "delete")}
+                            className="w-full flex items-center gap-x-3.5 py-2 px-3 rounded-md text-sm focus:ring-2 focus:ring-blue-500 text-gray-400 hover:bg-gray-700 hover:text-gray-300"
+                          >
+                            <User className="w-5 h-5 flex-none" />
+                            Tranfer Ownership
+                          </button>
                           {status === "public" ? (
                             <button
                               onClick={() => handleUpdate(id, "private")}
                               className="w-full flex items-center gap-x-3.5 py-2 px-3 rounded-md text-sm focus:ring-2 focus:ring-blue-500 text-gray-400 hover:bg-gray-700 hover:text-gray-300"
                             >
-                              <CloseEyeIcon className="w-5 h-5 flex-none" />
+                              <EyeOff className="w-5 h-5 flex-none" />
                               Keep private
                             </button>
                           ) : (
@@ -207,8 +206,8 @@ export default function MediaModal({
                               onClick={() => handleUpdate(id, "public")}
                               className="w-full flex items-center gap-x-3.5 py-2 px-3 rounded-md text-sm focus:ring-2 focus:ring-blue-500 text-gray-400 hover:bg-gray-700 hover:text-gray-300"
                             >
-                              <OpenEyeIcon className="w-5 h-5 flex-none" />
-                              Share as public
+                              <Eye className="w-5 h-5 flex-none" />
+                              Share as Public
                             </button>
                           )}
 
@@ -216,7 +215,7 @@ export default function MediaModal({
                             onClick={() => handleUpdate(id, "delete")}
                             className="w-full flex items-center gap-x-3.5 py-2 px-3 rounded-md text-sm focus:ring-2 focus:ring-blue-500 text-gray-400 hover:bg-gray-700 hover:text-gray-300"
                           >
-                            <TrashIcon className="w-5 h-5 flex-none" />
+                            <Trash className="w-5 h-5 flex-none" />
                             Remove
                           </button>
                         </div>
@@ -242,7 +241,7 @@ export default function MediaModal({
                   <div className="mt-2 text-center space-y-6 text-[15px] leading-relaxed text-gray-500">
                     <Image
                       src={src}
-                      alt="illustration"
+                      alt="image"
                       loading="lazy"
                       width={600}
                       height={500}
