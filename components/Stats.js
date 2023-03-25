@@ -1,13 +1,15 @@
 import Link from "next/link";
 import { useState, useEffect } from "react";
+import { ArrowCircleUpRight, Copy, Checks } from "phosphor-react"
+
 
 import { LinkLogo } from "../assets/Icons";
+import CopyButton from "./ui/copy-button";
 import { useStateContext } from "../context";
 import { shortenAddress } from "../utils";
 
-export default function Stats({lastUpdate, imageCount, videoCount, webCount, address, balance, storageUsed}) {
-
-  const {setActivePage} = useStateContext();
+export default function Stats({ lastUpdate, imageCount, videoCount, webCount, address, balance, storageUsed }) {
+  const { setActivePage } = useStateContext();
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -17,15 +19,16 @@ export default function Stats({lastUpdate, imageCount, videoCount, webCount, add
   const statCards = [
     {
       title: "Wallet Address",
+      data: address,
       value: shortenAddress(address),
-      link: "",
-      active: "profile"
+      link: false,
+      active: "profile",
     },
     {
       title: "Wallet Balance",
       value: `${parseFloat(balance?.data?.displayValue).toFixed(3)} ${" "} ${balance?.data?.symbol}`,
-      link: "",
-      active: "profile"
+      link: false,
+      active: "profile",
     },
     {
       title: "Image Count",
@@ -74,14 +77,22 @@ export default function Stats({lastUpdate, imageCount, videoCount, webCount, add
               className="card bg-white/5 rounded-lg shadow-xl p-4 flex flex-col justify-between gap-2"
               key={index}
             >
-              <Link
-                className="text-zinc-400 flex gap-4 m-0 items-center"
-                href={card.link}
-                rel="noreferrer"
-                onClick={()=>setActivePage(card.active)}
-              >
-                {card.title} <LinkLogo className="w-4 h-4" />
-              </Link>
+              {card.link ? (
+                <Link
+                  className="text-zinc-400 flex gap-4 m-0 items-center"
+                  href={card.link}
+                  rel="noreferrer"
+                  onClick={() => setActivePage(card.active)}
+                >
+                  {card.title}  <ArrowCircleUpRight size="1rem" className="p-2 text-white" weight="bold" />
+                </Link>
+              ) : (
+                <div className="flex gap-4 m-0 items-center">
+                  {card.title}
+                  <CopyButton value={card.data || card.value} />
+                </div>
+              )}
+
               <h3 className="text-zinc-200 m-0">
                 {card.value || "-"}
               </h3>
