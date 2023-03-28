@@ -74,7 +74,7 @@ const HomeNavbar = () => {
                 </li>
                 <li>
                   <a
-                    href="#"
+                    href="/about"
                     className="block md:px-4 transition text-gray-300 hover:text-violet-500"
                   >
                     <span>About</span>
@@ -94,7 +94,7 @@ const HomeNavbar = () => {
                   className="w-full py-3 px-6 text-center rounded-md transition bg-violet-500 hover:bg-violet-600 active:opacity-80 focus:opacity-80 sm:w-max"
                 >
                   <span className="flex justify-center items-center text-white font-semibold text-sm">
-                    Dashboard <CaretRight className="w-4 h-4 font-extrabold" /> 
+                    Dashboard <CaretRight className="w-4 h-4 font-extrabold" />
                   </span>
                 </button>
               ) : (

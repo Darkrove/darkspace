@@ -13,9 +13,7 @@ const docs = () => {
             className="text-violet-500 underline transition hover:text-violet-700/75"
             href="https://github.com/Darkrove/darkspace"
             rel="noreferrer"
-            target="_blank">github</a> {" "}
-          📌 Also this project is open source, so you can contribute to this project
-          by forking 🔮 this repo and making pull requests.
+            target="_blank">github</a> {" "}.
         </p>
       </div>
     </div>
