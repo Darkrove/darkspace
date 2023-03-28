@@ -21,12 +21,12 @@ const HomeNavbar = () => {
             className="peer hidden"
           />
           <div className="w-full px-6 flex justify-between lg:w-max md:px-0 z-30">
-            <a href="#" aria-label="logo" className="flex items-center">
+            <Link href="/" aria-label="logo" className="flex items-center">
               <DarkspaceLogoFull className="h-[50px] lg:h-[70px]" />
               <span className="top-0 -right-5 inline-flex items-center py-0.5 px-1.5 rounded-full text-[10px] lg:text-xs font-medium transform -translate-y-1/2 bg-red-500 text-white">
                 Beta
               </span>
-            </a>
+            </Link>
 
             <div className="flex items-center lg:hidden max-h-10">
               <label
@@ -73,12 +73,12 @@ const HomeNavbar = () => {
                   </Link>
                 </li>
                 <li>
-                  <a
+                  <Link
                     href="/about"
                     className="block md:px-4 transition text-gray-300 hover:text-violet-500"
                   >
                     <span>About</span>
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
