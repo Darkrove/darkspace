@@ -18,7 +18,7 @@ const about = () => {
                     for you to review, modify and you can also contribute to this project if you want to by
                     forking 📌 this repo and making pull requests.
                 </p>
-                <GithubBadge repo="Darkrove/darkspace" className="my-10" />
+                <GithubBadge repo="Darkrove/darkspace" />
             </div>
         </div>
     )

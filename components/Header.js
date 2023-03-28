@@ -1,6 +1,6 @@
 import Balancer from "react-wrap-balancer";
 import CustomButton from "./CustomButton";
-import { heroLogo, MacBook, SafariMockup } from "../assets/Icons";
+import { heroLogo, MacBook } from "../assets/Icons";
 
 const Header = () => {
   return (
@@ -75,7 +75,6 @@ const Header = () => {
             alt="hero"
             src={heroLogo}
           /> */}
-          <SafariMockup className="xl:w-[870px] lg:w-[670px]" />
         </div>
         {/* <div class="relative mt-16 h-80 lg:mt-8"> */}
         {/* <img class="absolute top-0 left-0 w-[57rem] max-w-none rounded-md bg-white/5 ring-1 ring-white/10" src="https://tailwindui.com/img/component-images/dark-project-app-screenshot.png" alt="App screenshot" width="1824" height="1080"> */}
