@@ -1,6 +1,6 @@
 import React from 'react';
 
-const GithubBadge = ({ repo }) => {
+export default function GithubBadge({ repo }){
   const [starsCount, setStarsCount] = React.useState('');
 
   React.useEffect(() => {
@@ -33,4 +33,3 @@ const GithubBadge = ({ repo }) => {
   );
 };
 
-export default GithubBadge;
