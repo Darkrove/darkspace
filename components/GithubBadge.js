@@ -19,7 +19,6 @@ export default function GithubBadge({ repo }){
         height={30}
         viewBox="0 0 50 50"
         xmlns="http://www.w3.org/2000/svg"
-        {...props}
       >
         <path
           fill='#fff'
