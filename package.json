@@ -20,7 +20,7 @@
     "@rajesh896/video-thumbnails-generator": "^2.3.9",
     "@thirdweb-dev/react": "^3",
     "@thirdweb-dev/sdk": "^3",
-    "@thirdweb-dev/storage": "^1.0.6",
+    "@thirdweb-dev/storage": "^1.1.4",
     "@vercel/analytics": "^0.1.8",
     "clsx": "^1.2.1",
     "daisyui": "^2.46.0",
