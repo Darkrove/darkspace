@@ -18,7 +18,7 @@
     "@radix-ui/react-avatar": "^1.0.2",
     "@radix-ui/react-popover": "^1.0.3",
     "@rajesh896/video-thumbnails-generator": "^2.3.9",
-    "@thirdweb-dev/react": "^3",
+    "@thirdweb-dev/react": "^3.13.0",
     "@thirdweb-dev/sdk": "^3",
     "@thirdweb-dev/storage": "^1.0.6",
     "@vercel/analytics": "^0.1.8",
