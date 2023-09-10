@@ -1,16 +1,24 @@
 import React from 'react';
+import useSWR from "swr";
 
-const GithubBadge = ({ repo }) => {
-  const [starsCount, setStarsCount] = React.useState('');
+const GithubBadge = () => {
+  // const [starsCount, setStarsCount] = React.useState('');
 
-  React.useEffect(() => {
-    async function fetchStarsCount() {
-      const response = await fetch(`https://api.github.com/repos/${repo}`);
-      const data = await response.json();
-      setStarsCount(data.stargazers_count);
-    }
-    fetchStarsCount();
-  }, [repo]);
+  // React.useEffect(() => {
+  //   async function fetchStarsCount() {
+  //     const response = await fetch(`https://api.github.com/repos/Darkrove/darkspace`);
+  //     const data = await response.json();
+  //     setStarsCount(data.stargazers_count);
+  //   }
+  //   fetchStarsCount();
+  // }, [repo]);
+
+  const fetcher = (url) => fetch(url).then((res) => res.json());
+
+  const { data, error, isLoading } = useSWR(
+    "https://api.github.com/repos/Darkrove/darkspace",
+    fetcher
+  );
 
   return (
     <div className="flex py-2 px-4 bg-black rounded-lg items-center space-x-2">
@@ -19,7 +27,6 @@ const GithubBadge = ({ repo }) => {
         height={30}
         viewBox="0 0 50 50"
         xmlns="http://www.w3.org/2000/svg"
-        {...props}
       >
         <path
           fill='#fff'
@@ -28,7 +35,7 @@ const GithubBadge = ({ repo }) => {
         />
       </svg>
       <span className="text-sm text-white font-bold">Star on Github</span>
-      <span className="text-sm text-gray-400">{starsCount}</span>
+      <span className="text-sm text-gray-400">{data.stargazers_count}</span>
     </div>
   );
 };
