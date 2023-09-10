@@ -94,8 +94,9 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }) {
     }
   };
 
+
   return (
-    <ThirdwebProvider desiredChainId={activeChainId}>
+    <ThirdwebProvider activeChain={Sepolia} clientId={process.env.THIRDWEB_CLIENT_ID}>
       <StateContextProvider>
         <SessionProvider session={session}>
           <RWBProvider>
