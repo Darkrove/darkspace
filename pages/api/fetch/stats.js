@@ -1,8 +1,11 @@
-import { ThirdwebSDK } from "@thirdweb-dev/sdk/evm";
+import { Sepolia } from "@thirdweb-dev/chains";
+import { ThirdwebSDK } from "@thirdweb-dev/sdk";
 import { formatBytes } from "../../../utils";
 
 const fetch = async () => {
-    const sdk = new ThirdwebSDK("goerli");
+    const sdk = new ThirdwebSDK(Sepolia, {
+        secretKey: process.env.THIRDWEB_SECRET,
+    });
     const contract = await sdk.getContract(process.env.CONTRACT);
     const data = await contract.call("getFiles");
     if (data.length > 0) {
