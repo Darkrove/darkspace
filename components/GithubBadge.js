@@ -2,16 +2,6 @@ import React from 'react';
 import useSWR from "swr";
 
 const GithubBadge = () => {
-  // const [starsCount, setStarsCount] = React.useState('');
-
-  // React.useEffect(() => {
-  //   async function fetchStarsCount() {
-  //     const response = await fetch(`https://api.github.com/repos/Darkrove/darkspace`);
-  //     const data = await response.json();
-  //     setStarsCount(data.stargazers_count);
-  //   }
-  //   fetchStarsCount();
-  // }, [repo]);
 
   const fetcher = (url) => fetch(url).then((res) => res.json());
 
@@ -40,4 +30,5 @@ const GithubBadge = () => {
   );
 };
 
-export default GithubBadge;
+
+export default GithubBadge
