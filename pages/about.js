@@ -39,7 +39,7 @@ const about = () => {
                         />
                     </svg>
                     <span className="text-sm text-white font-bold">Star on Github</span>
-                    <span className="text-sm text-gray-400">{data.stargazers_count}</span>
+                    <span className="text-sm text-gray-400">{data?.stargazers_count}</span>
                 </div>
             </div>
         </div>

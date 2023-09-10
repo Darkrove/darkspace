@@ -31,4 +31,4 @@ const GithubBadge = () => {
 };
 
 
-export default GithubBadge
+export default GithubBadge;
