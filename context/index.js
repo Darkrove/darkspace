@@ -17,7 +17,7 @@ const StateContext = createContext();
 
 export const StateContextProvider = ({ children }) => {
   const { contract } = useContract(
-    "0xF59c8EbE7a730C02800C59010a998948c203EBDc"
+    "0xAF56d5F4Fb6F97118B9afc032A2E5beE5315b6b6"
   );
   const { mutateAsync: addFile, isLoading } = useContractWrite(
     contract,
