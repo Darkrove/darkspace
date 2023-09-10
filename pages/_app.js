@@ -3,6 +3,7 @@ import React, { useEffect } from "react";
 import { Analytics } from "@vercel/analytics/react";
 import Head from "next/head";
 import Script from "next/script";
+import { Sepolia } from "@thirdweb-dev/chains";
 import { ChainId, ThirdwebProvider } from "@thirdweb-dev/react";
 import { useRouter } from "next/router";
 import { SessionProvider } from "next-auth/react";
