@@ -45,7 +45,7 @@ export const StateContextProvider = ({ children }) => {
 
 
   const getFileByHash = async (hash) => {
-    const data = await contract.call("getFileByHash", hash)
+    const data = await contract.call("getFileByHash", [hash])
     if (!data) return
     const parsedFiles = data.map((file, i) => ({
       owner: file.owner,
