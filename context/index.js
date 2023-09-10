@@ -77,14 +77,7 @@ export const StateContextProvider = ({ children }) => {
     const _filetype = padString(type);
     const _filehash = __hash;
     try {
-      const data = await addFile([
-        _username,
-        _profile,
-        _filename,
-        _filesize,
-        _filetype,
-        _filehash,
-      ]);
+      const data = await addFile({ args: [_username, _profile, _filename, _filesize, _filetype, _filehash] });
       // TODO toast updated
       toast({
         icon: 'Network',
@@ -107,7 +100,7 @@ export const StateContextProvider = ({ children }) => {
 
   const updateFile = async (_index, _status) => {
     try {
-      const data = await updateFileStatus([_index, _status]);
+      const data = await updateFileStatus({ args: [_index, _status] })
       // TODO toast updated
       toast({
         icon: 'Network',
